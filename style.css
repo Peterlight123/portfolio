@@ -1,0 +1,46 @@
+ #button{
+    text-decoration: none;
+
+ }
+ #high{
+    font-weight: bold;
+ }
+ html{
+    scroll-behavior: smooth;
+ }
+ body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+ }
+ .fade-in{
+    animation: fadeIn 1s ease-in-out;
+ }
+
+ @keyframes fadeIn {
+    from{opacity: 0; transform: translateY(10px);}
+    to{opacity: 1; transform: translateY(0);}
+ }
+ img{
+    max-width: 100%;
+    height: auto;
+ }
+ .card{
+    min-height: 300px;
+ }
+ .view-btn:hover {
+    transform: scale(1.05);
+    background-color: #dc3545; /* Bootstrap's danger color */
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.4);
+  }
+  .view-btn{
+    border-radius: 30px;
+  }
+  body {
+   opacity: 0;
+   animation: fadeIn 0.5s ease-in-out forwards;
+ }
+ @keyframes fadeIn {
+   to { opacity: 1; }
+ }
