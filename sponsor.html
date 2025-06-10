@@ -10,6 +10,7 @@
             background-color: #f8f9fa;
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Allows content above the modal button */
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -27,6 +28,17 @@
             font-family: monospace;
             word-break: break-all;
             color: #495057;
+            cursor: pointer; /* Indicate it's clickable */
+            position: relative; /* For positioning copy feedback */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .crypto-address-info small {
+            font-size: 0.8em;
+            color: #6c757d;
         }
         .crypto-qr-placeholder {
             background-color: #ced4da;
@@ -44,11 +56,33 @@
         .nav-tabs .nav-link.active {
             font-weight: bold;
         }
+        .copy-feedback {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .copy-feedback.show {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
 
-    
+    <div class="container text-center py-5">
+        <h1 class="mb-4">Thank you for considering a sponsorship!</h1>
+        <p class="lead mb-5">Click the button below to choose your sponsorship amount and method.</p>
+
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#paymentModal">
+            Open Payment Options
+        </button>
+    </div>
 
     <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -132,9 +166,9 @@
                                             <div class="accordion-body">
                                                 <p>Send **Bitcoin (BTC)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
-                                                <div class="crypto-address-info text-center">
-                                                    19Vgx1... <br>
-                                                    <small>(Tap to copy)</small>
+                                                <div class="crypto-address-info text-center" data-address="19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189">
+                                                    19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189 <span class="copy-feedback"></span>
+                                                    <small class="d-block">(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Bitcoin">
                                                 <input type="hidden" name="cryptoAddress" value="19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189">
@@ -153,9 +187,9 @@
                                             <div class="accordion-body">
                                                 <p>Send **Ethereum (ETH)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
-                                                <div class="crypto-address-info text-center">
-                                                    0x09e3... <br>
-                                                    <small>(Tap to copy)</small>
+                                                <div class="crypto-address-info text-center" data-address="0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2">
+                                                    0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 <span class="copy-feedback"></span>
+                                                    <small class="d-block">(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Ethereum">
                                                 <input type="hidden" name="cryptoAddress" value="0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2">
@@ -184,8 +218,9 @@
                                                 <div id="usdtAddressDisplay" class="d-none">
                                                     <p>Send **USDT** to this address on the selected network:</p>
                                                     <div class="crypto-qr-placeholder">QR Code Here</div>
-                                                    <div class="crypto-address-info text-center" id="selectedUsdtAddress">
-                                                        <small>(Tap to copy)</small>
+                                                    <div class="crypto-address-info text-center" id="selectedUsdtAddress" data-address="">
+                                                        <span class="copy-feedback"></span>
+                                                        <small class="d-block">(Tap to copy)</small>
                                                     </div>
                                                     <input type="hidden" name="cryptoType" value="USDT">
                                                     <input type="hidden" id="selectedUsdtAddressInput" name="cryptoAddress" value="">
@@ -204,9 +239,9 @@
                                             <div class="accordion-body">
                                                 <p>Send **Solana (SOL)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
-                                                <div class="crypto-address-info text-center">
-                                                    47jBL... <br>
-                                                    <small>(Tap to copy)</small>
+                                                <div class="crypto-address-info text-center" data-address="47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd">
+                                                    47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd <span class="copy-feedback"></span>
+                                                    <small class="d-block">(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Solana">
                                                 <input type="hidden" name="cryptoAddress" value="47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd">
@@ -228,6 +263,7 @@
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
@@ -236,26 +272,30 @@
             const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
             const usdtNetworkSelect = document.getElementById('usdtNetwork');
             const usdtAddressDisplay = document.getElementById('usdtAddressDisplay');
-            const selectedUsdtAddress = document.getElementById('selectedUsdtAddress');
+            const selectedUsdtAddressDiv = document.getElementById('selectedUsdtAddress'); // Renamed for clarity
             const selectedUsdtAddressInput = document.getElementById('selectedUsdtAddressInput');
 
-            // wallet addresses for usdt
+            // Consolidated wallet addresses for USDT, including both display and raw values
             const usdtAddresses = {
-                'ERC-20': '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2(ERC-20)',
-                'TRC-20': 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC (TRC-20)',
-                'BEP-20': '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (BEP-20)',
-                'SPL': '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd(SPL - Solana)'
+                'ERC-20': { display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (ERC-20)', address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2' },
+                'TRC-20': { display: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC (TRC-20)', address: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC' },
+                'BEP-20': { display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (BEP-20)', address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2' },
+                'SPL': { display: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd (SPL - Solana)', address: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd' }
             };
 
             usdtNetworkSelect.addEventListener('change', function() {
                 const selectedValue = this.value;
                 if (selectedValue && usdtAddresses[selectedValue]) {
-                    selectedUsdtAddress.innerHTML = usdtAddresses[selectedValue] + '<br><small>(Tap to copy)</small>';
-                    selectedUsdtAddressInput.value = usdtAddresses[selectedValue].split(' ')[0]; // Store just the address
+                    const cryptoInfo = usdtAddresses[selectedValue];
+                    selectedUsdtAddressDiv.innerHTML = `${cryptoInfo.display} <span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`;
+                    selectedUsdtAddressDiv.dataset.address = cryptoInfo.address; // Set data-address for copying
+                    selectedUsdtAddressInput.value = cryptoInfo.address; // Set hidden input value
                     usdtAddressDisplay.classList.remove('d-none');
                 } else {
                     usdtAddressDisplay.classList.add('d-none');
-                    selectedUsdtAddressInput.value = '';
+                    selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`; // Reset display
+                    selectedUsdtAddressDiv.dataset.address = ''; // Clear data-address
+                    selectedUsdtAddressInput.value = ''; // Clear hidden input
                 }
             });
 
@@ -267,14 +307,67 @@
                 if (event.target.id === 'collapseUSDT' || (event.target.id !== 'collapseUSDT' && document.getElementById('collapseUSDT').classList.contains('show'))) {
                     usdtNetworkSelect.value = ''; // Reset dropdown
                     usdtAddressDisplay.classList.add('d-none'); // Hide address display
+                    selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`; // Reset display
+                    selectedUsdtAddressDiv.dataset.address = ''; // Clear data-address
                     selectedUsdtAddressInput.value = ''; // Clear hidden input
                 }
             });
 
+            // --- Copy to Clipboard Functionality ---
+            function copyToClipboard(text, feedbackElement) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text)
+                        .then(() => {
+                            console.log('Text copied to clipboard:', text);
+                            if (feedbackElement) {
+                                feedbackElement.textContent = 'Copied!';
+                                feedbackElement.classList.add('show');
+                                setTimeout(() => {
+                                    feedbackElement.classList.remove('show');
+                                    feedbackElement.textContent = '';
+                                }, 2000); // Hide "Copied!" after 2 seconds
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Failed to copy text: ', err);
+                            alert('Failed to copy address. Please copy it manually: ' + text);
+                        });
+                } else {
+                    // Fallback for older browsers
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = text;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                    alert('Address copied to clipboard (manual copy fallback).');
+                    if (feedbackElement) {
+                        feedbackElement.textContent = 'Copied!';
+                        feedbackElement.classList.add('show');
+                        setTimeout(() => {
+                            feedbackElement.classList.remove('show');
+                            feedbackElement.textContent = '';
+                        }, 2000); // Hide "Copied!" after 2 seconds
+                    }
+                }
+            }
+
+            // Attach click listeners to all crypto address info divs for copying
+            document.querySelectorAll('.crypto-address-info').forEach(infoDiv => {
+                infoDiv.addEventListener('click', function() {
+                    const addressToCopy = this.dataset.address;
+                    const feedbackSpan = this.querySelector('.copy-feedback');
+                    if (addressToCopy) {
+                        copyToClipboard(addressToCopy, feedbackSpan);
+                    }
+                });
+            });
+
+            // --- End Copy to Clipboard Functionality ---
+
             // Event listener for the "Confirm Payment" button
             confirmPaymentBtn.addEventListener('click', function(event) {
-                // Prevent default form submission to handle it with JS
-                event.preventDefault();
+                event.preventDefault(); // Prevent default form submission
 
                 if (!paymentForm.checkValidity()) {
                     paymentForm.classList.add('was-validated'); // Show Bootstrap validation feedback
@@ -293,13 +386,12 @@
                 // Determine active payment method tab
                 const activeTab = document.querySelector('#paymentTab button.nav-link.active');
                 if (activeTab) {
-                    formData.paymentMethod = activeTab.id.replace('-tab', ''); // e.g., 'coffee', 'transfer', 'crypto'
+                    formData.paymentMethod = activeTab.id.replace('-tab', '');
                 }
 
                 // Collect payment method specific data
                 if (formData.paymentMethod === 'transfer') {
                     formData.transferRef = document.getElementById('transferRef').value;
-                    // Add dummy bank details for backend reference
                     formData.bankDetails = {
                         bankName: "Zenith Bank",
                         accountName: "Eluwade Peter Toluwanimi",
@@ -322,24 +414,20 @@
                             const usdtNetwork = usdtNetworkSelect.value;
                             if (!usdtNetwork) {
                                 alert('Please select a USDT network.');
-                                return; // Stop submission if USDT network not selected
+                                return;
                             }
                             formData.crypto.network = usdtNetwork;
                         }
                     } else {
                         alert('Please select a cryptocurrency option.');
-                        return; // Stop submission if no crypto selected
+                        return;
                     }
                 }
 
-                // Log the collected data to the console for demonstration
                 console.log('Payment Data Collected:', formData);
 
-                // --- START BACKEND INTEGRATION INSTRUCTION ---
-                // This is where you would send the 'formData' to your server.
-                // Example using Fetch API (requires a backend endpoint to receive POST requests):
-                /*
-                fetch('YOUR_BACKEND_API_ENDPOINT_FOR_PAYMENT_PROCESSING', {
+                // --- BACKEND INTEGRATION: Sending data to payment.php ---
+                fetch('payment.php', { // Make sure payment.php is in the same directory as sponsor.html
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -350,31 +438,25 @@
                 .then(data => {
                     console.log('Server response:', data);
                     if (data.success) {
-                        alert('Payment details submitted successfully! We will process your order.');
-                        // Close modal or show a success message
+                        alert('Payment details submitted successfully! We will process your order and send you a confirmation.');
+                        // Close modal and reset form
                         const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
                         paymentModal.hide();
-                        // Optionally, reset the form
                         paymentForm.reset();
                         paymentForm.classList.remove('was-validated');
+                        usdtNetworkSelect.value = ''; // Reset USDT dropdown
+                        usdtAddressDisplay.classList.add('d-none'); // Hide USDT address
+                        selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`; // Reset USDT display
+                        selectedUsdtAddressDiv.dataset.address = ''; // Clear USDT data-address
                     } else {
-                        alert('Error processing payment: ' + (data.message || 'Unknown error.'));
+                        alert('Error processing payment: ' + (data.message || 'Unknown error. Please try again.'));
                     }
                 })
                 .catch((error) => {
                     console.error('Error sending data to backend:', error);
-                    alert('An error occurred while trying to submit payment. Please try again.');
+                    alert('An error occurred while trying to submit payment. Please check your internet connection or try again later.');
                 });
-                */
-
-                // For now, we'll just simulate success and close the modal
-                alert('Payment details collected. This data would now be sent to your server for email processing and order fulfillment!');
-                const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
-                paymentModal.hide();
-                paymentForm.reset();
-                paymentForm.classList.remove('was-validated');
-                usdtNetworkSelect.value = ''; // Reset USDT dropdown
-                usdtAddressDisplay.classList.add('d-none'); // Hide USDT address
+                // --- END BACKEND INTEGRATION ---
             });
         });
     </script>
