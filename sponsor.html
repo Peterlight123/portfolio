@@ -110,25 +110,14 @@
                         <h4 class="mb-3">Select Payment Option</h4>
                         <ul class="nav nav-tabs mb-3" id="paymentTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="coffee-tab" data-bs-toggle="tab" data-bs-target="#coffee-section" type="button" role="tab" aria-controls="coffee-section" aria-selected="true">Pay at Store/Cafe</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="transfer-tab" data-bs-toggle="tab" data-bs-target="#transfer-section" type="button" role="tab" aria-controls="transfer-section" aria-selected="false">Bank Transfer</button>
+                                <button class="nav-link active" id="transfer-tab" data-bs-toggle="tab" data-bs-target="#transfer-section" type="button" role="tab" aria-controls="transfer-section" aria-selected="true">Bank Transfer</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="crypto-tab" data-bs-toggle="tab" data-bs-target="#crypto-section" type="button" role="tab" aria-controls="crypto-section" aria-selected="false">Cryptocurrencies</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="paymentTabContent">
-                            <div class="tab-pane fade show active" id="coffee-section" role="tabpanel" aria-labelledby="coffee-tab">
-                                <p class="alert alert-info">
-                                    Please proceed to the nearest participating store or cafe to complete your payment with cash or card. Show your order ID at the counter.
-                                </p>
-                                <p><strong>Order ID:</strong> <span class="fw-bold">#TEMP-0012345</span></p>
-                                <small class="text-muted">Payment will be confirmed manually after store visit.</small>
-                                <input type="hidden" name="_paymentMethod" value="Pay at Store/Cafe"> </div>
-
-                            <div class="tab-pane fade" id="transfer-section" role="tabpanel" aria-labelledby="transfer-tab">
+                            <div class="tab-pane fade show active" id="transfer-section" role="tabpanel" aria-labelledby="transfer-tab">
                                 <p class="alert alert-warning">
                                     Please make a transfer to the account details below. Your order will be processed upon confirmation of payment.
                                 </p>
@@ -279,22 +268,22 @@
                 'ERC-20': {
                     display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (ERC-20)',
                     address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2',
-                    qr: 'images/usdt_erc.png' // Changed
+                    qr: 'images/usdt_erc.png'
                 },
                 'TRC-20': {
                     display: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC (TRC-20)',
                     address: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC',
-                    qr: 'images/usdt_trc.png' // Changed
+                    qr: 'images/usdt_trc.png'
                 },
                 'BEP-20': {
                     display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (BEP-20)',
                     address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2',
-                    qr: 'images/usdt_bnb.png' // Changed
+                    qr: 'images/usdt_bnb.png'
                 },
                 'SPL': {
                     display: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd (SPL - Solana)',
                     address: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd',
-                    qr: 'images/usdt_sol.png' // Changed
+                    qr: 'images/usdt_sol.png'
                 }
             };
 
@@ -426,15 +415,13 @@
             const paymentTabs = document.querySelectorAll('#paymentTab button');
             paymentTabs.forEach(tab => {
                 tab.addEventListener('shown.bs.tab', function (event) {
-                    const newMethodTabId = event.target.id; // e.g., 'coffee-tab', 'transfer-tab', 'crypto-tab'
+                    const newMethodTabId = event.target.id; // e.g., 'transfer-tab', 'crypto-tab'
                     // Find the hidden input specific to the active tab's section
                     const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
 
                     if (paymentMethodInput) {
                         let methodValue = '';
-                        if (newMethodTabId === 'coffee-tab') {
-                            methodValue = 'Pay at Store/Cafe';
-                        } else if (newMethodTabId === 'transfer-tab') {
+                        if (newMethodTabId === 'transfer-tab') {
                             methodValue = 'Bank Transfer';
                         } else if (newMethodTabId === 'crypto-tab') {
                             methodValue = 'Cryptocurrency';
@@ -452,9 +439,7 @@
                 const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
                 if (paymentMethodInput) {
                     let methodValue = '';
-                    if (initialMethodTabId === 'coffee-tab') {
-                        methodValue = 'Pay at Store/Cafe';
-                    } else if (initialMethodTabId === 'transfer-tab') {
+                    if (initialMethodTabId === 'transfer-tab') {
                         methodValue = 'Bank Transfer';
                     } else if (initialMethodTabId === 'crypto-tab') {
                         methodValue = 'Cryptocurrency';
