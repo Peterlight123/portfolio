@@ -3,169 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Summary - Bootstrap</title>
-    <!-- navbar area -->
-    <nav class="navbar p-3 navbar-dark navbar-expand-sm bg-primary sticky-top text-dark">
-      <div class="container">
-        <link rel="icon" type="image/png" href="https://i.imgur.com/2Ocmg4m.png" />
-        <a href="#" class="navbar-brand text-light ">Peter Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="ms-auto navbar-nav">
-            <li class="nav-item">
-              <a href="#highlights" class="nav-link">My Highlights</a>
-            </li>
-            <li class="nav-item">
-              <a href="#Contact" class="nav-link">Contact Me</a>
-            </li>
-            <li class="nav-item">
-              <a href="#About" class="nav-link">About me</a>
-            </li>
-            <li class="nav-item">
-              <a href="#Services" class="nav-link">Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="sponsor.html" class="nav-link">Sponsor me</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <title>Payment Dialogue - Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            background-color: #f8f9fa; /* Light grey background */
+            background-color: #f8f9fa;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
-        .order-summary-card {
-            max-width: 700px;
-            width: 100%;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        .modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 1rem);
         }
-        .order-total-item {
-            font-size: 1.1em;
+        .crypto-address-info {
+            background-color: #e9ecef;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-family: monospace;
+            word-break: break-all;
+            color: #495057;
         }
-        .order-grand-total {
-            font-size: 1.3em;
+        .crypto-qr-placeholder {
+            background-color: #ced4da;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0.375rem;
+            margin: 1rem auto;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .nav-tabs .nav-link.active {
             font-weight: bold;
-            color: #0d6efd; /* Bootstrap primary blue */
-            border-top: 1px dashed #dee2e6; /* Light grey dashed line */
-            padding-top: 0.75rem;
-            margin-top: 0.75rem;
         }
     </style>
 </head>
 <body>
-    
-    <div class="card order-summary-card">
-        <div class="card-header bg-primary text-white text-center py-3">
-            <h2 class="mb-0">Your Order Summary</h2>
-        </div>
-        <div class="card-body p-4">
 
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <p class="mb-1"><strong>Order ID:</strong> #123456789</p>
-                    <p class="mb-0"><strong>Date Placed:</strong> June 10, 2025</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <span class="badge bg-success-subtle text-success-emphasis rounded-pill p-2">Status: Pending</span>
-                </div>
-            </div>
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#paymentModal">
+        Make a Payment
+    </button>
 
-            <h3 class="mb-3 border-bottom pb-2">Items in Your Order</h3>
-            <div class="table-responsive mb-4">
-                <table class="table table-striped table-hover align-middle">
-                    <thead class="table-light">
-                        <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                            <th scope="col" class="text-end">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Premium Coffee Beans (250g)</td>
-                            <td>2</td>
-                            <td>$12.50</td>
-                            <td class="text-end">$25.00</td>
-                        </tr>
-                        <tr>
-                            <td>Espresso Machine Cleaner</td>
-                            <td>1</td>
-                            <td>$8.99</td>
-                            <td class="text-end">$8.99</td>
-                        </tr>
-                        <tr>
-                            <td>Reusable Coffee Cup</td>
-                            <td>1</td>
-                            <td>$15.00</td>
-                            <td class="text-end">$15.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="row justify-content-end mb-4">
-                <div class="col-md-6 col-lg-5">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center order-total-item">
-                            Subtotal
-                            <span>$48.99</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center order-total-item">
-                            Shipping
-                            <span>$5.00</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center order-total-item">
-                            Tax (5%)
-                            <span>$2.45</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center order-grand-total">
-                            Grand Total
-                            <span>$56.44</span>
-                        </li>
-                    </ul>
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="paymentModalLabel">Choose Your Payment Method</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
+                <div class="modal-body p-4">
+                    <form id="paymentForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailAddress" class="form-label">Your Email Address</label>
+                            <input type="email" class="form-control" id="emailAddress" name="emailAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount (NGN)</label>
+                            <input type="number" class="form-control" id="amount" name="amount" step="0.01" min="0.01" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="orderNotes" class="form-label">Order Notes (Optional)</label>
+                            <textarea class="form-control" id="orderNotes" name="orderNotes" rows="3"></textarea>
+                        </div>
 
-            <h3 class="mb-3 border-bottom pb-2">Delivery Details</h3>
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <p class="mb-1"><strong>Shipping Address:</strong></p>
-                    <address class="mb-0">
-                        John Doe<br>
-                        123 Main Street<br>
-                        Anytown, CA 90210<br>
-                        United States
-                    </address>
-                </div>
-                <div class="col-md-6">
-                    <p class="mb-1"><strong>Payment Method:</strong></p>
-                    <p class="mb-0">Credit Card ending in ****1234</p>
-                </div>
-            </div>
+                        <h4 class="mb-3">Select Payment Option</h4>
+                        <ul class="nav nav-tabs mb-3" id="paymentTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="coffee-tab" data-bs-toggle="tab" data-bs-target="#coffee-section" type="button" role="tab" aria-controls="coffee-section" aria-selected="true">Pay at Store/Cafe</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="transfer-tab" data-bs-toggle="tab" data-bs-target="#transfer-section" type="button" role="tab" aria-controls="transfer-section" aria-selected="false">Bank Transfer</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="crypto-tab" data-bs-toggle="tab" data-bs-target="#crypto-section" type="button" role="tab" aria-controls="crypto-section" aria-selected="false">Cryptocurrencies</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="paymentTabContent">
+                            <div class="tab-pane fade show active" id="coffee-section" role="tabpanel" aria-labelledby="coffee-tab">
+                                <p class="alert alert-info">
+                                    Please proceed to the nearest participating store or cafe to complete your payment with cash or card. Show your order ID at the counter.
+                                </p>
+                                <p><strong>Order ID:</strong> <span class="fw-bold">#TEMP-0012345</span></p>
+                                <small class="text-muted">Payment will be confirmed manually after store visit.</small>
+                            </div>
 
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
-                <button type="button" class="btn btn-primary btn-lg">Proceed to Payment</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg">Continue Shopping</button>
+                            <div class="tab-pane fade" id="transfer-section" role="tabpanel" aria-labelledby="transfer-tab">
+                                <p class="alert alert-warning">
+                                    Please make a transfer to the account details below. Your order will be processed upon confirmation of payment.
+                                </p>
+                                <div class="card bg-light mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bank Account Details</h5>
+                                        <p class="card-text mb-1"><strong>Bank Name:</strong> Access Bank Plc</p>
+                                        <p class="card-text mb-1"><strong>Account Name:</strong> Peter Eluwade Solutions</p>
+                                        <p class="card-text mb-0"><strong>Account Number:</strong> 0123456789</p>
+                                        <small class="text-muted">Kindly include your full name in the transfer description.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="transferRef" class="form-label">Transfer Reference (Optional)</label>
+                                    <input type="text" class="form-control" id="transferRef" name="transferRef" placeholder="e.g., your bank transaction ID">
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="crypto-section" role="tabpanel" aria-labelledby="crypto-tab">
+                                <p class="alert alert-danger">
+                                    <strong>Important:</strong> Only send the exact cryptocurrency to the specified address on the correct network. Sending unsupported crypto or using the wrong network may result in loss of funds.
+                                </p>
+
+                                <div class="accordion" id="cryptoOptionsAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingBTC">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBTC" aria-expanded="false" aria-controls="collapseBTC">
+                                                Bitcoin (BTC)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseBTC" class="accordion-collapse collapse" aria-labelledby="headingBTC" data-bs-parent="#cryptoOptionsAccordion">
+                                            <div class="accordion-body">
+                                                <p>Send **Bitcoin (BTC)** to the address below:</p>
+                                                <div class="crypto-qr-placeholder">QR Code Here</div>
+                                                <div class="crypto-address-info text-center">
+                                                    bc1qxyz... <br>
+                                                    <small>(Tap to copy)</small>
+                                                </div>
+                                                <input type="hidden" name="cryptoType" value="Bitcoin">
+                                                <input type="hidden" name="cryptoAddress" value="bc1qxyzexamplebitcoinaddress1234567890abcdef">
+                                                <small class="text-muted">Network: Bitcoin (BTC)</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingETH">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseETH" aria-expanded="false" aria-controls="collapseETH">
+                                                Ethereum (ETH)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseETH" class="accordion-collapse collapse" aria-labelledby="headingETH" data-bs-parent="#cryptoOptionsAccordion">
+                                            <div class="accordion-body">
+                                                <p>Send **Ethereum (ETH)** to the address below:</p>
+                                                <div class="crypto-qr-placeholder">QR Code Here</div>
+                                                <div class="crypto-address-info text-center">
+                                                    0xAbC... <br>
+                                                    <small>(Tap to copy)</small>
+                                                </div>
+                                                <input type="hidden" name="cryptoType" value="Ethereum">
+                                                <input type="hidden" name="cryptoAddress" value="0xAbCDeF1234567890123456789012345678901234">
+                                                <small class="text-muted">Network: Ethereum (ERC-20)</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingUSDT">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUSDT" aria-expanded="false" aria-controls="collapseUSDT">
+                                                USDT (Tether)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseUSDT" class="accordion-collapse collapse" aria-labelledby="headingUSDT" data-bs-parent="#cryptoOptionsAccordion">
+                                            <div class="accordion-body">
+                                                <p class="mb-2">Select USDT Network:</p>
+                                                <select class="form-select mb-3" id="usdtNetwork" name="usdtNetwork">
+                                                    <option selected disabled value="">Choose network...</option>
+                                                    <option value="ERC-20">Ethereum (ERC-20)</option>
+                                                    <option value="TRC-20">Tron (TRC-20)</option>
+                                                    <option value="BEP-20">Binance Smart Chain (BEP-20)</option>
+                                                    <option value="SPL">Solana (SPL)</option>
+                                                </select>
+
+                                                <div id="usdtAddressDisplay" class="d-none">
+                                                    <p>Send **USDT** to this address on the selected network:</p>
+                                                    <div class="crypto-qr-placeholder">QR Code Here</div>
+                                                    <div class="crypto-address-info text-center" id="selectedUsdtAddress">
+                                                        <small>(Tap to copy)</small>
+                                                    </div>
+                                                    <input type="hidden" name="cryptoType" value="USDT">
+                                                    <input type="hidden" id="selectedUsdtAddressInput" name="cryptoAddress" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingSOL">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSOL" aria-expanded="false" aria-controls="collapseSOL">
+                                                Solana (SOL)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSOL" class="accordion-collapse collapse" aria-labelledby="headingSOL" data-bs-parent="#cryptoOptionsAccordion">
+                                            <div class="accordion-body">
+                                                <p>Send **Solana (SOL)** to the address below:</p>
+                                                <div class="crypto-qr-placeholder">QR Code Here</div>
+                                                <div class="crypto-address-info text-center">
+                                                    8kP... <br>
+                                                    <small>(Tap to copy)</small>
+                                                </div>
+                                                <input type="hidden" name="cryptoType" value="Solana">
+                                                <input type="hidden" name="cryptoAddress" value="8kP1234567890abcdefghijklmnopqrstuvwxyzABcDeF">
+                                                <small class="text-muted">Network: Solana</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <small class="text-muted mt-3 d-block">Remember to only send from your own wallet. Exchange deposits may require extra steps.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" id="confirmPaymentBtn">Confirm Payment</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentForm = document.getElementById('paymentForm');
+            const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+            const usdtNetworkSelect = document.getElementById('usdtNetwork');
+            const usdtAddressDisplay = document.getElementById('usdtAddressDisplay');
+            const selectedUsdtAddress = document.getElementById('selectedUsdtAddress');
+            const selectedUsdtAddressInput = document.getElementById('selectedUsdtAddressInput');
+
+            // Dummy wallet addresses for demonstration
+            const usdtAddresses = {
+                'ERC-20': '0x7622...850c (ERC-20)',
+                'TRC-20': 'TXpD...B8F1 (TRC-20)',
+                'BEP-20': '0x55d3...7955 (BEP-20)',
+                'SPL': 'Es9v...wNYB (SPL - Solana)'
+            };
+
+            usdtNetworkSelect.addEventListener('change', function() {
+                const selectedValue = this.value;
+                if (selectedValue && usdtAddresses[selectedValue]) {
+                    selectedUsdtAddress.innerHTML = usdtAddresses[selectedValue] + '<br><small>(Tap to copy)</small>';
+                    selectedUsdtAddressInput.value = usdtAddresses[selectedValue].split(' ')[0]; // Store just the address
+                    usdtAddressDisplay.classList.remove('d-none');
+                } else {
+                    usdtAddressDisplay.classList.add('d-none');
+                    selectedUsdtAddressInput.value = '';
+                }
+            });
+
+            // Handle accordion collapses to reset USDT selection
+            const cryptoAccordion = document.getElementById('cryptoOptionsAccordion');
+            cryptoAccordion.addEventListener('hide.bs.collapse', function (event) {
+                // If a crypto section other than USDT is collapsing, or if USDT section collapses
+                // and the current selected value is USDT, clear USDT selection.
+                if (event.target.id === 'collapseUSDT' || (event.target.id !== 'collapseUSDT' && document.getElementById('collapseUSDT').classList.contains('show'))) {
+                    usdtNetworkSelect.value = ''; // Reset dropdown
+                    usdtAddressDisplay.classList.add('d-none'); // Hide address display
+                    selectedUsdtAddressInput.value = ''; // Clear hidden input
+                }
+            });
+
+            // Event listener for the "Confirm Payment" button
+            confirmPaymentBtn.addEventListener('click', function(event) {
+                // Prevent default form submission to handle it with JS
+                event.preventDefault();
+
+                if (!paymentForm.checkValidity()) {
+                    paymentForm.classList.add('was-validated'); // Show Bootstrap validation feedback
+                    return; // Stop if form is not valid
+                }
+
+                // Collect common form data
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    emailAddress: document.getElementById('emailAddress').value,
+                    amount: document.getElementById('amount').value,
+                    orderNotes: document.getElementById('orderNotes').value,
+                    paymentMethod: ''
+                };
+
+                // Determine active payment method tab
+                const activeTab = document.querySelector('#paymentTab button.nav-link.active');
+                if (activeTab) {
+                    formData.paymentMethod = activeTab.id.replace('-tab', ''); // e.g., 'coffee', 'transfer', 'crypto'
+                }
+
+                // Collect payment method specific data
+                if (formData.paymentMethod === 'transfer') {
+                    formData.transferRef = document.getElementById('transferRef').value;
+                    // Add dummy bank details for backend reference
+                    formData.bankDetails = {
+                        bankName: "Access Bank Plc",
+                        accountName: "Peter Eluwade Solutions",
+                        accountNumber: "0123456789"
+                    };
+                } else if (formData.paymentMethod === 'crypto') {
+                    const activeCryptoAccordion = cryptoAccordion.querySelector('.accordion-collapse.show');
+                    if (activeCryptoAccordion) {
+                        const cryptoTypeInput = activeCryptoAccordion.querySelector('input[name="cryptoType"]');
+                        const cryptoAddressInput = activeCryptoAccordion.querySelector('input[name="cryptoAddress"]');
+
+                        if (cryptoTypeInput) {
+                            formData.crypto = {
+                                type: cryptoTypeInput.value,
+                                address: cryptoAddressInput ? cryptoAddressInput.value : ''
+                            };
+                        }
+
+                        if (formData.crypto.type === 'USDT') {
+                            const usdtNetwork = usdtNetworkSelect.value;
+                            if (!usdtNetwork) {
+                                alert('Please select a USDT network.');
+                                return; // Stop submission if USDT network not selected
+                            }
+                            formData.crypto.network = usdtNetwork;
+                        }
+                    } else {
+                        alert('Please select a cryptocurrency option.');
+                        return; // Stop submission if no crypto selected
+                    }
+                }
+
+                // Log the collected data to the console for demonstration
+                console.log('Payment Data Collected:', formData);
+
+                // --- START BACKEND INTEGRATION INSTRUCTION ---
+                // This is where you would send the 'formData' to your server.
+                // Example using Fetch API (requires a backend endpoint to receive POST requests):
+                /*
+                fetch('YOUR_BACKEND_API_ENDPOINT_FOR_PAYMENT_PROCESSING', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Server response:', data);
+                    if (data.success) {
+                        alert('Payment details submitted successfully! We will process your order.');
+                        // Close modal or show a success message
+                        const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+                        paymentModal.hide();
+                        // Optionally, reset the form
+                        paymentForm.reset();
+                        paymentForm.classList.remove('was-validated');
+                    } else {
+                        alert('Error processing payment: ' + (data.message || 'Unknown error.'));
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error sending data to backend:', error);
+                    alert('An error occurred while trying to submit payment. Please try again.');
+                });
+                */
+
+                // For now, we'll just simulate success and close the modal
+                alert('Payment details collected. This data would now be sent to your server for email processing and order fulfillment!');
+                const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+                paymentModal.hide();
+                paymentForm.reset();
+                paymentForm.classList.remove('was-validated');
+                usdtNetworkSelect.value = ''; // Reset USDT dropdown
+                usdtAddressDisplay.classList.add('d-none'); // Hide USDT address
+            });
+        });
+    </script>
+
 </body>
 </html>
