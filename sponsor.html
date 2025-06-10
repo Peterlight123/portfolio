@@ -11,9 +11,10 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Align content to top */
             align-items: center;
-            padding: 20px;
+            padding-bottom: 20px; /* Add padding at the bottom */
+            padding-top: 20px; /* Add padding at the top for content below navbar */
         }
         .modal-dialog-centered {
             display: flex;
@@ -68,42 +69,46 @@
         .copy-feedback.show {
             opacity: 1;
         }
+        .navbar {
+            width: 100%; /* Ensure navbar spans full width */
+        }
     </style>
 </head>
 <body>
-    <!-- navbar area -->
+
     <nav class="navbar p-3 navbar-dark navbar-expand-sm bg-primary sticky-top text-dark">
-      <div class="container">
-        <a href="#" class="navbar-brand text-light ">Peter Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="ms-auto navbar-nav">
-            <li class="nav-item">
-              <a href="#highlights" class="nav-link">My Highlights</a>
-            </li>
-            <li class="nav-item">
-              <a href="#Contact" class="nav-link">Contact Me</a>
-            </li>
-            <li class="nav-item">
-              <a href="#About" class="nav-link">About me</a>
-            </li>
-            <li class="nav-item">
-              <a href="#Services" class="nav-link">Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="#Sponsor" class="nav-link">Sponsor me</a>
-            </li>
-          </ul>
+        <div class="container">
+            <a href="#" class="navbar-brand text-light ">Peter Portfolio</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="ms-auto navbar-nav">
+                    <li class="nav-item">
+                        <a href="#highlights" class="nav-link">My Highlights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Contact" class="nav-link">Contact Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#About" class="nav-link">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Sponsor" class="nav-link">Sponsor me</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
+
     <div class="container text-center py-5">
         <h1 class="mb-4">Thank you for considering a sponsorship!</h1>
         <p class="lead mb-5">Click the button below to choose your sponsorship amount and method.</p>
@@ -164,7 +169,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="transferRef" class="form-label">Transfer Reference (Optional)</label>
-                                    <input type="text" class="form-control" id="transferRef" name="transferRef" placeholder="e.g., your bank transaction ID">
+                                    <input type="text" class="form-control" id="transferRef" placeholder="e.g., your bank transaction ID">
                                 </div>
                                 <input type="hidden" name="_paymentMethod" value="Bank Transfer"> </div>
 
@@ -188,8 +193,6 @@
                                                     19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189 <span class="copy-feedback"></span>
                                                     <small class="d-block">(Tap to copy)</small>
                                                 </div>
-                                                <input type="hidden" name="cryptoType" value="Bitcoin">
-                                                <input type="hidden" name="cryptoAddress" value="19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189">
                                                 <small class="text-muted">Network: Bitcoin (BTC)</small>
                                             </div>
                                         </div>
@@ -209,8 +212,6 @@
                                                     0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 <span class="copy-feedback"></span>
                                                     <small class="d-block">(Tap to copy)</small>
                                                 </div>
-                                                <input type="hidden" name="cryptoType" value="Ethereum">
-                                                <input type="hidden" name="cryptoAddress" value="0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2">
                                                 <small class="text-muted">Network: Ethereum (ERC-20)</small>
                                             </div>
                                         </div>
@@ -225,8 +226,7 @@
                                         <div id="collapseUSDT" class="accordion-collapse collapse" aria-labelledby="headingUSDT" data-bs-parent="#cryptoOptionsAccordion">
                                             <div class="accordion-body">
                                                 <p class="mb-2">Select USDT Network:</p>
-                                                <select class="form-select mb-3" id="usdtNetwork" name="usdtNetwork">
-                                                    <option selected disabled value="">Choose network...</option>
+                                                <select class="form-select mb-3" id="usdtNetwork"> <option selected disabled value="">Choose network...</option>
                                                     <option value="ERC-20">Ethereum (ERC-20)</option>
                                                     <option value="TRC-20">Tron (TRC-20)</option>
                                                     <option value="BEP-20">Binance Smart Chain (BEP-20)</option>
@@ -240,8 +240,6 @@
                                                         <span class="copy-feedback"></span>
                                                         <small class="d-block">(Tap to copy)</small>
                                                     </div>
-                                                    <input type="hidden" name="cryptoType" value="USDT">
-                                                    <input type="hidden" id="selectedUsdtAddressInput" name="cryptoAddress" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -261,15 +259,15 @@
                                                     47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd <span class="copy-feedback"></span>
                                                     <small class="d-block">(Tap to copy)</small>
                                                 </div>
-                                                <input type="hidden" name="cryptoType" value="Solana">
-                                                <input type="hidden" name="cryptoAddress" value="47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd">
                                                 <small class="text-muted">Network: Solana</small>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div> <small class="text-muted mt-3 d-block">Remember to only send from your own wallet. Exchange deposits may require extra steps.</small>
-                                <input type="hidden" name="_paymentMethod" value="Cryptocurrency">
+                                <input type="hidden" id="submittedCryptoType">
+                                <input type="hidden" id="submittedCryptoAddress">
+                                <input type="hidden" id="submittedUsdtNetwork">
                             </div>
                         </div>
                     </form>
@@ -292,8 +290,16 @@
             const usdtNetworkSelect = document.getElementById('usdtNetwork');
             const usdtAddressDisplay = document.getElementById('usdtAddressDisplay');
             const selectedUsdtAddressDiv = document.getElementById('selectedUsdtAddress');
-            const selectedUsdtAddressInput = document.getElementById('selectedUsdtAddressInput');
             const usdtQrCodeImage = document.getElementById('usdtQrCode');
+            const cryptoAccordion = document.getElementById('cryptoOptionsAccordion');
+
+            // Hidden inputs for dynamic form submission
+            const submittedCryptoTypeInput = document.getElementById('submittedCryptoType');
+            const submittedCryptoAddressInput = document.getElementById('submittedCryptoAddress');
+            const submittedUsdtNetworkInput = document.getElementById('submittedUsdtNetwork');
+            const transferRefInput = document.getElementById('transferRef');
+            const paymentMethodInput = paymentForm.querySelector('input[name="_paymentMethod"]');
+
 
             // Consolidated wallet addresses and QR code paths
             const usdtAddresses = {
@@ -314,7 +320,7 @@
                 },
                 'SPL': {
                     display: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd (SPL - Solana)',
-                    address: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd',
+                    address: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FBkd',
                     qr: 'images/usdt_sol.png'
                 }
             };
@@ -325,7 +331,6 @@
                     const cryptoInfo = usdtAddresses[selectedValue];
                     selectedUsdtAddressDiv.innerHTML = `${cryptoInfo.display} <span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`;
                     selectedUsdtAddressDiv.dataset.address = cryptoInfo.address;
-                    selectedUsdtAddressInput.value = cryptoInfo.address;
 
                     // Set QR code source and show it
                     usdtQrCodeImage.src = cryptoInfo.qr;
@@ -335,22 +340,19 @@
                     usdtAddressDisplay.classList.add('d-none');
                     selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`;
                     selectedUsdtAddressDiv.dataset.address = '';
-                    selectedUsdtAddressInput.value = '';
                     usdtQrCodeImage.src = ''; // Clear QR code source
                     usdtQrCodeImage.classList.add('d-none'); // Hide the image
                 }
             });
 
             // Handle accordion collapses to reset USDT selection
-            const cryptoAccordion = document.getElementById('cryptoOptionsAccordion');
             cryptoAccordion.addEventListener('hide.bs.collapse', function (event) {
-                // Check if the collapsing item is USDT or if USDT was previously open and another item is opening/closing
+                // If the collapsing item is USDT or if USDT was previously open and another item is opening/closing
                 if (event.target.id === 'collapseUSDT' || (event.target.id !== 'collapseUSDT' && document.getElementById('collapseUSDT').classList.contains('show'))) {
                     usdtNetworkSelect.value = '';
                     usdtAddressDisplay.classList.add('d-none');
                     selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`;
                     selectedUsdtAddressDiv.dataset.address = '';
-                    selectedUsdtAddressInput.value = '';
                     usdtQrCodeImage.src = ''; // Clear QR code source on collapse
                     usdtQrCodeImage.classList.add('d-none'); // Hide the image
                 }
@@ -408,6 +410,58 @@
 
             // Event listener for the "Confirm Payment" button
             confirmPaymentBtn.addEventListener('click', function(event) {
+                // Clear any previously set dynamic names to ensure only relevant data is sent
+                submittedCryptoTypeInput.removeAttribute('name');
+                submittedCryptoAddressInput.removeAttribute('name');
+                submittedUsdtNetworkInput.removeAttribute('name');
+                transferRefInput.removeAttribute('name'); // Ensure transferRef is not always named
+
+                const activeTabButton = document.querySelector('#paymentTab button.nav-link.active');
+
+                // Set general payment method hidden input
+                if (activeTabButton.id === 'transfer-tab') {
+                    paymentMethodInput.value = 'Bank Transfer';
+                    transferRefInput.setAttribute('name', 'transferRef'); // Add name back for transferRef
+                } else if (activeTabButton.id === 'crypto-tab') {
+                    paymentMethodInput.value = 'Cryptocurrency';
+
+                    // Find the active crypto accordion item
+                    const activeCryptoAccordion = cryptoAccordion.querySelector('.accordion-collapse.show');
+
+                    if (activeCryptoAccordion) {
+                        submittedCryptoTypeInput.setAttribute('name', 'cryptoType');
+                        submittedCryptoAddressInput.setAttribute('name', 'cryptoAddress');
+
+                        if (activeCryptoAccordion.id === 'collapseBTC') {
+                            submittedCryptoTypeInput.value = 'Bitcoin';
+                            submittedCryptoAddressInput.value = '19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189';
+                        } else if (activeCryptoAccordion.id === 'collapseETH') {
+                            submittedCryptoTypeInput.value = 'Ethereum';
+                            submittedCryptoAddressInput.value = '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2';
+                        } else if (activeCryptoAccordion.id === 'collapseSOL') {
+                            submittedCryptoTypeInput.value = 'Solana';
+                            submittedCryptoAddressInput.value = '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd';
+                        } else if (activeCryptoAccordion.id === 'collapseUSDT') {
+                            const selectedUsdtNetwork = usdtNetworkSelect.value;
+                            if (selectedUsdtNetwork) {
+                                submittedCryptoTypeInput.value = 'USDT';
+                                submittedCryptoAddressInput.value = usdtAddresses[selectedUsdtNetwork].address;
+                                // Also set the specific USDT network
+                                submittedUsdtNetworkInput.setAttribute('name', 'usdtNetwork');
+                                submittedUsdtNetworkInput.value = selectedUsdtNetwork;
+                            } else {
+                                event.preventDefault(); // Stop submission
+                                alert('Please select a USDT network.');
+                                return;
+                            }
+                        }
+                    } else {
+                        event.preventDefault(); // Stop submission
+                        alert('Please select a cryptocurrency option from the list (Bitcoin, Ethereum, USDT, Solana).');
+                        return;
+                    }
+                }
+
                 // If form is invalid, prevent submission and show validation messages
                 if (!paymentForm.checkValidity()) {
                     event.preventDefault(); // Stop the form from submitting
@@ -415,31 +469,8 @@
                     return;
                 }
 
-                // Additional validation for crypto if selected
-                const activeTab = document.querySelector('#paymentTab button.nav-link.active');
-                if (activeTab && activeTab.id === 'crypto-tab') {
-                    const activeCryptoAccordion = cryptoAccordion.querySelector('.accordion-collapse.show');
-                    if (!activeCryptoAccordion) {
-                        event.preventDefault(); // Stop submission
-                        alert('Please select a cryptocurrency option from the list (Bitcoin, Ethereum, USDT, Solana).');
-                        return;
-                    }
-
-                    if (activeCryptoAccordion.id === 'collapseUSDT') {
-                        if (!usdtNetworkSelect.value) {
-                            event.preventDefault(); // Stop submission
-                            alert('Please select a USDT network.');
-                            return;
-                        }
-                    }
-                }
-
                 // If all validations pass, the form will submit normally to Formspree
                 // No fetch call or custom server-side logic needed here.
-                // Formspree will handle the submission and send you an an email.
-                // The user will be redirected to Formspree's success page by default,
-                // or to a custom redirect URL if you configure one in Formspree settings.
-                // No need for event.preventDefault() here, as we want the form to submit.
             });
 
 
@@ -447,36 +478,34 @@
             const paymentTabs = document.querySelectorAll('#paymentTab button');
             paymentTabs.forEach(tab => {
                 tab.addEventListener('shown.bs.tab', function (event) {
-                    const newMethodTabId = event.target.id; // e.g., 'transfer-tab', 'crypto-tab'
-                    // Find the hidden input specific to the active tab's section
-                    const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
+                    // Clear all payment-specific dynamic names first when switching tabs
+                    submittedCryptoTypeInput.removeAttribute('name');
+                    submittedCryptoAddressInput.removeAttribute('name');
+                    submittedUsdtNetworkInput.removeAttribute('name');
+                    transferRefInput.removeAttribute('name'); // Ensure transferRef is not always named
 
-                    if (paymentMethodInput) {
-                        let methodValue = '';
-                        if (newMethodTabId === 'transfer-tab') {
-                            methodValue = 'Bank Transfer';
-                        } else if (newMethodTabId === 'crypto-tab') {
-                            methodValue = 'Cryptocurrency';
-                        }
-                        paymentMethodInput.value = methodValue;
+                    const newMethodTabId = event.target.id;
+
+                    if (newMethodTabId === 'transfer-tab') {
+                        paymentMethodInput.value = 'Bank Transfer';
+                        transferRefInput.setAttribute('name', 'transferRef'); // Add name back for transferRef
+                    } else if (newMethodTabId === 'crypto-tab') {
+                        paymentMethodInput.value = 'Cryptocurrency';
+                        // Crypto-specific names will be set just before submission by the confirmPaymentBtn listener
                     }
                 });
             });
 
-            // Set initial hidden _paymentMethod value when the page loads (for the active tab)
-            const initialActiveTab = document.querySelector('#paymentTab button.nav-link.active');
-            if (initialActiveTab) {
-                const initialMethodTabId = initialActiveTab.id;
-                // Find the hidden input specific to the initial active tab's section
-                const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
-                if (paymentMethodInput) {
-                    let methodValue = '';
-                    if (initialMethodTabId === 'transfer-tab') {
-                        methodValue = 'Bank Transfer';
-                    } else if (initialMethodTabId === 'crypto-tab') {
-                        methodValue = 'Cryptocurrency';
-                    }
-                    paymentMethodInput.value = methodValue;
+            // Set initial state correctly on page load for the active tab (Bank Transfer)
+            const initialActiveTabButton = document.querySelector('#paymentTab button.nav-link.active');
+            if (initialActiveTabButton) {
+                const initialMethodTabId = initialActiveTabButton.id;
+
+                if (initialMethodTabId === 'transfer-tab') {
+                    paymentMethodInput.value = 'Bank Transfer';
+                    transferRefInput.setAttribute('name', 'transferRef'); // Set name for transferRef on initial load
+                } else if (initialMethodTabId === 'crypto-tab') {
+                    paymentMethodInput.value = 'Cryptocurrency';
                 }
             }
         });
