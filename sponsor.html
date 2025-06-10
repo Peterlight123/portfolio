@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Dialogue - Bootstrap</title>
+    <title>Sponsor Me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
@@ -106,9 +106,9 @@
                                 <div class="card bg-light mb-3">
                                     <div class="card-body">
                                         <h5 class="card-title">Bank Account Details</h5>
-                                        <p class="card-text mb-1"><strong>Bank Name:</strong> Access Bank Plc</p>
-                                        <p class="card-text mb-1"><strong>Account Name:</strong> Peter Eluwade Solutions</p>
-                                        <p class="card-text mb-0"><strong>Account Number:</strong> 0123456789</p>
+                                        <p class="card-text mb-1"><strong>Bank Name:</strong> Zenith Bank</p>
+                                        <p class="card-text mb-1"><strong>Account Name:</strong> Eluwade Peter Toluwanimi</p>
+                                        <p class="card-text mb-0"><strong>Account Number:</strong> 4291620354</p>
                                         <small class="text-muted">Kindly include your full name in the transfer description.</small>
                                     </div>
                                 </div>
@@ -135,11 +135,11 @@
                                                 <p>Send **Bitcoin (BTC)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
                                                 <div class="crypto-address-info text-center">
-                                                    bc1qxyz... <br>
+                                                    19Vgx1... <br>
                                                     <small>(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Bitcoin">
-                                                <input type="hidden" name="cryptoAddress" value="bc1qxyzexamplebitcoinaddress1234567890abcdef">
+                                                <input type="hidden" name="cryptoAddress" value="19Vgx1nv32Ra2gH69Mndged2ZGEpY6J189">
                                                 <small class="text-muted">Network: Bitcoin (BTC)</small>
                                             </div>
                                         </div>
@@ -156,11 +156,11 @@
                                                 <p>Send **Ethereum (ETH)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
                                                 <div class="crypto-address-info text-center">
-                                                    0xAbC... <br>
+                                                    0x09e3... <br>
                                                     <small>(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Ethereum">
-                                                <input type="hidden" name="cryptoAddress" value="0xAbCDeF1234567890123456789012345678901234">
+                                                <input type="hidden" name="cryptoAddress" value="0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2">
                                                 <small class="text-muted">Network: Ethereum (ERC-20)</small>
                                             </div>
                                         </div>
@@ -207,11 +207,11 @@
                                                 <p>Send **Solana (SOL)** to the address below:</p>
                                                 <div class="crypto-qr-placeholder">QR Code Here</div>
                                                 <div class="crypto-address-info text-center">
-                                                    8kP... <br>
+                                                    47jBL... <br>
                                                     <small>(Tap to copy)</small>
                                                 </div>
                                                 <input type="hidden" name="cryptoType" value="Solana">
-                                                <input type="hidden" name="cryptoAddress" value="8kP1234567890abcdefghijklmnopqrstuvwxyzABcDeF">
+                                                <input type="hidden" name="cryptoAddress" value="47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd">
                                                 <small class="text-muted">Network: Solana</small>
                                             </div>
                                         </div>
@@ -241,12 +241,12 @@
             const selectedUsdtAddress = document.getElementById('selectedUsdtAddress');
             const selectedUsdtAddressInput = document.getElementById('selectedUsdtAddressInput');
 
-            // Dummy wallet addresses for demonstration
+            // wallet addresses for usdt
             const usdtAddresses = {
-                'ERC-20': '0x7622...850c (ERC-20)',
-                'TRC-20': 'TXpD...B8F1 (TRC-20)',
-                'BEP-20': '0x55d3...7955 (BEP-20)',
-                'SPL': 'Es9v...wNYB (SPL - Solana)'
+                'ERC-20': '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2(ERC-20)',
+                'TRC-20': 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC (TRC-20)',
+                'BEP-20': '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (BEP-20)',
+                'SPL': '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd(SPL - Solana)'
             };
 
             usdtNetworkSelect.addEventListener('change', function() {
@@ -303,9 +303,9 @@
                     formData.transferRef = document.getElementById('transferRef').value;
                     // Add dummy bank details for backend reference
                     formData.bankDetails = {
-                        bankName: "Access Bank Plc",
-                        accountName: "Peter Eluwade Solutions",
-                        accountNumber: "0123456789"
+                        bankName: "Zenith Bank",
+                        accountName: "Eluwade Peter Toluwanimi",
+                        accountNumber: "4291620354"
                     };
                 } else if (formData.paymentMethod === 'crypto') {
                     const activeCryptoAccordion = cryptoAccordion.querySelector('.accordion-collapse.show');
