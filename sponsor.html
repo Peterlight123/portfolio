@@ -89,7 +89,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form id="paymentForm">
+                    <form id="paymentForm" action="https://formspree.io/f/xvgrkldk" method="POST">
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="fullName" name="fullName" required>
@@ -126,7 +126,7 @@
                                 </p>
                                 <p><strong>Order ID:</strong> <span class="fw-bold">#TEMP-0012345</span></p>
                                 <small class="text-muted">Payment will be confirmed manually after store visit.</small>
-                            </div>
+                                <input type="hidden" name="_paymentMethod" value="Pay at Store/Cafe"> </div>
 
                             <div class="tab-pane fade" id="transfer-section" role="tabpanel" aria-labelledby="transfer-tab">
                                 <p class="alert alert-warning">
@@ -145,7 +145,7 @@
                                     <label for="transferRef" class="form-label">Transfer Reference (Optional)</label>
                                     <input type="text" class="form-control" id="transferRef" name="transferRef" placeholder="e.g., your bank transaction ID">
                                 </div>
-                            </div>
+                                <input type="hidden" name="_paymentMethod" value="Bank Transfer"> </div>
 
                             <div class="tab-pane fade" id="crypto-section" role="tabpanel" aria-labelledby="crypto-tab">
                                 <p class="alert alert-danger">
@@ -248,13 +248,14 @@
                                     </div>
 
                                 </div> <small class="text-muted mt-3 d-block">Remember to only send from your own wallet. Exchange deposits may require extra steps.</small>
+                                <input type="hidden" name="_paymentMethod" value="Cryptocurrency">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success" id="confirmPaymentBtn">Confirm Payment</button>
+                    <button type="submit" class="btn btn-success" form="paymentForm" id="confirmPaymentBtn">Confirm Payment</button>
                 </div>
             </div>
         </div>
@@ -271,29 +272,29 @@
             const usdtAddressDisplay = document.getElementById('usdtAddressDisplay');
             const selectedUsdtAddressDiv = document.getElementById('selectedUsdtAddress');
             const selectedUsdtAddressInput = document.getElementById('selectedUsdtAddressInput');
-            const usdtQrCodeImage = document.getElementById('usdtQrCode'); // Get the USDT QR code image element
+            const usdtQrCodeImage = document.getElementById('usdtQrCode');
 
             // Consolidated wallet addresses and QR code paths
             const usdtAddresses = {
                 'ERC-20': {
                     display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (ERC-20)',
                     address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2',
-                    qr: 'images/usdt_erc.png'
+                    qr: 'images/usdt_erc.png' // Changed
                 },
                 'TRC-20': {
                     display: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC (TRC-20)',
                     address: 'TGXpu2E7AU4tncJ8baRRzCpcEq4GfMfcKC',
-                    qr: 'images/usdt_trc.png'
+                    qr: 'images/usdt_trc.png' // Changed
                 },
                 'BEP-20': {
                     display: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2 (BEP-20)',
                     address: '0x09e30b2c2ac6cd875121b9b088ba57a1da1d7ed2',
-                    qr: 'images/usdt_bnb.png' // Assuming you'll have this QR code
+                    qr: 'images/usdt_bnb.png' // Changed
                 },
                 'SPL': {
                     display: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd (SPL - Solana)',
                     address: '47jBLNm9AKF5a9d6j8bqYe7NTJNVbbS9TkQsj2FSeBkd',
-                    qr: 'images/usdt_sol.png' // Assuming you'll have this QR code
+                    qr: 'images/usdt_sol.png' // Changed
                 }
             };
 
@@ -322,6 +323,7 @@
             // Handle accordion collapses to reset USDT selection
             const cryptoAccordion = document.getElementById('cryptoOptionsAccordion');
             cryptoAccordion.addEventListener('hide.bs.collapse', function (event) {
+                // Check if the collapsing item is USDT or if USDT was previously open and another item is opening/closing
                 if (event.target.id === 'collapseUSDT' || (event.target.id !== 'collapseUSDT' && document.getElementById('collapseUSDT').classList.contains('show'))) {
                     usdtNetworkSelect.value = '';
                     usdtAddressDisplay.classList.add('d-none');
@@ -353,6 +355,7 @@
                             alert('Failed to copy address. Please copy it manually: ' + text);
                         });
                 } else {
+                    // Fallback for browsers that don't support navigator.clipboard
                     const tempInput = document.createElement('textarea');
                     tempInput.value = text;
                     document.body.appendChild(tempInput);
@@ -384,105 +387,81 @@
 
             // Event listener for the "Confirm Payment" button
             confirmPaymentBtn.addEventListener('click', function(event) {
-                event.preventDefault();
-
+                // If form is invalid, prevent submission and show validation messages
                 if (!paymentForm.checkValidity()) {
+                    event.preventDefault(); // Stop the form from submitting
                     paymentForm.classList.add('was-validated');
                     return;
                 }
 
-                const formData = {
-                    fullName: document.getElementById('fullName').value,
-                    emailAddress: document.getElementById('emailAddress').value,
-                    amount: document.getElementById('amount').value,
-                    orderNotes: document.getElementById('orderNotes').value,
-                    paymentMethod: ''
-                };
-
+                // Additional validation for crypto if selected
                 const activeTab = document.querySelector('#paymentTab button.nav-link.active');
-                if (activeTab) {
-                    formData.paymentMethod = activeTab.id.replace('-tab', '');
-                }
-
-                if (formData.paymentMethod === 'transfer') {
-                    formData.transferRef = document.getElementById('transferRef').value;
-                    formData.bankDetails = {
-                        bankName: "Zenith Bank",
-                        accountName: "Eluwade Peter Toluwanimi",
-                        accountNumber: "4291620354"
-                    };
-                } else if (formData.paymentMethod === 'crypto') {
+                if (activeTab && activeTab.id === 'crypto-tab') {
                     const activeCryptoAccordion = cryptoAccordion.querySelector('.accordion-collapse.show');
-                    if (activeCryptoAccordion) {
-                        const cryptoTypeInput = activeCryptoAccordion.querySelector('input[name="cryptoType"]');
-                        const cryptoAddressInput = activeCryptoAccordion.querySelector('input[name="cryptoAddress"]');
-
-                        if (cryptoTypeInput) {
-                            formData.crypto = {
-                                type: cryptoTypeInput.value,
-                                address: cryptoAddressInput ? cryptoAddressInput.value : ''
-                            };
-                        }
-
-                        if (formData.crypto.type === 'USDT') {
-                            const usdtNetwork = usdtNetworkSelect.value;
-                            if (!usdtNetwork) {
-                                alert('Please select a USDT network.');
-                                return;
-                            }
-                            formData.crypto.network = usdtNetwork;
-                            // Ensure the correct USDT address is picked if the network selection was active
-                            formData.crypto.address = usdtAddresses[usdtNetwork].address;
-                        }
-                    } else {
-                        alert('Please select a cryptocurrency option.');
+                    if (!activeCryptoAccordion) {
+                        event.preventDefault(); // Stop submission
+                        alert('Please select a cryptocurrency option from the list (Bitcoin, Ethereum, USDT, Solana).');
                         return;
                     }
+
+                    if (activeCryptoAccordion.id === 'collapseUSDT') {
+                        if (!usdtNetworkSelect.value) {
+                            event.preventDefault(); // Stop submission
+                            alert('Please select a USDT network.');
+                            return;
+                        }
+                    }
                 }
 
-                console.log('Payment Data Collected:', formData);
-
-                // --- BACKEND INTEGRATION: Sending data to payment.php ---
-                fetch('payment.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                })
-                .then(response => {
-                    // Check if the response is OK (status 200-299)
-                    if (!response.ok) {
-                        // If not OK, read the response as text to get error message from PHP
-                        return response.text().then(text => { throw new Error(text) });
-                    }
-                    // If OK, parse as JSON
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Server response:', data);
-                    if (data.success) {
-                        alert('Payment details submitted successfully! We will process your order and send you a confirmation.');
-                        const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
-                        paymentModal.hide();
-                        paymentForm.reset();
-                        paymentForm.classList.remove('was-validated');
-                        usdtNetworkSelect.value = '';
-                        usdtAddressDisplay.classList.add('d-none');
-                        selectedUsdtAddressDiv.innerHTML = `<span class="copy-feedback"></span><small class="d-block">(Tap to copy)</small>`;
-                        selectedUsdtAddressDiv.dataset.address = '';
-                        usdtQrCodeImage.src = '';
-                        usdtQrCodeImage.classList.add('d-none');
-                    } else {
-                        alert('Error processing payment: ' + (data.message || 'Unknown error.'));
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error sending data to backend or parsing response:', error);
-                    alert('An error occurred during payment submission. This might be a network issue or a server problem. Details: ' + error.message);
-                });
-                // --- END BACKEND INTEGRATION ---
+                // If all validations pass, the form will submit normally to Formspree
+                // No fetch call or custom server-side logic needed here.
+                // Formspree will handle the submission and send you an an email.
+                // The user will be redirected to Formspree's success page by default,
+                // or to a custom redirect URL if you configure one in Formspree settings.
+                // No need for event.preventDefault() here, as we want the form to submit.
             });
+
+
+            // This handles updating the hidden input for payment method when tabs change
+            const paymentTabs = document.querySelectorAll('#paymentTab button');
+            paymentTabs.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function (event) {
+                    const newMethodTabId = event.target.id; // e.g., 'coffee-tab', 'transfer-tab', 'crypto-tab'
+                    // Find the hidden input specific to the active tab's section
+                    const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
+
+                    if (paymentMethodInput) {
+                        let methodValue = '';
+                        if (newMethodTabId === 'coffee-tab') {
+                            methodValue = 'Pay at Store/Cafe';
+                        } else if (newMethodTabId === 'transfer-tab') {
+                            methodValue = 'Bank Transfer';
+                        } else if (newMethodTabId === 'crypto-tab') {
+                            methodValue = 'Cryptocurrency';
+                        }
+                        paymentMethodInput.value = methodValue;
+                    }
+                });
+            });
+
+            // Set initial hidden _paymentMethod value when the page loads (for the active tab)
+            const initialActiveTab = document.querySelector('#paymentTab button.nav-link.active');
+            if (initialActiveTab) {
+                const initialMethodTabId = initialActiveTab.id;
+                // Find the hidden input specific to the initial active tab's section
+                const paymentMethodInput = paymentForm.querySelector('.tab-pane.show input[name="_paymentMethod"]');
+                if (paymentMethodInput) {
+                    let methodValue = '';
+                    if (initialMethodTabId === 'coffee-tab') {
+                        methodValue = 'Pay at Store/Cafe';
+                    } else if (initialMethodTabId === 'transfer-tab') {
+                        methodValue = 'Bank Transfer';
+                    } else if (initialMethodTabId === 'crypto-tab') {
+                        methodValue = 'Cryptocurrency';
+                    }
+                    paymentMethodInput.value = methodValue;
+                }
+            }
         });
     </script>
 
