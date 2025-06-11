@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sponsor Me</title>
-    <link rel="index.html">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="https://i.imgur.com/2Ocmg4m.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
+        /* CSS to remove all default margin/padding from html and body */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%; /* Important for sticky footer and full height layouts */
             overflow-x: hidden; /* Prevent horizontal scrollbar if elements slightly exceed width */
         }
+
+        /* Body styling for a flexbox layout, crucial for sticky footer */
         body {
             background-color: #f8f9fa;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Align content to top */
-            align-items: center;
-            padding-bottom: 20px; /* Add padding at the bottom */
-            padding-top: 20px; /* Add padding at the top for content below navbar */
+            min-height: 100vh; /* Ensures body takes at least the full viewport height */
+            display: flex; /* Enables flexbox for children */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: flex-start; /* Aligns content to the very top */
+            align-items: stretch; /* Ensures children like .container stretch to fill width */
+            /* REMOVED: padding-top: 20px; This was causing the space above the navbar */
+            padding-bottom: 20px; /* Keep padding at the bottom if desired for content above the footer */
         }
+
+        /* Other existing custom styles */
         .modal-dialog-centered {
             display: flex;
             align-items: center;
@@ -81,30 +87,36 @@
         .navbar{
             width: 100%;
         }
+        /* Add some padding to the main content container to prevent it from sitting directly under the fixed navbar */
+        /* This applies to the div that starts with <div class="container text-center py-5"> */
+        .main-content-area {
+            margin-top: 20px; /* Adjust this value based on your navbar's height + desired gap */
+            /* If you want the space from the navbar itself, you can remove margin-top here and use padding-top on the div inside the container */
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar for sposor stuff      -->
     <nav class="navbar navbar-expand-sm p-3 navbar-dark bg-primary sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Portfolio Logo" style="height: 40px;">
-        </a>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Portfolio Logo" style="height: 40px;">
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto"> <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
                 </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-    <div class="container text-center py-5">
+    <div class="container text-center py-5 main-content-area">
         <h1 class="mb-4">Thank you for considering a sponsorship!</h1>
         <p class="lead mb-5">Click the button below to choose your sponsorship amount and method.</p>
 
@@ -166,7 +178,8 @@
                                     <label for="transferRef" class="form-label">Transfer Reference (Optional)</label>
                                     <input type="text" class="form-control" id="transferRef" placeholder="e.g., your bank transaction ID">
                                 </div>
-                                <input type="hidden" name="_paymentMethod" value="Bank Transfer"> </div>
+                                <input type="hidden" name="_paymentMethod" value="Bank Transfer">
+                            </div>
 
                             <div class="tab-pane fade" id="crypto-section" role="tabpanel" aria-labelledby="crypto-tab">
                                 <p class="alert alert-danger">
@@ -221,7 +234,8 @@
                                         <div id="collapseUSDT" class="accordion-collapse collapse" aria-labelledby="headingUSDT" data-bs-parent="#cryptoOptionsAccordion">
                                             <div class="accordion-body">
                                                 <p class="mb-2">Select USDT Network:</p>
-                                                <select class="form-select mb-3" id="usdtNetwork"> <option selected disabled value="">Choose network...</option>
+                                                <select class="form-select mb-3" id="usdtNetwork">
+                                                    <option selected disabled value="">Choose network...</option>
                                                     <option value="ERC-20">Ethereum (ERC-20)</option>
                                                     <option value="TRC-20">Tron (TRC-20)</option>
                                                     <option value="BEP-20">Binance Smart Chain (BEP-20)</option>
@@ -259,7 +273,8 @@
                                         </div>
                                     </div>
 
-                                </div> <small class="text-muted mt-3 d-block">Remember to only send from your own wallet. Exchange deposits may require extra steps.</small>
+                                </div>
+                                <small class="text-muted mt-3 d-block">Remember to only send from your own wallet. Exchange deposits may require extra steps.</small>
                                 <input type="hidden" id="submittedCryptoType">
                                 <input type="hidden" id="submittedCryptoAddress">
                                 <input type="hidden" id="submittedUsdtNetwork">
