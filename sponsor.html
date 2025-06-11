@@ -26,7 +26,6 @@
             flex-direction: column; /* Stacks children vertically */
             justify-content: flex-start; /* Aligns content to the very top */
             align-items: stretch; /* Ensures children like .container stretch to fill width */
-            /* REMOVED: padding-top: 20px; This was causing the space above the navbar */
             padding-bottom: 20px; /* Keep padding at the bottom if desired for content above the footer */
         }
 
@@ -88,10 +87,8 @@
             width: 100%;
         }
         /* Add some padding to the main content container to prevent it from sitting directly under the fixed navbar */
-        /* This applies to the div that starts with <div class="container text-center py-5"> */
         .main-content-area {
             margin-top: 20px; /* Adjust this value based on your navbar's height + desired gap */
-            /* If you want the space from the navbar itself, you can remove margin-top here and use padding-top on the div inside the container */
         }
     </style>
 </head>
@@ -310,6 +307,10 @@
             const transferRefInput = document.getElementById('transferRef');
             const paymentMethodInput = paymentForm.querySelector('input[name="_paymentMethod"]');
 
+            // New: Get references to amount input and label
+            const amountLabel = document.querySelector('label[for="amount"]');
+            const amountInput = document.getElementById('amount');
+
 
             // Consolidated wallet addresses and QR code paths
             const usdtAddresses = {
@@ -499,9 +500,13 @@
                     if (newMethodTabId === 'transfer-tab') {
                         paymentMethodInput.value = 'Bank Transfer';
                         transferRefInput.setAttribute('name', 'transferRef'); // Add name back for transferRef
+                        amountLabel.textContent = 'Amount (NGN)'; // Revert to NGN
+                        amountInput.placeholder = ''; // Clear placeholder or set specific NGN example
                     } else if (newMethodTabId === 'crypto-tab') {
                         paymentMethodInput.value = 'Cryptocurrency';
                         // Crypto-specific names will be set just before submission by the confirmPaymentBtn listener
+                        amountLabel.textContent = 'Amount (USD)'; // Change to USD
+                        amountInput.placeholder = ''; // Clear placeholder or set specific USD example
                     }
                 });
             });
@@ -514,8 +519,10 @@
                 if (initialMethodTabId === 'transfer-tab') {
                     paymentMethodInput.value = 'Bank Transfer';
                     transferRefInput.setAttribute('name', 'transferRef'); // Set name for transferRef on initial load
+                    amountLabel.textContent = 'Amount (NGN)'; // Ensure NGN is set on initial load
                 } else if (initialMethodTabId === 'crypto-tab') {
                     paymentMethodInput.value = 'Cryptocurrency';
+                    amountLabel.textContent = 'Amount (USD)'; // Ensure USD is set on initial load
                 }
             }
         });
