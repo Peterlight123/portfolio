@@ -1,4 +1,4 @@
- #button{
+#button{
     text-decoration: none;
 
  }
@@ -44,3 +44,10 @@
  @keyframes fadeIn {
    to { opacity: 1; }
  }
+*{
+   margin: 0;
+   padding: 0;
+}
+#contact{
+   matgin-top: 10px;
+}
