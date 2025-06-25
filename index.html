@@ -51,12 +51,13 @@
     <!-- navbar area -->
 <nav class="navbar p-3 navbar-dark navbar-expand-sm bg-primary sticky-top text-light">
   <div class="container-fluid">
+    
     <!-- Logo -->
     <a class="navbar-brand" href="index.html">
       <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Logo" style="height: 40px;">
     </a>
 
-    <!-- Hamburger Menu for Mobile -->
+    <!-- Hamburger Button for Mobile -->
     <button
       class="navbar-toggler"
       type="button"
@@ -73,17 +74,9 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
 
-        <!-- Home Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            Home
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#Highlights">My Highlights</a></li>
-            <li><a class="dropdown-item" href="#Services">Services</a></li>
-            <li><a class="dropdown-item" href="#Sponsor">Sponsor me</a></li>
-            <li><a class="dropdown-item" href="https://drive.google.com/file/d/1CH-h31rXVgyPxxTZKPtRQx1ew1s-uIcp/view?usp=sharing" target="_blank">View my CV</a></li>
-          </ul>
+        <!-- Home (regular link) -->
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
         </li>
 
         <!-- About -->
@@ -94,6 +87,19 @@
         <!-- Contact -->
         <li class="nav-item">
           <a href="#Contact" class="nav-link">Contact Me</a>
+        </li>
+
+        <!-- More Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#Highlights">My Highlights</a></li>
+            <li><a class="dropdown-item" href="#Services">Services</a></li>
+            <li><a class="dropdown-item" href="#Sponsor">Sponsor Me</a></li>
+            <li><a class="dropdown-item" href="https://drive.google.com/file/d/1CH-h31rXVgyPxxTZKPtRQx1ew1s-uIcp/view?usp=sharing" target="_blank">View My CV</a></li>
+          </ul>
         </li>
 
       </ul>
