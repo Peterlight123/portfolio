@@ -30,6 +30,58 @@
   <script>
     alert("Welcome to Eluwade Peter Portfolio");
   </script>
+    <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #Testimonials {
+      padding: 4rem 0;
+    }
+
+    #Testimonials .carousel-item {
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .carousel-item img {
+      border: 3px solid #0d6efd;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #0d6efd;
+      border-radius: 50%;
+    }
+
+    .text-warning i {
+      font-size: 1.25rem;
+    }
+
+    .blockquote {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+    }
+
+    .carousel-item footer {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        margin: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -320,6 +372,28 @@
   
       </div>
     </div>
+    <section id="Testimonials" class="bg-light">
+  <div class="container">
+    <h2 class="text-center text-primary fw-bold mb-5">What Clients Say</h2>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+
+        <!-- Testimonial 1 (Halima)-->
+        <div class="carousel-item active">
+          <img src="" class="rounded-circle mb-4" width="90" height="90" alt="Client 1">
+          <blockquote class="blockquote">
+            <p>"Peter made my website very responsive and still follows me up for me to earn by using Ads and more as extra earning. Highly recommend!"</p>
+          </blockquote>
+          <div class="text-warning mb-2">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <footer class="blockquote-footer">Halima M., <cite title="Source Title">Website Development</cite></footer>
+        </div>
   </section>
     <!-- sponsor section -->
     <section id="Sponsor" class="bg-light py-5 text-center">
