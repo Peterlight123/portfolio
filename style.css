@@ -52,3 +52,14 @@
    margin-top: 10px;
     
 }
+
+.dropdown-menu {
+  transition: all 0.2s ease-in-out;
+  top: 100%;
+}
+
+/* Make dropdown float over content instead of pushing it anyhow */
+.dropdown-menu {
+  position: absolute !important;
+  z-index: 9999;
+}
