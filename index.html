@@ -36,6 +36,26 @@
     alert("Welcome to Eluwade Peter Portfolio");
   </script>
     <style>
+   .social-btn {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 140px;
+}
+
+/* Hover effect that won't cause disappearance */
+.social-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1); /* brighten instead of opacity */
+}
+
     body {
       background-color: #f8f9fa;
       font-family: 'Segoe UI', sans-serif;
@@ -70,7 +90,7 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
-
+  
     .carousel-control-prev,
     .carousel-control-next {
       width: 5%;
