@@ -101,30 +101,3 @@ h2 {
 .navbar .dropdown-menu.show {
   margin-top: 0; /* kill space glitch */
 }
-
-/* Ensure spacing above and below testimonial section */
-#Testimonials {
-  padding-top: 3rem !important;
-  padding-bottom: 4rem !important;
-}
-
-/* Add spacing between section heading and carousel */
-#Testimonials .carousel {
-  margin-top: 1.5rem;
-}
-
-/* Add safe-space for image loading in case of slow load */
-#Testimonials .carousel-item img {
-  margin-top: 1rem;
-}
-
-/* Optional: Prevent negative space under image */
-.carousel-item {
-  padding-top: 1rem;
-}
-
-/* Make sure heading stacks above carousel */
-#Testimonials h2 {
-  position: relative;
-  z-index: 1;
-}
