@@ -279,7 +279,6 @@
   </section>
   
  <!-- Contact Us area -->
-
 <section id="Contact" class="container py-5 bg-light">
   <div class="container mt-5">
     <h2 class="text-center mb-4 fw-bold text-danger pt-5">Contact Me</h2>
@@ -287,17 +286,23 @@
 
     <div class="row justify-content-center mb-5">
       <div class="col-lg-8">
-        <div class="ratio ratio-16x9 shadow-lg rounded">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdmoi6reD2WKfiJnRB9C9TTi_bC_PFGP-1ElLaONCKc0x0IJw/viewform?usp=header"
-            width="100%" height="500px"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Contact Peter Lightspeed"
-            style="border: none; border-radius: 10px;">
-          </iframe>
-        </div>
+        <form action="https://formspree.io/f/xpwrbkrr" method="POST" class="bg-white p-4 shadow-lg rounded-3">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Your Name</label>
+            <input type="text" name="name" id="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Your Email</label>
+            <input type="email" name="email" id="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Your Message</label>
+            <textarea name="message" id="message" rows="5" class="form-control" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-danger px-4">Send Message</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -309,27 +314,21 @@
         <a href="https://x.com/peter8118533304" class="btn social-btn twitter" target="_blank">
           <i class="bi bi-twitter me-1"></i> Twitter
         </a>
-
         <a href="https://www.tiktok.com/@eluwadepeter" class="btn social-btn tiktok" target="_blank">
           <i class="bi bi-tiktok me-1"></i> TikTok
         </a>
-
         <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" class="btn social-btn linkedin" target="_blank">
           <i class="bi bi-linkedin me-1"></i> LinkedIn
         </a>
-
         <a href="https://www.instagram.com/eluwadepeter" class="btn social-btn instagram" target="_blank">
           <i class="bi bi-instagram me-1"></i> Instagram
         </a>
-
         <a href="mailto:petereluwade55@gmail.com" class="btn social-btn email">
           <i class="bi bi-envelope me-1"></i> Email
         </a>
-
         <a href="https://wa.me/2348108821809" class="btn social-btn whatsapp" target="_blank">
           <i class="bi bi-whatsapp me-1"></i> WhatsApp
         </a>
-
         <a href="https://www.facebook.com/profile.php?id=61575074189195" class="btn social-btn facebook" target="_blank">
           <i class="bi bi-facebook me-1"></i> Facebook
         </a>
@@ -338,6 +337,7 @@
     </div>
   </div>
 </section>
+
 
 
   
