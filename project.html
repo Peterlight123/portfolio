@@ -1,87 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lightspeed Project</title>
-  <link rel="stylesheet" href=style.css>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/2Ocmg4m.png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lightspeed Projects</title>
+  <link rel="icon" href="https://i.imgur.com/2Ocmg4m.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card img {
+      height: 250px;
+      object-fit: cover;
+    }
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://i.imgur.com/5x6leaQ.png" alt="Peter Logo" height="40">
-      </a>
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        </ul>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://i.imgur.com/5x6leaQ.png" alt="Peter Logo" height="40">
+    </a>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PROJECTS -->
+<div class="container">
+
+  <!-- Web Design Projects -->
+  <h2 class="text-center text-primary">Web Design Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
+        <div class="card-body">
+          <h5 class="card-title">Isaac's Portfolio Website</h5>
+          <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+        </div>
       </div>
     </div>
-  </nav>
-<!-- //navbar -->
-  <!-- projects -->
-  <!-- forex flier-->
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="https://i.imgur.com/t0xSPd5.png" alt="Forex Flier">
-  <div class="card-body">
-    <h4 class="card-title">Graphics design</h4>
-    <p class="card-text"></p>
-    <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-primary">See Project</a>
+    <!-- Add more web projects here -->
   </div>
-</div>
-  <!--//forex flier>
-  <!-- Beat blast -->
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="https://i.imgur.com/IAko0ri.png" alt="Beat blast">
-  <div class="card-body">
-    <h4 class="card-title">Graphics design</h4>
-    <p class="card-text"></p>
-    <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-primary">See Project</a>
+
+  <!-- Graphics Design Projects -->
+  <h2 class="text-center text-danger">Graphics Design Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+        <div class="card-body">
+          <h5 class="card-title">Forex Flier</h5>
+          <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
+        <div class="card-body">
+          <h5 class="card-title">Beat Blast </h5>
+          <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Fashion Banner">
+        <div class="card-body">
+          <h5 class="card-title">Fashion Banner</h5>
+          <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder basket ball flier -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="img_avatar1.png" class="card-img-top" alt="Basketball Flier">
+        <div class="card-body">
+          <h5 class="card-title">Basketball Event Flier</h5>
+          <a href="#" class="btn btn-danger">See Project</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-  <!-- //Beat blast -->
-  <!-- isaac web -->
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="https://i.imgur.com/nha0GNK.png" alt="Isaac web">
-  <div class="card-body">
-    <h4 class="card-title">Web design</h4>
-    <p class="card-text"></p>
-    <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+
+  <!-- Typing Projects -->
+  <h2 class="text-center text-success">Typing Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i.imgur.com/2Ocmg4m.png" class="card-img-top" alt="card1">
+        <div class="card-body">
+          <h5 class="card-title">Data Entry Sample</h5>
+          <a href="#" class="btn btn-success">See Project</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more typing/admin works -->
   </div>
+
 </div>
-  <!-- //isaac web -->
-  <!-- Basket ball flier -->
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title">Graphics design</h4>
-    <p class="card-text"></p>
-    <a href="#" class="btn btn-primary">See Project</a>
-  </div>
-</div>
-  <!-- //Basket ball flier -->
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="https://i.imgur.com/Smwo35d.png" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title">Graphics design</h4>
-    <p class="card-text"></p>
-    <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-primary">See Project</a>
-  </div>
-</div>
-  <div class="card-fluid" style="width:400px">
-  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title">Graphics design</h4>
-    <p class="card-text"></p>
-    <a href="#" class="btn btn-primary">See Project</a>
-  </div>
-</div>
-  <--! //projects -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
