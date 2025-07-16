@@ -13,7 +13,6 @@
     }
     h2 {
       margin-top: 60px;
-      margin-bottom: 30px;
       font-weight: bold;
     }
   </style>
@@ -26,6 +25,9 @@
     <a class="navbar-brand" href="#">
       <img src="https://i.imgur.com/5x6leaQ.png" alt="Peter Logo" height="40">
     </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -34,84 +36,171 @@
   </div>
 </nav>
 
-<!-- PROJECTS -->
-<div class="container">
+<!-- Tab Navigation -->
+<div class="container my-5">
+  <h2 class="text-center text-primary">My Projects</h2>
+  <ul class="nav nav-tabs justify-content-center mb-4" id="projectTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">All</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button">Websites</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="graphics-tab" data-bs-toggle="tab" data-bs-target="#graphics" type="button">Graphics</button>
+    </li>
+  </ul>
 
-  <!-- Web Design Projects -->
-  <h2 class="text-center text-primary">Web Design Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
-        <div class="card-body">
-          <h5 class="card-title">Isaac's Portfolio Website</h5>
-          <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+  <div class="tab-content" id="projectTabsContent">
+
+    <!-- ALL Projects -->
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+      <div class="row g-4">
+        <!-- Isaac Website -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
+            <div class="card-body">
+              <h5 class="card-title">Isaac's Portfolio Website</h5>
+              <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freedom Reign -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/NMe2Vmi.png" class="card-img-top" alt="Freedom Reign site">
+            <div class="card-body">
+              <h5 class="card-title">Freedom Reign Website</h5>
+              <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forex Flier -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+            <div class="card-body">
+              <h5 class="card-title">Forex Flier</h5>
+              <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beat Blast -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
+            <div class="card-body">
+              <h5 class="card-title">Beat Blast Concert Flier</h5>
+              <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basketball -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+            <div class="card-body">
+              <h5 class="card-title">Basketball Flier</h5>
+              <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peter Logo -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Logo">
+            <div class="card-body">
+              <h5 class="card-title">Peter Light Logo</h5>
+              <a href="https://i.imgur.com/vOOTG9M.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Add more web projects here -->
+
+    <!-- WEBSITE PROJECTS ONLY -->
+    <div class="tab-pane fade" id="web" role="tabpanel">
+      <div class="row g-4">
+        <!-- Isaac Website -->
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
+            <div class="card-body">
+              <h5 class="card-title">Isaac's Portfolio Website</h5>
+              <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freedom Reign -->
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/NMe2Vmi.png" class="card-img-top" alt="Freedom Reign">
+            <div class="card-body">
+              <h5 class="card-title">Freedom Reign Website</h5>
+              <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary">See Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPHICS DESIGN PROJECTS ONLY -->
+    <div class="tab-pane fade" id="graphics" role="tabpanel">
+      <div class="row g-4">
+        <!-- Forex -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex">
+            <div class="card-body">
+              <h5 class="card-title">Forex Flier</h5>
+              <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beat Blast -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
+            <div class="card-body">
+              <h5 class="card-title">Beat Blast Flier</h5>
+              <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basketball -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+            <div class="card-body">
+              <h5 class="card-title">Basketball Flier</h5>
+              <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Logo">
+            <div class="card-body">
+              <h5 class="card-title">Peter Light Logo</h5>
+              <a href="https://i.imgur.com/vOOTG9M.png" class="btn btn-danger">See Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <!-- Graphics Design Projects -->
-  <h2 class="text-center text-danger">Graphics Design Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
-        <div class="card-body">
-          <h5 class="card-title">Forex Flier</h5>
-          <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
-        <div class="card-body">
-          <h5 class="card-title">Beat Blast </h5>
-          <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basket Ball flier">
-        <div class="card-body">
-          <h5 class="card-title">Basketball Flier</h5>
-          <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
-        </div>
-      </div>
-    </div>
-
-   
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="My logo">
-        <div class="card-body">
-          <h5 class="card-title">Peter light logo</h5>
-          <a href="https://i.imgur.com/vOOTG9M.png" class="btn btn-danger">See Project</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Typing Projects -->
-  <h2 class="text-center text-success">Typing Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <img src="" class="card-img-top" alt="card1">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <a href="#" class="btn btn-success">See Project</a>
-        </div>
-      </div>
-    </div>
-    <!-- Add more typing/admin works -->
-  </div>
-
 </div>
 
 <!-- Bootstrap JS -->
