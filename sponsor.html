@@ -281,7 +281,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success" form="paymentForm" id="confirmPaymentBtn">Confirm Payment</button>
+                    <button type="submit" class="btn btn-success" form="paymentForm" id="confirmPaymentBtn onsubmit="handleForm(ssponsor)">Confirm Payment</button>
                 </div>
             </div>
         </div>
@@ -570,6 +570,7 @@
                     }
                 });
             });
+            
 
             // Set initial state correctly on page load for the active tab (Bank Transfer)
             const initialActiveTabButton = document.querySelector('#paymentTab button.nav-link.active');
@@ -587,6 +588,27 @@
             }
         });
     </script>
+<script>
+  function handleForm(ssponsor) {
+    event.preventDefault(); // prevent default submission first
+    const form = event.target;
 
+    // Use Formspree's POST submission manually via fetch
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert("Message sent successfully! ✅");
+        form.reset(); // clear the form inputs
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    }).catch(error => {
+      alert("There was an error submitting the form.");
+    });
+  }
+</script>
 </body>
 </html>
