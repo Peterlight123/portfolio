@@ -109,7 +109,23 @@
     html {
   scroll-padding-top: 50px; /* Adjust to your navbar height */
 }
-
+@keyframes slideInRight{
+  from{
+    transform: translateX(-300px)
+  }
+  to{
+    transform: translateX(0)
+  }
+}
+#highlights{
+  animation-name:slideInRight ;
+  animation-duration:3s ;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-deiraction: normal;
+  animation-fill-mode: forward;
+}
   </style>
 </head>
 <body>
