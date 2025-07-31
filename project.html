@@ -428,7 +428,38 @@
         once: true,     // whether animation should happen only once - while scrolling down
     });
 
-    // Formspree submission for admin form
+    // --- ADMIN ACCESS LOGIC ---
+    const ADMIN_PASSWORD = "Peterlight2025"; 
+
+    function promptForAdminAccess() {
+        // Only prompt if the form is currently hidden
+        if (document.getElementById("adminUploadForm").style.display === "none") {
+            const password = prompt("Enter admin password to show the project upload form:");
+
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById("adminUploadForm").style.display = "block";
+                alert("Admin access granted! The upload form is now visible.");
+            } else if (password !== null) { // If user didn't click cancel
+                alert("Incorrect password. Admin access denied.");
+            }
+        }
+    }
+
+    // You can decide when to trigger the admin prompt:
+    // 1. Immediately on page load (less subtle):
+    // promptForAdminAccess();
+
+    // 2. Or, more commonly, bind it to a hidden element/button click.
+    // For demonstration, let's assume you'd add a hidden link/button somewhere
+    // that only you know about (e.g., in the footer or by clicking the logo 5 times).
+    // For now, I'll add a simple example of how to make it accessible if needed.
+    // Let's make it trigger if a specific hash is in the URL, e.g., yoursite.com/projects.html#admin
+    if (window.location.hash === '#admin') {
+        promptForAdminAccess();
+    }
+
+
+    // --- FORMSPREE SUBMISSION LOGIC ---
     document.getElementById("adminForm").addEventListener("submit", function(e) {
         e.preventDefault(); // Prevent default form submission
 
@@ -436,7 +467,7 @@
         const formData = new FormData(form);
 
         // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree endpoint
-        fetch("https://formspree.io/f/xdkddlop", { 
+        fetch("https://formspree.io/f/xdkddlop", {
             method: "POST",
             body: formData,
             headers: {
@@ -448,13 +479,20 @@
                 const successMessage = document.getElementById("successMessage");
                 successMessage.classList.remove("d-none");
                 form.reset(); // clear form fields
-                
+
                 // Hide success message after 4 seconds
                 setTimeout(() => {
                     successMessage.classList.add("d-none");
                 }, 4000);
             } else {
-                alert("Oops! Something went wrong. Please try again.");
+                // Handle non-OK responses from Formspree (e.g., validation errors)
+                response.json().then(data => {
+                    if (data.errors) {
+                        alert("Form submission failed: " + data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert("Oops! Something went wrong with the submission. Please try again.");
+                    }
+                });
             }
         })
         .catch(error => {
@@ -463,9 +501,6 @@
         });
     });
 
-    // Optional: Add logic to toggle admin upload form visibility (e.g., with a secret button or URL parameter)
-    // For demonstration, you could uncomment the line below to show it by default
-    // document.getElementById("adminUploadForm").style.display = "block";
 </script>
 
 </body>
