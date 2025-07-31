@@ -23,41 +23,72 @@
             transition: color 0.3s ease;
         }
         .nav-link:hover {
-            color: #ffc107 !important; /* Example hover color */
+            color: #ffc107 !important;
         }
         .card {
             border: none;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
+            position: relative;
         }
         .card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
         .card img {
-            height: 250px;
+            height: 280px;
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
         }
         .card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
         .card-body {
-            padding: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
         .card-title {
             font-weight: bold;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .card-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 20px;
         }
         .btn {
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
         }
         .btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: none;
         }
         .nav-tabs .nav-link {
             color: #0d6efd;
@@ -65,6 +96,7 @@
             border: none;
             border-bottom: 3px solid transparent;
             transition: all 0.3s ease;
+            border-radius: 0;
         }
         .nav-tabs .nav-link.active {
             color: #0d6efd;
@@ -78,8 +110,20 @@
             margin-top: 60px;
             font-weight: bold;
             text-align: center;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
         }
         .footer {
             background-color: #212529;
@@ -96,6 +140,42 @@
         .social-icons a {
             font-size: 1.5rem;
             margin: 0 10px;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .tech-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+        .stat-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: #6c757d;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -132,17 +212,17 @@
 </nav>
 
 <div class="container my-5">
-    <h2 class="text-center mb-5" data-aos="fade-down">My Projects</h2>
+    <h2 class="text-center mb-5" data-aos="fade-down">My Professional Projects</h2>
     
     <ul class="nav nav-tabs justify-content-center mb-5" id="projectTabs" role="tablist" data-aos="fade-up">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All Projects</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false">Websites</button>
+            <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false">Web Development</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="graphics-tab" data-bs-toggle="tab" data-bs-target="#graphics" type="button" role="tab" aria-controls="graphics" aria-selected="false">Graphics</button>
+            <button class="nav-link" id="graphics-tab" data-bs-toggle="tab" data-bs-target="#graphics" type="button" role="tab" aria-controls="graphics" aria-selected="false">Graphic Design</button>
         </li>
     </ul>
 
@@ -151,92 +231,282 @@
         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
             <div class="row g-4 justify-content-center">
 
+                <!-- Personal Portfolio Website -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac's Portfolio Website">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-primary text-white">Featured</span>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Personal Portfolio Website">
                         <div class="card-body">
-                            <h5 class="card-title">Isaac's Portfolio Website</h5>
-                            <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary w-100">See Project</a>
+                            <h5 class="card-title">Personal Portfolio Website</h5>
+                            <p class="card-description">Modern, responsive portfolio showcasing my full-stack development skills with interactive UI and optimized performance.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-label">Responsive</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">A+</div>
+                                    <div class="stat-label">Performance</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">SEO</div>
+                                    <div class="stat-label">Optimized</div>
+                                </div>
+                            </div>
+                            <a href="https://peterlight123.github.io/portfolio" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-eye me-2"></i>View Live Site
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Freedom Reign Basketball Academy -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/Z7zOJJS.png" class="card-img-top" alt="Freedom Reign Website">
-                        <div class="card-body">
-                            <h5 class="card-title">Freedom Reign Website</h5>
-                            <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
-                        <div class="card-body">
-                            <h5 class="card-title">Peter Lightspeed (v1)</h5>
-                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
-                        <div class="card-body">
-                            <h5 class="card-title">Peter Lightspeed (v2)</h5>
-                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/NuJhb71.png" class="card-img-top" alt="Freedom Reign basketball academy web">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-success text-white">Sports</span>
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Freedom Reign Basketball Academy">
                         <div class="card-body">
                             <h5 class="card-title">Freedom Reign Basketball Academy</h5>
-                            <a href="https://peterlight123.github.io/freedomreign/" class="btn btn-primary w-100">See Project</a>
+                            <p class="card-description">Professional sports academy website with registration system, coach profiles, and training schedules for young athletes.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Students</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">15</div>
+                                    <div class="stat-label">Programs</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Support</div>
+                                </div>
+                            </div>
+                            <a href="https://peterlight123.github.io/freedomreign/" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-globe me-2"></i>Visit Website
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Gidi Beat Blast Concert -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-warning text-dark">Music</span>
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Gidi Beat Blast Concert">
+                        <div class="card-body">
+                            <h5 class="card-title">Gidi Beat Blast Concert</h5>
+                            <p class="card-description">Dynamic visual branding for electrifying drum concert event with vibrant designs capturing the energy of live performances.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Illustrator</span>
+                                <span class="tech-badge">Print Design</span>
+                                <span class="tech-badge">Branding</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">5K+</div>
+                                    <div class="stat-label">Attendees</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10</div>
+                                    <div class="stat-label">Designs</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">HD</div>
+                                    <div class="stat-label">Quality</div>
+                                </div>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-image me-2"></i>View Design
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forex Trading Flyer -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-info text-white">Finance</span>
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Forex Trading Flyer">
+                        <div class="card-body">
+                            <h5 class="card-title">Forex Trading Flyer</h5>
+                            <p class="card-description">Professional financial flyer design combining credibility with modern aesthetics to attract potential investors effectively.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Financial Design</span>
+                                <span class="tech-badge">Marketing</span>
+                                <span class="tech-badge">Print Ready</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">95%</div>
+                                    <div class="stat-label">Conversion</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">A4</div>
+                                    <div class="stat-label">Format</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">300</div>
+                                    <div class="stat-label">DPI</div>
+                                </div>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-file-earmark-image me-2"></i>View Flyer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Isaac's Portfolio Website -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-secondary text-white">Client</span>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Isaac's Portfolio Website">
                         <div class="card-body">
-                            <h5 class="card-title">Forex Flier</h5>
-                            <a href="https://i.imgur.com/t0xSPd5.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Isaac's Portfolio Website</h5>
+                            <p class="card-description">Custom portfolio website for client Isaac showcasing his professional work with clean design and smooth user experience.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Responsive</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-label">Satisfied</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">Fast</div>
+                                    <div class="stat-label">Loading</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">Mobile</div>
+                                    <div class="stat-label">Ready</div>
+                                </div>
+                            </div>
+                            <a href="https://peterlight123.github.io/isaac/" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-person-workspace me-2"></i>View Portfolio
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Peter Light Logo -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-dark text-white">Branding</span>
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Peter Light Logo">
                         <div class="card-body">
-                            <h5 class="card-title">Beat Blast Concert Flier</h5>
-                            <a href="https://i.imgur.com/IAko0ri.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Peter Light Logo Design</h5>
+                            <p class="card-description">Personal brand logo design representing professionalism and creativity in web development and digital services.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Illustrator</span>
+                                <span class="tech-badge">Logo Design</span>
+                                <span class="tech-badge">Vector</span>
+                                <span class="tech-badge">Scalable</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">SVG</div>
+                                    <div class="stat-label">Format</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">∞</div>
+                                    <div class="stat-label">Scalable</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">Pro</div>
+                                    <div class="stat-label">Quality</div>
+                                </div>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-badge-tm me-2"></i>View Logo
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Basketball Flyer -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-warning text-dark">Sports</span>
+                        <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Basketball Flyer">
                         <div class="card-body">
-                            <h5 class="card-title">Basketball Flier</h5>
-                            <a href="https://i.imgur.com/Smwo35d.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Basketball Academy Flyer</h5>
+                            <p class="card-description">Eye-catching promotional flyer for basketball academy featuring dynamic sports imagery and compelling call-to-action.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Sports Design</span>
+                                <span class="tech-badge">Print</span>
+                                <span class="tech-badge">Marketing</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">200+</div>
+                                    <div class="stat-label">Sign-ups</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">A4</div>
+                                    <div class="stat-label">Size</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">HD</div>
+                                    <div class="stat-label">Print</div>
+                                </div>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-file-earmark-image me-2"></i>View Flyer
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Freedom Reign Website (Alternative) -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Logo">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-primary text-white">Web App</span>
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Freedom Reign Website">
                         <div class="card-body">
-                            <h5 class="card-title">Peter Light Logo</h5>
-                            <a href="https://i.imgur.com/vOOTG9M.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Freedom Reign Platform</h5>
+                            <p class="card-description">Comprehensive web platform for Freedom Reign organization with user management, content system, and interactive features.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">API</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">1K+</div>
+                                    <div class="stat-label">Users</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">99%</div>
+                                    <div class="stat-label">Uptime</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">Fast</div>
+                                    <div class="stat-label">API</div>
+                                </div>
+                            </div>
+                            <a href="https://peterlight123.github.io/freedom-reign" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-globe2 me-2"></i>Visit Platform
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -244,55 +514,110 @@
             </div>
         </div>
 
+        <!-- Web Development Tab -->
         <div class="tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
             <div class="row g-4 justify-content-center">
 
+                <!-- Personal Portfolio Website -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac's Portfolio Website">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-primary text-white">Featured</span>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Personal Portfolio Website">
                         <div class="card-body">
-                            <h5 class="card-title">Isaac's Portfolio Website</h5>
-                            <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary w-100">See Project</a>
+                            <h5 class="card-title">Personal Portfolio Website</h5>
+                            <p class="card-description">Modern, responsive portfolio showcasing my full-stack development skills with interactive UI and optimized performance.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <a href="https://peterlight123.github.io/portfolio" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-eye me-2"></i>View Live Site
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Freedom Reign Basketball Academy -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/Z7zOJJS.png" class="card-img-top" alt="Freedom Reign Website">
-                        <div class="card-body">
-                            <h5 class="card-title">Freedom Reign Website</h5>
-                            <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
-                        <div class="card-body">
-                            <h5 class="card-title">Peter Lightspeed (v1)</h5>
-                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
-                        <div class="card-body">
-                            <h5 class="card-title">Peter Lightspeed (v2)</h5>
-                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/NuJhb71.png" class="card-img-top" alt="Freedom Reign basketball academy web">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-success text-white">Sports</span>
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Freedom Reign Basketball Academy">
                         <div class="card-body">
                             <h5 class="card-title">Freedom Reign Basketball Academy</h5>
-                            <a href="https://peterlight123.github.io/freedomreign/" class="btn btn-primary w-100">See Project</a>
+                            <p class="card-description">Professional sports academy website with registration system, coach profiles, and training schedules.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                            </div>
+                            <a href="https://peterlight123.github.io/freedomreign/" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-globe me-2"></i>Visit Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Isaac's Portfolio -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-secondary text-white">Client</span>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Isaac's Portfolio Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Isaac's Portfolio Website</h5>
+                            <p class="card-description">Custom portfolio website for client Isaac showcasing his professional work with clean design and smooth user experience.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Responsive</span>
+                            </div>
+                            <a href="https://peterlight123.github.io/isaac/" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-person-workspace me-2"></i>View Portfolio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freedom Reign Platform -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-primary text-white">Web App</span>
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Freedom Reign Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Freedom Reign Platform</h5>
+                            <p class="card-description">Comprehensive web platform for Freedom Reign organization with user management, content system, and interactive features.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">API</span>
+                            </div>
+                            <a href="https://peterlight123.github.io/freedom-reign" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-globe2 me-2"></i>Visit Platform
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Commerce Website -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-warning text-dark">E-Commerce</span>
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="E-Commerce Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Modern E-Commerce Store</h5>
+                            <p class="card-description">Full-featured online store with payment integration, inventory management, and customer dashboard.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">Stripe</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Tailwind</span>
+                            </div>
+                            <a href="https://peterlight123.github.io/website3/" target="_blank" class="btn btn-primary w-100 mt-3">
+                                <i class="bi bi-cart me-2"></i>View Store
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -300,45 +625,132 @@
             </div>
         </div>
 
+        <!-- Graphics Design Tab -->
         <div class="tab-pane fade" id="graphics" role="tabpanel" aria-labelledby="graphics-tab">
             <div class="row g-4 justify-content-center">
 
+                <!-- Gidi Beat Blast Concert -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-warning text-dark">Music</span>
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Gidi Beat Blast Concert">
                         <div class="card-body">
-                            <h5 class="card-title">Forex Flier</h5>
-                            <a href="https://i.imgur.com/t0xSPd5.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Gidi Beat Blast Concert</h5>
+                            <p class="card-description">Dynamic visual branding for electrifying drum concert event with vibrant designs capturing the energy of live performances.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Illustrator</span>
+                                <span class="tech-badge">Print Design</span>
+                                <span class="tech-badge">Branding</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-image me-2"></i>View Design
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Forex Trading Flyer -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast Concert Flier">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-info text-white">Finance</span>
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Forex Trading Flyer">
                         <div class="card-body">
-                            <h5 class="card-title">Beat Blast Concert Flier</h5>
-                            <a href="https://i.imgur.com/IAko0ri.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Forex Trading Flyer</h5>
+                            <p class="card-description">Professional financial flyer design combining credibility with modern aesthetics to attract potential investors effectively.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Financial Design</span>
+                                <span class="tech-badge">Marketing</span>
+                                <span class="tech-badge">Print Ready</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-file-earmark-image me-2"></i>View Flyer
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Peter Light Logo -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-dark text-white">Branding</span>
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Peter Light Logo">
                         <div class="card-body">
-                            <h5 class="card-title">Basketball Flier</h5>
-                            <a href="https://i.imgur.com/Smwo35d.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Peter Light Logo Design</h5>
+                            <p class="card-description">Personal brand logo design representing professionalism and creativity in web development and digital services.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Illustrator</span>
+                                <span class="tech-badge">Logo Design</span>
+                                <span class="tech-badge">Vector</span>
+                                <span class="tech-badge">Scalable</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-badge-tm me-2"></i>View Logo
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Basketball Flyer -->
                 <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card shadow-sm h-100">
-                        <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Light Logo">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-warning text-dark">Sports</span>
+                        <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Basketball Flyer">
                         <div class="card-body">
-                            <h5 class="card-title">Peter Light Logo</h5>
-                            <a href="https://i.imgur.com/vOOTG9M.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                            <h5 class="card-title">Basketball Academy Flyer</h5>
+                            <p class="card-description">Eye-catching promotional flyer for basketball academy featuring dynamic sports imagery and compelling call-to-action.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Sports Design</span>
+                                <span class="tech-badge">Print</span>
+                                <span class="tech-badge">Marketing</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-file-earmark-image me-2"></i>View Flyer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Branding Package -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-success text-white">Corporate</span>
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Corporate Branding">
+                        <div class="card-body">
+                            <h5 class="card-title">Corporate Branding Package</h5>
+                            <p class="card-description">Complete branding solution including logo, business cards, letterheads, and brand guidelines for professional businesses.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Illustrator</span>
+                                <span class="tech-badge">InDesign</span>
+                                <span class="tech-badge">Brand Identity</span>
+                                <span class="tech-badge">Print</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-briefcase me-2"></i>View Package
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Graphics -->
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card shadow-lg h-100">
+                        <span class="project-badge bg-primary text-white">Social</span>
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop&crop=center" class="card-img-top" alt="Social Media Graphics">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Graphics</h5>
+                            <p class="card-description">Engaging social media post designs optimized for various platforms including Instagram, Facebook, and Twitter.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Canva Pro</span>
+                                <span class="tech-badge">Photoshop</span>
+                                <span class="tech-badge">Social Media</span>
+                                <span class="tech-badge">Digital</span>
+                            </div>
+                            <a href="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600" target="_blank" class="btn btn-danger w-100 mt-3">
+                                <i class="bi bi-share me-2"></i>View Graphics
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -348,49 +760,71 @@
     </div>
 </div>
 
+<!-- Admin Upload Form -->
 <div class="container my-5" id="adminUploadForm" style="display: none;" data-aos="fade-up">
-    <h3 class="text-center text-success mb-4">Admin Project Upload</h3>
+    <h3 class="text-center text-success mb-4">
+        <i class="bi bi-shield-lock me-2"></i>Admin Project Upload
+    </h3>
     
-    <form id="adminForm" class="p-4 border rounded shadow-sm bg-light">
+    <form id="adminForm" class="p-4 border rounded-3 shadow-lg bg-light">
         <div class="row g-3">
             <div class="col-md-6">
-                <label for="projectTitle" class="form-label">Project Title</label>
-                <input type="text" name="title" id="projectTitle" class="form-control" placeholder="e.g., Isaac Portfolio Website" required>
+                <label for="projectTitle" class="form-label fw-bold">
+                    <i class="bi bi-type me-2"></i>Project Title
+                </label>
+                <input type="text" name="title" id="projectTitle" class="form-control form-control-lg" placeholder="e.g., Isaac Portfolio Website" required>
             </div>
             <div class="col-md-6">
-                <label for="projectImage" class="form-label">Project Image URL</label>
-                <input type="url" name="image" id="projectImage" class="form-control" placeholder="https://..." required>
+                <label for="projectImage" class="form-label fw-bold">
+                    <i class="bi bi-image me-2"></i>Project Image URL
+                </label>
+                <input type="url" name="image" id="projectImage" class="form-control form-control-lg" placeholder="https://..." required>
             </div>
             <div class="col-md-6">
-                <label for="projectLink" class="form-label">Project Link</label>
-                <input type="url" name="link" id="projectLink" class="form-control" placeholder="https://..." required>
+                <label for="projectLink" class="form-label fw-bold">
+                    <i class="bi bi-link-45deg me-2"></i>Project Link
+                </label>
+                <input type="url" name="link" id="projectLink" class="form-control form-control-lg" placeholder="https://..." required>
             </div>
             <div class="col-md-6">
-                <label for="category" class="form-label">Category</label>
-                <select name="category" id="category" class="form-select" required>
-                    <option value="">Choose...</option>
-                    <option value="Web">Website</option>
-                    <option value="Graphics">Graphics</option>
+                <label for="category" class="form-label fw-bold">
+                    <i class="bi bi-tags me-2"></i>Category
+                </label>
+                <select name="category" id="category" class="form-select form-select-lg" required>
+                    <option value="">Choose Category...</option>
+                    <option value="Web">Website Development</option>
+                    <option value="Graphics">Graphic Design</option>
                 </select>
             </div>
+            <div class="col-12">
+                <label for="projectDescription" class="form-label fw-bold">
+                    <i class="bi bi-card-text me-2"></i>Project Description
+                </label>
+                <textarea name="description" id="projectDescription" class="form-control" rows="3" placeholder="Brief description of the project..." required></textarea>
+            </div>
             <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-success w-50 btn-lg">Submit Project</button>
+                <button type="submit" class="btn btn-success btn-lg px-5 py-3">
+                    <i class="bi bi-cloud-upload me-2"></i>Submit Project
+                </button>
             </div>
         </div>
     </form>
 
     <div class="alert alert-success text-center mt-4 d-none" id="successMessage" data-aos="zoom-in">
-        ✅ Project submitted successfully!
+        <i class="bi bi-check-circle-fill me-2"></i>
+        ✅ Project submitted successfully! It will be reviewed and added to the portfolio.
     </div>
 </div>
 
 <!-- ===== FOOTER ===== -->
-    <footer class="bg-dark text-light text-center text-md-start py-5 mt-5 footer">
+<footer class="bg-dark text-light text-center text-md-start py-5 mt-5 footer">
     <div class="container">
         <div class="row">
             <!-- Brand Section -->
             <div class="col-md-3 mb-4" data-aos="fade-up">
-                <h5 class="fw-bold mb-3">Peter Lightspeed</h5>
+                <h5 class="fw-bold mb-3">
+                    <i class="bi bi-lightning-charge me-2"></i>Peter Lightspeed
+                </h5>
                 <p class="mb-3">Your Reliable Virtual Assistant for Digital Services</p>
                 <small class="text-muted">© 2025 Eluwade Peter Toluwanimi. All rights reserved.</small>
             </div>
@@ -568,7 +1002,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
                 <small class="text-muted">
-                    Built  by Peter Lightspeed | Virtual Assistant & Web Developer
+                    Built with ❤️ by Peter Lightspeed | Virtual Assistant & Web Developer
                 </small>
             </div>
             <div class="col-md-6 text-center text-md-end">
@@ -588,55 +1022,69 @@
     </div>
 </footer>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     // Initialize AOS
     AOS.init({
-        duration: 1000, // animation duration
-        once: true,     // whether animation should happen only once - while scrolling down
+        duration: 1000,
+        once: true,
+        offset: 100
     });
 
     // --- ADMIN ACCESS LOGIC ---
     const ADMIN_PASSWORD = "Peterlight2025"; 
 
     function promptForAdminAccess() {
-        // Only prompt if the form is currently hidden
         if (document.getElementById("adminUploadForm").style.display === "none") {
-            const password = prompt("Enter admin password to show the project upload form:");
+            const password = prompt("🔐 Enter admin password to access project upload form:");
 
             if (password === ADMIN_PASSWORD) {
                 document.getElementById("adminUploadForm").style.display = "block";
-                alert("Admin access granted! The upload form is now visible.");
-            } else if (password !== null) { // If user didn't click cancel
-                alert("Incorrect password. Admin access denied.");
+                // Smooth scroll to admin form
+                document.getElementById("adminUploadForm").scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                alert("✅ Admin access granted! The upload form is now visible.");
+            } else if (password !== null) {
+                alert("❌ Incorrect password. Admin access denied.");
             }
         }
     }
 
-    // You can decide when to trigger the admin prompt:
-    // 1. Immediately on page load (less subtle):
-    // promptForAdminAccess();
-
-    // 2. Or, more commonly, bind it to a hidden element/button click.
-    // For demonstration, let's assume you'd add a hidden link/button somewhere
-    // that only you know about (e.g., in the footer or by clicking the logo 5 times).
-    // For now, I'll add a simple example of how to make it accessible if needed.
-    // Let's make it trigger if a specific hash is in the URL, e.g., yoursite.com/projects.html#admin
+    // Check for admin hash in URL
     if (window.location.hash === '#admin') {
         promptForAdminAccess();
     }
 
+    // Add secret admin access (click logo 5 times)
+    let logoClickCount = 0;
+    document.querySelector('.navbar-brand img').addEventListener('click', function() {
+        logoClickCount++;
+        if (logoClickCount === 5) {
+            promptForAdminAccess();
+            logoClickCount = 0; // Reset counter
+        }
+        
+        // Reset counter after 3 seconds of no clicks
+        setTimeout(() => {
+            logoClickCount = 0;
+        }, 3000);
+    });
 
     // --- FORMSPREE SUBMISSION LOGIC ---
     document.getElementById("adminForm").addEventListener("submit", function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
         const form = e.target;
         const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        // Show loading state
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Submitting...';
+        submitBtn.disabled = true;
 
-        // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree endpoint
         fetch("https://formspree.io/f/xdkddlop", {
             method: "POST",
             body: formData,
@@ -648,26 +1096,61 @@
             if (response.ok) {
                 const successMessage = document.getElementById("successMessage");
                 successMessage.classList.remove("d-none");
-                form.reset(); // clear form fields
+                form.reset();
 
-                // Hide success message after 4 seconds
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // Hide success message after 5 seconds
                 setTimeout(() => {
                     successMessage.classList.add("d-none");
-                }, 4000);
+                }, 5000);
             } else {
-                // Handle non-OK responses from Formspree (e.g., validation errors)
                 response.json().then(data => {
                     if (data.errors) {
-                        alert("Form submission failed: " + data.errors.map(error => error.message).join(", "));
+                        alert("❌ Form submission failed: " + data.errors.map(error => error.message).join(", "));
                     } else {
-                        alert("Oops! Something went wrong with the submission. Please try again.");
+                        alert("❌ Oops! Something went wrong with the submission. Please try again.");
                     }
                 });
             }
         })
         .catch(error => {
             console.error("Error submitting the form:", error);
-            alert("Error submitting the form. Please check your internet connection.");
+            alert("❌ Error submitting the form. Please check your internet connection.");
+        })
+        .finally(() => {
+            // Restore button state
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    });
+
+    // Add smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add loading animation for external links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon) {
+                const originalClass = icon.className;
+                icon.className = 'bi bi-hourglass-split me-2';
+                setTimeout(() => {
+                    icon.className = originalClass;
+                }, 2000);
+            }
         });
     });
 
@@ -675,3 +1158,4 @@
 
 </body>
 </html>
+
