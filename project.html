@@ -1,380 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lightspeed Projects</title>
-  <link rel="icon" href="https://i.imgur.com/2Ocmg4m.png"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    .card img {
-      height: 250px;
-      object-fit: cover;
-    }
-    .card:hover {
-      transform: scale(1.02);
-      transition: all 0.3s ease-in-out;
-    }
-    h2 {
-      margin-top: 60px;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lightspeed Projects</title>
+    <link rel="icon" href="https://i.imgur.com/2Ocmg4m.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important; /* Example hover color */
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover img {
+            transform: scale(1.05);
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .btn {
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .nav-tabs .nav-link {
+            color: #0d6efd;
+            font-weight: 600;
+            border: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .nav-tabs .nav-link.active {
+            color: #0d6efd;
+            border-bottom: 3px solid #0d6efd;
+            background-color: transparent;
+        }
+        .nav-tabs .nav-link:hover:not(.active) {
+            border-bottom: 3px solid #6c757d;
+        }
+        h2 {
+            margin-top: 60px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .footer {
+            background-color: #212529;
+            color: #f8f9fa;
+        }
+        .footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #0d6efd;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Logo" height="40">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://peterlight123.github.io/portfolio/index.html#Contact">Contact Me</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://peterlight123.github.io/portfolio/index.html#About">About Me</a></li>
-        <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#highlights">My Highlights</a></li>
-            <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#Services">Services</a></li>
-            <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#Testimonials">Testimonials</a></li>
-            <li><a class="dropdown-item" href="sponsor.html">Sponsor Me</a></li>
-            <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#cv">Download My CV</a></li>
-            <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#licenses">Licenses & Certifications</a></li>
-          </ul>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3 shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://peterlight123.github.io/portfolio/index.html#Contact">Contact Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://peterlight123.github.io/portfolio/index.html#About">About Me</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="project.html">Projects</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#highlights">My Highlights</a></li>
+                        <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#Services">Services</a></li>
+                        <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#Testimonials">Testimonials</a></li>
+                        <li><a class="dropdown-item" href="sponsor.html">Sponsor Me</a></li>
+                        <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#cv">Download My CV</a></li>
+                        <li><a class="dropdown-item" href="https://peterlight123.github.io/portfolio/index.html#licenses">Licenses & Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
+<div class="container my-5">
+    <h2 class="text-center mb-5" data-aos="fade-down">My Projects</h2>
+    
+    <ul class="nav nav-tabs justify-content-center mb-5" id="projectTabs" role="tablist" data-aos="fade-up">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false">Websites</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="graphics-tab" data-bs-toggle="tab" data-bs-target="#graphics" type="button" role="tab" aria-controls="graphics" aria-selected="false">Graphics</button>
+        </li>
+    </ul>
 
+    <div class="tab-content" id="projectTabsContent">
 
-  <!-- Tab Buttons -->
-  <ul class="nav nav-tabs justify-content-center mb-4" id="projectTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">All</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button">Websites</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="graphics-tab" data-bs-toggle="tab" data-bs-target="#graphics" type="button">Graphics</button>
-    </li>
-  </ul>
+        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+            <div class="row g-4 justify-content-center">
 
-  <!-- Tab Content -->
-  <div class="tab-content" id="projectTabsContent">
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac's Portfolio Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Isaac's Portfolio Website</h5>
+                            <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- All Projects Tab -->
-    <div class="tab-pane fade show active" id="all" role="tabpanel">
-      <div class="row g-4">
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/Z7zOJJS.png" class="card-img-top" alt="Freedom Reign Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Freedom Reign Website</h5>
+                            <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Isaac Website -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
-            <div class="card-body">
-              <h5 class="card-title">Isaac's Portfolio Website</h5>
-              <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Lightspeed (v1)</h5>
+                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Lightspeed (v2)</h5>
+                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/NuJhb71.png" class="card-img-top" alt="Freedom Reign basketball academy web">
+                        <div class="card-body">
+                            <h5 class="card-title">Freedom Reign Basketball Academy</h5>
+                            <a href="https://peterlight123.github.io/freedomreign/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+                        <div class="card-body">
+                            <h5 class="card-title">Forex Flier</h5>
+                            <a href="https://i.imgur.com/t0xSPd5.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
+                        <div class="card-body">
+                            <h5 class="card-title">Beat Blast Concert Flier</h5>
+                            <a href="https://i.imgur.com/IAko0ri.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+                        <div class="card-body">
+                            <h5 class="card-title">Basketball Flier</h5>
+                            <a href="https://i.imgur.com/Smwo35d.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Light Logo</h5>
+                            <a href="https://i.imgur.com/vOOTG9M.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
         </div>
 
-        <!-- Freedom Reign -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/Z7zOJJS.png" class="card-img-top" alt="Freedom Reign site">
-            <div class="card-body">
-              <h5 class="card-title">Freedom Reign Website</h5>
-              <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary">See Project</a>
+        <div class="tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac's Portfolio Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Isaac's Portfolio Website</h5>
+                            <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/Z7zOJJS.png" class="card-img-top" alt="Freedom Reign Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Freedom Reign Website</h5>
+                            <a href="https://peterlight123.github.io/freedom-reign" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Lightspeed (v1)</h5>
+                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Lightspeed (v2)</h5>
+                            <a href="https://peterlight123.github.io/website3/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/NuJhb71.png" class="card-img-top" alt="Freedom Reign basketball academy web">
+                        <div class="card-body">
+                            <h5 class="card-title">Freedom Reign Basketball Academy</h5>
+                            <a href="https://peterlight123.github.io/freedomreign/" class="btn btn-primary w-100">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
         </div>
 
-        <!-- Website 3 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
-            <div class="card-body">
-              <h5 class="card-title">Peter Lightspeed</h5>
-              <a href="https://peterlight123.github.io/website3/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
+        <div class="tab-pane fade" id="graphics" role="tabpanel" aria-labelledby="graphics-tab">
+            <div class="row g-4 justify-content-center">
 
-        <!-- Website 3(2) -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
-            <div class="card-body">
-              <h5 class="card-title">Peter Lightspeed Web (2)</h5>
-              <a href="https://peterlight123.github.io/website3/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
+                        <div class="card-body">
+                            <h5 class="card-title">Forex Flier</h5>
+                            <a href="https://i.imgur.com/t0xSPd5.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Forex Flier -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex Flier">
-            <div class="card-body">
-              <h5 class="card-title">Forex Flier</h5>
-              <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast Concert Flier">
+                        <div class="card-body">
+                            <h5 class="card-title">Beat Blast Concert Flier</h5>
+                            <a href="https://i.imgur.com/IAko0ri.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Beat Blast -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
-            <div class="card-body">
-              <h5 class="card-title">Beat Blast Concert Flier</h5>
-              <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
+                        <div class="card-body">
+                            <h5 class="card-title">Basketball Flier</h5>
+                            <a href="https://i.imgur.com/Smwo35d.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Basketball Flier -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
-            <div class="card-body">
-              <h5 class="card-title">Basketball Flier</h5>
-              <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Light Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Peter Light Logo</h5>
+                            <a href="https://i.imgur.com/vOOTG9M.png" target="_blank" class="btn btn-danger w-100">View Graphic</a>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Peter Logo -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Peter Logo">
-            <div class="card-body">
-              <h5 class="card-title">Peter Light Logo</h5>
-              <a href="https://i.imgur.com/vOOTG9M.png" class="btn btn-danger">See Project</a>
             </div>
-          </div>
         </div>
-
-      </div>
     </div>
-
-    <!-- Website Projects Tab -->
-    <div class="tab-pane fade" id="web" role="tabpanel">
-      <div class="row g-4">
-
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/nha0GNK.png" class="card-img-top" alt="Isaac web">
-            <div class="card-body">
-              <h5 class="card-title">Isaac's Portfolio Website</h5>
-              <a href="https://peterlight123.github.io/isaac/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/NuJhb71.png" class="card-img-top" alt="Freedom Reign basketball academy web">
-            <div class="card-body">
-              <h5 class="card-title">Freedom Reign Basketball Academy</h5>
-              <a href="https://peterlight123.github.io/freedomreign/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/bXmX09r.png" class="card-img-top" alt="Peterlightspeed web">
-            <div class="card-body">
-              <h5 class="card-title">Peter Lightspeed</h5>
-              <a href="https://peterlight123.github.io/website3/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/OFCbXgy.png" class="card-img-top" alt="Peterlightspeed Web">
-            <div class="card-body">
-              <h5 class="card-title">Peter Lightspeed Web (2)</h5>
-              <a href="https://peterlight123.github.io/website3/" class="btn btn-primary">See Project</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Graphics Projects Tab -->
-    <div class="tab-pane fade" id="graphics" role="tabpanel">
-      <div class="row g-4">
-
-        <!-- Repeat only graphics projects -->
-
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/t0xSPd5.png" class="card-img-top" alt="Forex">
-            <div class="card-body">
-              <h5 class="card-title">Forex Flier</h5>
-              <a href="https://i.imgur.com/t0xSPd5.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/IAko0ri.png" class="card-img-top" alt="Beat Blast">
-            <div class="card-body">
-              <h5 class="card-title">Beat Blast Flier</h5>
-              <a href="https://i.imgur.com/IAko0ri.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/Smwo35d.png" class="card-img-top" alt="Basketball Flier">
-            <div class="card-body">
-              <h5 class="card-title">Basketball Flier</h5>
-              <a href="https://i.imgur.com/Smwo35d.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <img src="https://i.imgur.com/vOOTG9M.png" class="card-img-top" alt="Logo">
-            <div class="card-body">
-              <h5 class="card-title">Peter Light Logo</h5>
-              <a href="https://i.imgur.com/vOOTG9M.png" class="btn btn-danger">See Project</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
 </div>
 
-  <!-- Admin Upload Form (Hidden by Default) -->
-<div class="container my-5" id="adminUploadForm" style="display: none;">
-  <h3 class="text-center text-success">Admin Project Upload</h3>
-  
-  <form id="adminForm">
-    <div class="row g-3">
-      <div class="col-md-6">
-        <label for="projectTitle" class="form-label">Project Title</label>
-        <input type="text" name="title" id="projectTitle" class="form-control" placeholder="e.g., Isaac Portfolio Website" required>
-      </div>
-      <div class="col-md-6">
-        <label for="projectImage" class="form-label">Project Image URL</label>
-        <input type="url" name="image" id="projectImage" class="form-control" placeholder="https://..." required>
-      </div>
-      <div class="col-md-6">
-        <label for="projectLink" class="form-label">Project Link</label>
-        <input type="url" name="link" id="projectLink" class="form-control" placeholder="https://..." required>
-      </div>
-      <div class="col-md-6">
-        <label for="category" class="form-label">Category</label>
-        <select name="category" id="category" class="form-select" required>
-          <option value="">Choose...</option>
-          <option value="Web">Website</option>
-          <option value="Graphics">Graphics</option>
-        </select>
-      </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-success w-50">Submit Project</button>
-      </div>
-    </div>
-  </form>
+<div class="container my-5" id="adminUploadForm" style="display: none;" data-aos="fade-up">
+    <h3 class="text-center text-success mb-4">Admin Project Upload</h3>
+    
+    <form id="adminForm" class="p-4 border rounded shadow-sm bg-light">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="projectTitle" class="form-label">Project Title</label>
+                <input type="text" name="title" id="projectTitle" class="form-control" placeholder="e.g., Isaac Portfolio Website" required>
+            </div>
+            <div class="col-md-6">
+                <label for="projectImage" class="form-label">Project Image URL</label>
+                <input type="url" name="image" id="projectImage" class="form-control" placeholder="https://..." required>
+            </div>
+            <div class="col-md-6">
+                <label for="projectLink" class="form-label">Project Link</label>
+                <input type="url" name="link" id="projectLink" class="form-control" placeholder="https://..." required>
+            </div>
+            <div class="col-md-6">
+                <label for="category" class="form-label">Category</label>
+                <select name="category" id="category" class="form-select" required>
+                    <option value="">Choose...</option>
+                    <option value="Web">Website</option>
+                    <option value="Graphics">Graphics</option>
+                </select>
+            </div>
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-success w-50 btn-lg">Submit Project</button>
+            </div>
+        </div>
+    </form>
 
-  <!-- Success Message -->
-  <div class="alert alert-success text-center mt-3 d-none" id="successMessage">
-    ✅ Project submitted successfully!
-  </div>
+    <div class="alert alert-success text-center mt-4 d-none" id="successMessage" data-aos="zoom-in">
+        ✅ Project submitted successfully!
+    </div>
 </div>
 
-
-<!-- Footer -->
-<footer class="bg-dark text-light text-center text-md-start py-4 mt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 mb-4">
-        <h5 class="fw-bold">Peter Lightspeed</h5>
-        <p>Your Reliable Virtual Assistant for Digital Services</p>
-        <small>© 2025 Eluwade Peter Toluwanimi. All rights reserved.</small>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
-        <ul class="list-unstyled">
-          <li><a href="#About" class="text-light text-decoration-none">About</a></li>
-          <li><a href="#Services" class="text-light text-decoration-none">Services</a></li>
-          <li><a href="#Contact" class="text-light text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="text-uppercase fw-bold mb-3">Skills</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-light text-decoration-none">Web Design</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Graphics Design</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 text-md-end text-center">
-        <h6 class="text-uppercase fw-bold mb-3">Follow Me</h6>
-        <a href="https://x.com/peter8118533304" class="text-light me-2"><i class="bi bi-twitter-x fs-5"></i></a>
-        <a href="https://www.instagram.com/eluwadepeter/" class="text-light me-2"><i class="bi bi-instagram fs-5"></i></a>
-        <a href="mailto:petereluwade55@gmail.com" class="text-light me-2"><i class="bi bi-envelope fs-5"></i></a>
-        <a href="https://wa.me/2348108821809" class="text-light me-2"><i class="bi bi-whatsapp fs-5"></i></a>
-      </div>
+<footer class="bg-dark text-light text-center text-md-start py-5 mt-5 footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-4" data-aos="fade-up">
+                <h5 class="fw-bold mb-3">Peter Lightspeed</h5>
+                <p>Your Reliable Virtual Assistant for Digital Services</p>
+                <small>© 2025 Eluwade Peter Toluwanimi. All rights reserved.</small>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="https://peterlight123.github.io/portfolio/index.html#About" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="https://peterlight123.github.io/portfolio/index.html#Services" class="text-light text-decoration-none">Services</a></li>
+                    <li><a href="https://peterlight123.github.io/portfolio/index.html#Contact" class="text-light text-decoration-none">Contact</a></li>
+                    <li><a href="project.html" class="text-light text-decoration-none">Projects</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <h6 class="text-uppercase fw-bold mb-3">Skills</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light text-decoration-none">Web Design</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Graphics Design</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-md-end text-center social-icons" data-aos="fade-up" data-aos-delay="300">
+                <h6 class="text-uppercase fw-bold mb-3">Follow Me</h6>
+                <a href="https://x.com/peter8118533304" target="_blank" class="text-light me-2"><i class="bi bi-twitter-x fs-5"></i></a>
+                <a href="https://www.instagram.com/eluwadepeter/" target="_blank" class="text-light me-2"><i class="bi bi-instagram fs-5"></i></a>
+                <a href="mailto:petereluwade55@gmail.com" class="text-light me-2"><i class="bi bi-envelope fs-5"></i></a>
+                <a href="https://wa.me/2348108821809" target="_blank" class="text-light me-2"><i class="bi bi-whatsapp fs-5"></i></a>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-document.getElementById("adminForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent default redirect behavior
+    // Initialize AOS
+    AOS.init({
+        duration: 1000, // animation duration
+        once: true,     // whether animation should happen only once - while scrolling down
+    });
 
-  const form = e.target;
-  const formData = new FormData(form);
+    // Formspree submission for admin form
+    document.getElementById("adminForm").addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent default form submission
 
-  fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
-    method: "POST",
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      document.getElementById("successMessage").classList.remove("d-none");
-      form.reset(); // clear form fields
-    } else {
-      alert("Oops! Something went wrong. Try again.");
-    }
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Error submitting the form. Check your internet.");
-  });
-});
-  setTimeout(() => {
-  document.getElementById("successMessage").classList.add("d-none");
-}, 4000);
+        const form = e.target;
+        const formData = new FormData(form);
 
+        // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree endpoint
+        fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", { 
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                const successMessage = document.getElementById("successMessage");
+                successMessage.classList.remove("d-none");
+                form.reset(); // clear form fields
+                
+                // Hide success message after 4 seconds
+                setTimeout(() => {
+                    successMessage.classList.add("d-none");
+                }, 4000);
+            } else {
+                alert("Oops! Something went wrong. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error submitting the form:", error);
+            alert("Error submitting the form. Please check your internet connection.");
+        });
+    });
+
+    // Optional: Add logic to toggle admin upload form visibility (e.g., with a secret button or URL parameter)
+    // For demonstration, you could uncomment the line below to show it by default
+    // document.getElementById("adminUploadForm").style.display = "block";
 </script>
-
 
 </body>
 </html>
