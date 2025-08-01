@@ -1494,24 +1494,25 @@ emoji-picker {
 
     </script>
 
-<!--  Chatbot Widget -->
+<!-- ===== Chatbot Widget ===== -->
 <div id="chatbot-widget" class="fixed bottom-4 right-4 z-50 bg-white border rounded-lg shadow-lg w-80 scale-0 transition-transform duration-300">
   <div class="flex items-center justify-between bg-blue-600 text-white p-3 rounded-t-lg">
     <span class="font-semibold">Peter Assistant</span>
     <button id="close-chat" class="text-sm hover:text-red-300">✖</button>
   </div>
-  <div id="chat-area-widget" class="chat-area-widget p-3 h-64 overflow-y-auto flex flex-col gap-2"></div>
+  <div id="chat-area-widget" class="p-3 h-64 overflow-y-auto flex flex-col gap-2 text-sm"></div>
   <div class="flex items-center p-2 border-t">
     <input id="user-input-widget" type="text" placeholder="Type something..." class="flex-1 border rounded px-2 py-1 text-sm outline-none" />
     <button id="send-button-widget" class="ml-2 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Send</button>
   </div>
 </div>
 
-<!--  Floating Button -->
+<!-- ===== Floating Chat Button ===== -->
 <button id="open-chat-button" class="fixed bottom-4 right-4 z-40 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:bg-blue-700 transition scale-100">
   💬
-  <div id="notification-badge" class="notification-badge hidden">1</div>
+  <div id="notification-badge" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1 hidden">1</div>
 </button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoDQHOZefdfd1z0ar3xS4FBcXlRSJoC7E4CkFjZVhFQ51Ym" crossorigin="anonymous"></script>
 
 <!-- Link bot.js -->
