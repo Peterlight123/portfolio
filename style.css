@@ -38,22 +38,7 @@
     }
 }
 
-/* FIX NAVBAR ON MOBILE */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: rgba(0,0,0,0.95);
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-top: 0.5rem;
-    }
-}
-                 /* ===== NAVIGATION STYLES ===== */
-        
-        /* Custom navbar styling */
-/*         .navbar.bg-primary {
-            background-color: #0d6efd !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        } */
+
         
         /* ===== SOCIAL MEDIA BUTTON STYLES ===== */
         
@@ -284,54 +269,7 @@ h2 {
    margin: 0;
    padding: 0;
 }
-/* #contact{
-   margin-top: 10px;
-    
-}
 
-.dropdown-menu {
-  transition: all 0.2s ease-in-out;
-  top: 100%;
-}
-
-/* Make dropdown float over content instead of pushing it anyhow */
-.dropdown-menu {
-  position: absolute !important;
-  z-index: 9999;
-}
-/* Clean default Bootstrap dropdown styling */
-.navbar .dropdown-menu {
-  background-color: #0d6efd; /* Bootstrap Primary Blue */
-  border: none;
-  border-radius: 0 0 10px 10px;
-  margin-top: 0; /* removes space caused by padding/margin bug */
-  padding: 0;
-  min-width: 180px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Dropdown links */
-.navbar .dropdown-item {
-  color: white;
-  padding: 10px 16px;
-  transition: background-color 0.2s ease;
-}
-
-/* Hover effect */
-.navbar .dropdown-item:hover,
-.navbar .dropdown-item:focus {
-  background-color: #084298; /* Darker blue on hover */
-  color: #fff;
-}
-
-/* Fix spacing bug when clicking dropdown */
-.navbar .dropdown-toggle::after {
-  margin-left: 0.3rem;
-}
-
-.navbar .dropdown-menu.show {
-  margin-top: 0; /* kill space glitch */
-} */
 #Testimonials{
     padding-top: 100px;
 }
@@ -506,6 +444,7 @@ emoji-picker {
 .footer hr {
     opacity: 0.3;
 }
+
 
 
 
