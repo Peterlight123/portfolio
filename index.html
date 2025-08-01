@@ -1,83 +1,102 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<script src="https://cdn.tailwindcss.com"></script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Peter Lightspeed - Professional Virtual Assistant, Web Developer &amp; Graphic Designer. Expert in website development, digital marketing, and business solutions." name="description"/>
-<meta content="virtual assistant, web developer, graphic designer, website development, digital marketing, freelancer, Nigeria" name="keywords"/>
-<meta content="Peter Eluwade Toluwanimi" name="author"/>
-<meta content="index, follow" name="robots"/>
-  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Peter Lightspeed - Professional Virtual Assistant, Web Developer & Graphic Designer. Expert in website development, digital marketing, and business solutions."/>
+  <meta name="keywords" content="virtual assistant, web developer, graphic designer, website development, digital marketing, freelancer, Nigeria"/>
+  <meta name="author" content="Peter Eluwade Toluwanimi"/>
+  <meta name="robots" content="index, follow"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="X-Frame-Options" content="DENY"/>
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
 
-<!-- <script src="myscripts.js"></script> -->
-<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
-<meta content="DENY" http-equiv="X-Frame-Options"/>
-<meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9NKNYWDH33"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9NKNYWDH33');
-</script>
-<!-- Open Graph for social media -->
-<meta content="Peter Lightspeed - Virtual Assistant &amp; Web Developer" property="og:title"/>
-<meta content="Professional digital services including web development, graphic design, and virtual assistance." property="og:description"/>
-<meta content="https://peterlight123.github.io/portfolio/images/og-image.jpg" property="og:image"/>
-<meta content="https://peterlight123.github.io/portfolio" property="og:url"/>
-<meta content="website" property="og:type"/>
-<!-- Twitter Cards -->
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Peter Lightspeed - Virtual Assistant" name="twitter:title"/>
-<meta content="Expert virtual assistant and web developer" name="twitter:description"/>
-<meta content="https://peterlight123.github.io/portfolio/images/twitter-image.jpg" name="twitter:image"/>
-<!-- Canonical URL -->
-<link href="https://peterlight123.github.io/portfolio" rel="canonical"/>
-<!-- ADD THIS JSON-LD SCRIPT TO YOUR <head> -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Peter Eluwade Toluwanimi",
-  "alternateName": "Peter Lightspeed",
-  "jobTitle": "Virtual Assistant & Web Developer",
-  "url": "https://peterlight123.github.io/portfolio/",
-  "image": "https://peterlight123.github.io/portfolio/images/peter.jpg",
-  "sameAs": [
-    "https://x.com/peter8118533304",
-    "https://www.instagram.com/eluwadepeter",
-    "https://www.linkedin.com/in/peter-eluwade-5b8a73363/"
-  ],
-  "knowsAbout": ["Web Development", "Graphic Design", "Virtual Assistant"],
-  "offers": {
-    "@type": "Service",
-    "serviceType": "Virtual Assistant Services"
+  <link rel="canonical" href="https://peterlight123.github.io/portfolio"/>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.imgur.com/2Ocmg4m.png"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Emoji Picker -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/index.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NKNYWDH33"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9NKNYWDH33');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Peter Lightspeed - Virtual Assistant & Web Developer"/>
+  <meta property="og:description" content="Professional digital services including web development, graphic design, and virtual assistance."/>
+  <meta property="og:image" content="https://peterlight123.github.io/portfolio/images/og-image.jpg"/>
+  <meta property="og:url" content="https://peterlight123.github.io/portfolio"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Peter Lightspeed - Virtual Assistant"/>
+  <meta name="twitter:description" content="Expert virtual assistant and web developer"/>
+  <meta name="twitter:image" content="https://peterlight123.github.io/portfolio/images/twitter-image.jpg"/>
+
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Peter Eluwade Toluwanimi",
+    "alternateName": "Peter Lightspeed",
+    "musicName": "Peterphonist" 
+    "jobTitle": "Virtual Assistant & Web Developer",
+    "url": "https://peterlight123.github.io/portfolio/",
+    "image": "https://peterlight123.github.io/portfolio/images/peter.jpg",
+    "sameAs": [
+      "https://x.com/peter8118533304",
+      "https://www.instagram.com/eluwadepeter",
+      "https://www.linkedin.com/in/peter-eluwade-5b8a73363/"
+    ],
+    "knowsAbout": ["Web Development", "Graphic Design", "Virtual Assistant"],
+    "offers": {
+      "@type": "Service",
+      "serviceType": "Virtual Assistant Services"
+    }
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Peter Lightspeed Virtual Assistant Services",
-  "description": "Professional virtual assistant services in Nigeria",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "Nigeria"
-  },
-  "telephone": "+234-810-882-1809",
-  "email": "petereluwade55@gmail.com",
-  "url": "https://peterlight123.github.io/portfolio/",
-  "priceRange": "#150,000",
-  "serviceArea": {
-    "@type": "Country",
-    "name": "Nigeria"
+  </script>
+
+  <!-- JSON-LD Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Peter Lightspeed Virtual Assistant Services",
+    "description": "Professional virtual assistant services in Nigeria",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nigeria"
+    },
+    "telephone": "+234-810-882-1809",
+    "email": "petereluwade55@gmail.com",
+    "url": "https://peterlight123.github.io/portfolio/",
+    "priceRange": "#150,000",
+    "serviceArea": {
+      "@type": "Country",
+      "name": "Nigeria"
+    }
   }
-}
-</script>
+  </script>
 <script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/index.js" type="module"></script>
 <title>Eluwade Peter Toluwanimi - Virtual Assistant Portfolio</title>
 <!-- External CSS Libraries -->
