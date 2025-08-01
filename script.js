@@ -228,5 +228,133 @@
             console.error('Unhandled promise rejection:', e.reason);
             // You could implement error reporting here
         });
-    
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // --- ADMIN ACCESS LOGIC ---
+    const ADMIN_PASSWORD = "Peterlight2025"; 
+
+    function promptForAdminAccess() {
+        if (document.getElementById("adminUploadForm").style.display === "none") {
+            const password = prompt("🔐 Enter admin password to access project upload form:");
+
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById("adminUploadForm").style.display = "block";
+                // Smooth scroll to admin form
+                document.getElementById("adminUploadForm").scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                alert("✅ Admin access granted! The upload form is now visible.");
+            } else if (password !== null) {
+                alert("❌ Incorrect password. Admin access denied.");
+            }
+        }
+    }
+
+    // Check for admin hash in URL
+    if (window.location.hash === '#admin') {
+        promptForAdminAccess();
+    }
+
+    // Add secret admin access (click logo 5 times)
+    let logoClickCount = 0;
+    document.querySelector('.navbar-brand img').addEventListener('click', function() {
+        logoClickCount++;
+        if (logoClickCount === 5) {
+            promptForAdminAccess();
+            logoClickCount = 0; // Reset counter
+        }
+        
+        // Reset counter after 3 seconds of no clicks
+        setTimeout(() => {
+            logoClickCount = 0;
+        }, 3000);
+    });
+
+    // --- FORMSPREE SUBMISSION LOGIC ---
+    document.getElementById("adminForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        // Show loading state
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Submitting...';
+        submitBtn.disabled = true;
+
+        fetch("https://formspree.io/f/xdkddlop", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                const successMessage = document.getElementById("successMessage");
+                successMessage.classList.remove("d-none");
+                form.reset();
+
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add("d-none");
+                }, 5000);
+            } else {
+                response.json().then(data => {
+                    if (data.errors) {
+                        alert("❌ Form submission failed: " + data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert("❌ Oops! Something went wrong with the submission. Please try again.");
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error submitting the form:", error);
+            alert("❌ Error submitting the form. Please check your internet connection.");
+        })
+        .finally(() => {
+            // Restore button state
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    });
+
+    // Add smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add loading animation for external links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon) {
+                const originalClass = icon.className;
+                icon.className = 'bi bi-hourglass-split me-2';
+                setTimeout(() => {
+                    icon.className = originalClass;
+                }, 2000);
+            }
+        });
+    });
+
 
