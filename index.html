@@ -1727,69 +1727,101 @@
     </script>
 
 
-<!-- Chatbot Container -->
-<div class="chatbot-container" id="chatbotContainer">
-  <!-- Chatbot Toggle Button -->
-  <div class="chatbot-toggle" id="chatbotToggle">
-    <i class="bi bi-chat-dots-fill"></i>
-    <span class="notification-dot" id="notificationDot"></span>
-  </div>
-  
-  <!-- Chatbot Window -->
-  <div class="chatbot-window" id="chatbotWindow">
-    <!-- Chatbot Header -->
-    <div class="chatbot-header">
-      <div class="chatbot-avatar">
-        <img src="https://wallpaperbat.com/img/870210-anime-boy.jpg" alt="Peter's AI Assistant">
-      </div>
-      <div class="chatbot-info">
-        <h6 class="mb-0">Peter's AI Assistant</h6>
-        <small class="text-muted">Ask me about Peter's work!</small>
-      </div>
-      <button class="chatbot-close" id="chatbotClose">
-        <i class="bi bi-x"></i>
-      </button>
-    </div>
-    
-    <!-- Chatbot Messages -->
-    <div class="chatbot-messages" id="chatbotMessages">
-      <div class="message bot-message">
-        <div class="message-avatar">
-          <img src="https://images.nightcafe.studio/ik-seo/jobs/IWazxYj2nreQUyx0qQRn/IWazxYj2nreQUyx0qQRn--1--mafda/guy-portrait.jpg?tr=w-1600,c-at_max" alt="AI">
+<!-- The main chatbot widget container. It is initially hidden. -->
+<div id="chatbot-widget" class="fixed bottom-4 right-4 z-50 transition-all duration-300 transform scale-0 origin-bottom-right">
+    <div class="chat-container max-w-sm w-[380px] h-[500px] flex flex-col rounded-xl shadow-2xl bg-white">
+        <!-- Chat header -->
+        <div class="bg-blue-600 text-white p-4 rounded-t-xl text-center shadow-lg flex items-center justify-between">
+            <h1 class="text-xl font-bold">My Personal Chatbot</h1>
+            <button id="close-chat" class="p-1 rounded-full hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+            </button>
         </div>
-        <div class="message-content">
-          <p>Hi! I'm Peter's AI assistant. I can help you learn about his skills, projects, and experience. What would you like to know?</p>
-          <div class="quick-replies">
-            <button class="quick-reply" data-message="Tell me about Peter's skills">Skills</button>
-            <button class="quick-reply" data-message="What projects has Peter worked on?">Projects</button>
-            <button class="quick-reply" data-message="How can I contact Peter?">Contact</button>
-          </div>
+
+        <!-- Chat messages area -->
+        <div id="chat-area-widget" class="flex-grow overflow-y-auto p-4 flex flex-col gap-3">
+            <!-- Initial bot message -->
+            <div class="bot-message message-bubble">
+                Hello! I'm a simple chatbot. I can answer a few questions about the owner of this portfolio. What would you like to know?
+            </div>
         </div>
-      </div>
+
+        <!-- Chat input area -->
+        <div class="p-4 bg-gray-100 rounded-b-xl flex items-center gap-2 border-t border-gray-200">
+            <input type="text" id="user-input-widget" placeholder="Type your message..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+            <button id="send-button-widget" class="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal">
+                    <path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/>
+                </svg>
+            </button>
+        </div>
     </div>
-    
-    <!-- Typing Indicator -->
-    <div class="typing-indicator" id="typingIndicator">
-      <div class="typing-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <span class="typing-text">PLS is typing...</span>
-    </div>
-    
-    <!-- Chatbot Input -->
-    <div class="chatbot-input">
-      <div class="input-group">
-        <input type="text" class="form-control" id="chatbotInput" placeholder="Ask me anything about Peter..." maxlength="500">
-        <button class="btn btn-primary" id="chatbotSend" type="button">
-          <i class="bi bi-send-fill"></i>
-        </button>
-      </div>
-    </div>
-  </div>
 </div>
 
+<!-- Floating button to toggle the chatbot widget -->
+<button id="open-chat-button" class="fixed bottom-4 right-4 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+</button>
+
+<!-- Custom CSS for the chatbot and animations -->
+<style>
+    /* Make sure Tailwind is loaded for these classes to work */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .chat-area-widget::-webkit-scrollbar {
+        width: 8px;
+    }
+    .chat-area-widget::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    .chat-area-widget::-webkit-scrollbar-thumb {
+        background: #d4d4d4;
+        border-radius: 10px;
+    }
+    .chat-area-widget::-webkit-scrollbar-thumb:hover {
+        background: #a3a3a3;
+    }
+    .message-bubble {
+        max-width: 85%;
+        padding: 0.75rem 1rem;
+        border-radius: 1.25rem;
+        word-wrap: break-word;
+    }
+    .user-message {
+        background-color: #3b82f6; /* Blue for user messages */
+        color: #ffffff;
+        align-self: flex-end;
+        border-bottom-right-radius: 0.25rem;
+    }
+    .bot-message {
+        background-color: #e5e7eb; /* Light gray for bot messages */
+        color: #1f2937;
+        align-self: flex-start;
+        border-bottom-left-radius: 0.25rem;
+    }
+    .typing-indicator {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #9ca3af;
+        border-radius: 50%;
+        animation: bounce 1.4s infinite ease-in-out both;
+        margin-right: 4px;
+    }
+    .typing-indicator:nth-child(2) { animation-delay: -0.32s; }
+    .typing-indicator:nth-child(3) { animation-delay: -0.16s; }
+    @keyframes bounce {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1.0); }
+    }
+</style>
 </body>
 </html>
 
