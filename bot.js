@@ -309,3 +309,15 @@ Tell me wetin you wan learn.`
 window.addEventListener('DOMContentLoaded', () => {
   window.PeterBot = new PeterChatbot();
 });
+document.getElementById('open-chat-button')?.addEventListener('click', () => {
+    const widget = document.getElementById('chatbot-widget');
+    widget.classList.remove('scale-0');
+    widget.classList.add('scale-100');
+});
+
+document.getElementById('close-chat')?.addEventListener('click', () => {
+    const widget = document.getElementById('chatbot-widget');
+    widget.classList.remove('scale-100');
+    widget.classList.add('scale-0');
+});
+
