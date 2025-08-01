@@ -322,49 +322,55 @@
 </head>
 <body>
 <!-- ===== NAVIGATION BAR ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3" style="z-index: 1050;">
-<div class="container-fluid">
-<!-- Brand Logo -->
-<a aria-label="Peter Lightspeed Portfolio Home" class="navbar-brand" href="index.html">
-<img alt="Peter Logo" height="40" loading="lazy" src="https://i.imgur.com/Cgy2Aeq.png"/>
-</a>
-<!-- Mobile Menu Toggle Button -->
-<button aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navmenu" data-bs-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<!-- Navigation Menu -->
-<div class="collapse navbar-collapse" id="navmenu">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item">
-<a aria-label="Go to Home section" class="nav-link" href="index.html">Home</a>
-</li>
-<li class="nav-item">
-<a aria-label="Go to Contact section" class="nav-link" href="#Contact">Contact Me</a>
-</li>
-<li class="nav-item">
-<a aria-label="Go to About section" class="nav-link" href="#About">About Me</a>
-</li>
-<li class="nav-item">
-<a aria-label="View my projects" class="nav-link" href="project.html">Projects</a>
-</li>
-<!-- Dropdown Menu for Additional Links -->
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-label="More options" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="moreDropdown" role="button">
-                            More
-                        </a>
-<ul aria-labelledby="moreDropdown" class="dropdown-menu dropdown-menu-end">
-<li><a class="dropdown-item" href="#highlights">My Highlights</a></li>
-<li><a class="dropdown-item" href="#Services">Services</a></li>
-<li><a class="dropdown-item" href="#Testimonials">Testimonials</a></li>
-<li><a class="dropdown-item" href="#Sponsor">Sponsor Me</a></li>
-<li><a class="dropdown-item" href="#cv">Download My CV</a></li>
-<li><a class="dropdown-item" href="#licenses">Licenses &amp; Certifications</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top p-3">
+  <div class="container-fluid">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="index.html" aria-label="Peter Lightspeed Portfolio Home">
+      <img src="https://i.imgur.com/Cgy2Aeq.png" alt="Peter Logo" height="40" loading="lazy">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+      aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu Items -->
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contact">Contact Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#About">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">Projects</a>
+        </li>
+
+        <!-- Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreDropdown">
+            <li><a class="dropdown-item" href="#highlights">My Highlights</a></li>
+            <li><a class="dropdown-item" href="#Services">Services</a></li>
+            <li><a class="dropdown-item" href="#Testimonials">Testimonials</a></li>
+            <li><a class="dropdown-item" href="#Sponsor">Sponsor Me</a></li>
+            <li><a class="dropdown-item" href="#cv">Download My CV</a></li>
+            <li><a class="dropdown-item" href="#licenses">Licenses & Certifications</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
 <!-- ===== HERO SECTION ===== -->
 <section class="bg-primary text-light text-center text-md-start" role="banner">
 <div class="container pb-3">
