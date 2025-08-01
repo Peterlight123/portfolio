@@ -258,3 +258,76 @@ document.addEventListener('keydown', function(e) {
     chatbot.addMessage("🎉 You found the secret! Peter is always ready for new challenges and exciting projects!", 'bot');
   }
 });
+// ===== ADVANCED CHATBOT FEATURES =====
+
+// Add to the PeterChatbot class:
+
+// Sentiment Analysis (basic)
+analyzeSentiment(message) {
+  const positiveWords = ['great', 'awesome', 'excellent', 'amazing', 'good', 'nice', 'love', 'like'];
+  const negativeWords = ['bad', 'terrible', 'awful', 'hate', 'dislike', 'poor', 'worst'];
+  
+  const words = message.toLowerCase().split(' ');
+  let score = 0;
+  
+  words.forEach(word => {
+    if (positiveWords.includes(word)) score++;
+    if (negativeWords.includes(word)) score--;
+  });
+  
+  return score;
+}
+
+// Context awareness
+maintainContext(message, response) {
+  // Store conversation context for better responses
+  if (!this.context) this.context = [];
+  
+  this.context.push({
+    user: message,
+    bot: response,
+    timestamp: new Date()
+  });
+  
+  // Keep only last 5 exchanges
+  if (this.context.length > 5) {
+    this.context.shift();
+  }
+}
+
+// Smart suggestions based on conversation
+generateSuggestions(lastMessage) {
+  const suggestions = {
+    skills: ["Tell me about Excel expertise", "What about data visualization?", "Financial analysis skills?"],
+    projects: ["Show me more examples", "Any recent work?", "Client testimonials?"],
+    contact: ["How to hire Peter?", "Response time?", "Pricing information?"]
+  };
+  
+  // Return relevant suggestions based on context
+  for (let key in suggestions) {
+    if (lastMessage.includes(key)) {
+      return suggestions[key];
+    }
+  }
+  
+  return ["Tell me about skills", "Show me projects", "How to contact Peter?"];
+}
+// You can easily customize:
+
+// 1. Change chatbot personality
+const personality = {
+  formal: "I'd be happy to assist you with information about Peter's professional background.",
+  casual: "Hey! I'm here to chat about Peter's awesome work!",
+  technical: "I can provide detailed technical specifications about Peter's expertise."
+};
+
+// 2. Add more response categories
+this.responses.pricing = [
+  "For pricing information, please contact Peter directly through his portfolio website. He offers competitive rates for data analysis projects!"
+];
+
+// 3. Integrate with external APIs
+async generateAIResponse(message) {
+  // Could integrate with OpenAI API for more dynamic responses
+  // This is a placeholder for future enhancement
+}
