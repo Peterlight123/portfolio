@@ -783,3 +783,73 @@ What specific information would be most helpful for you? 🎯`
 
                 this.showTyping();
                 this.updateStatus('Typing...');
+                        // Simulate delay and generate response
+        setTimeout(() => {
+          this.hideTyping();
+          this.updateStatus('Online');
+          const botResponse = this.generateBotResponse(message);
+          this.conversationContext.push({ type: 'bot', message: botResponse });
+          this.addMessage(botResponse, 'bot');
+        }, 1000);
+      }
+
+      addMessage(message, sender) {
+        const chatArea = document.getElementById('chat-area-widget');
+        const messageElement = document.createElement('div');
+        messageElement.className = `${sender}-message message-bubble`;
+        messageElement.innerHTML = message;
+
+        const timeElement = document.createElement('div');
+        timeElement.className = 'message-time';
+        timeElement.textContent = this.getCurrentTime();
+        messageElement.appendChild(timeElement);
+
+        chatArea.appendChild(messageElement);
+        chatArea.scrollTop = chatArea.scrollHeight;
+      }
+
+      showTyping() {
+        const chatArea = document.getElementById('chat-area-widget');
+        this.typingBubble = document.createElement('div');
+        this.typingBubble.className = 'bot-message message-bubble flex gap-1 items-center';
+        this.typingBubble.innerHTML = `
+          <span class="typing-indicator"></span>
+          <span class="typing-indicator"></span>
+          <span class="typing-indicator"></span>
+        `;
+        chatArea.appendChild(this.typingBubble);
+        chatArea.scrollTop = chatArea.scrollHeight;
+      }
+
+      hideTyping() {
+        if (this.typingBubble) {
+          this.typingBubble.remove();
+          this.typingBubble = null;
+        }
+      }
+
+      generateBotResponse(message) {
+        const lowerMessage = message.toLowerCase();
+
+        for (const category in this.knowledgeBase) {
+          if (category === 'default') continue;
+          const data = this.knowledgeBase[category];
+          if (data.keywords.some(keyword => lowerMessage.includes(keyword))) {
+            const responses = data.responses;
+            return responses[Math.floor(Math.random() * responses.length)];
+          }
+        }
+
+        const defaultResponses = this.knowledgeBase.default;
+        return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+      }
+    }
+
+    // Initialize chatbot on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      new PeterChatbot();
+    });
+  </script>
+</body>
+</html>
+
