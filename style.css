@@ -54,7 +54,7 @@ h2 {
    margin: 0;
    padding: 0;
 }
-#contact{
+/* #contact{
    margin-top: 10px;
     
 }
@@ -101,7 +101,7 @@ h2 {
 
 .navbar .dropdown-menu.show {
   margin-top: 0; /* kill space glitch */
-}
+} */
 #Testimonials{
     padding-top: 100px;
 }
@@ -151,3 +151,4 @@ h2 {
 .facebook {
   background-color: #1877F2;
 }
+
