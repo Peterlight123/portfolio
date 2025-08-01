@@ -320,4 +320,3 @@ document.getElementById('close-chat')?.addEventListener('click', () => {
     widget.classList.remove('scale-100');
     widget.classList.add('scale-0');
 });
-
