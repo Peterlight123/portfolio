@@ -224,3 +224,88 @@ Just talk wetin you wan make we change.`
 window.addEventListener('DOMContentLoaded', () => {
     window.PeterBot = new PeterChatbot();
 });
+// 📌 Enhanced Chatbot Script (Continued: New FAQ Categories)
+// This continues the knowledgeBase to include more human-like inquiries
+
+class PeterChatbot {
+  // ... Existing code remains the same ...
+
+  get knowledgeBase() {
+    return {
+      // Existing blocks...
+      en: {
+        // ... existing entries ...
+
+        urgent: {
+          keywords: ['urgent', 'quick job', 'fast', 'asap', 'immediately', 'need now'],
+          responses: [
+            `⚡ Yes, I accept urgent projects depending on my schedule.
+Please send your details and timeline. Rush fees may apply.`
+          ]
+        },
+
+        installment: {
+          keywords: ['installment', 'two parts', 'split payment', 'half now', 'pay later'],
+          responses: [
+            `💳 Yes, payment in 2 parts is available:
+• 50% upfront to begin
+• 50% after completion
+Let’s discuss the project scope!`
+          ]
+        },
+
+        training: {
+          keywords: ['train', 'teach', 'class', 'learn', 'tutorial'],
+          responses: [
+            `🎓 I offer training on:
+• Web development
+• Design with Canva & Photoshop
+• Digital freelancing tips
+Let me know which you're interested in!`
+          ]
+        }
+      },
+
+      pidgin: {
+        // ... existing entries ...
+
+        urgent: {
+          keywords: ['urgent', 'sharp sharp', 'fast fast', 'now now', 'asap'],
+          responses: [
+            `⚡ If na urgent work, e possible o!
+Just drop wetin you wan make I run, but rush job dey get extra fee sha.`
+          ]
+        },
+
+        installment: {
+          keywords: ['two part', 'half pay', 'balance later', 'installment'],
+          responses: [
+            `💳 You fit pay am twice:
+• Half now make we start
+• Balance when we finish
+No wahala. Just talk your budget.`
+          ]
+        },
+
+        training: {
+          keywords: ['train', 'learn', 'teach', 'school me', 'tutor'],
+          responses: [
+            `🎓 I dey train people:
+• Website design
+• Canva or Photoshop
+• How to do online hustle
+Tell me wetin you wan learn.`
+          ]
+        }
+      }
+      // ... default still intact ...
+    }
+  }
+
+  // ... Remaining methods stay unchanged ...
+}
+
+// Already running at bottom:
+window.addEventListener('DOMContentLoaded', () => {
+  window.PeterBot = new PeterChatbot();
+});
