@@ -381,6 +381,131 @@ h2 {
 .facebook {
   background-color: #1877F2;
 }
+/* ===== FOOTER STYLES ===== */
+
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-top: 3px solid #dc3545;
+}
+
+/* Footer link hover effects */
+.footer-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #dc3545 !important;
+    transform: translateX(5px);
+}
+
+.footer-link:hover i {
+    color: #dc3545;
+}
+
+/* Social media icons styling */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+/* Individual social media colors */
+.social-icon.twitter {
+    background-color: #1da1f2;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5;
+}
+/* Add this to your existing <style> block */
+emoji-picker {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    --emoji-size: 28px;
+    --border-radius: 0.75rem;
+    --num-columns: 8;
+    --outline-color: #e5e7eb;
+    --background-color: #ffffff;
+}
+.social-icon.facebook {
+    background-color: #1877f2;
+}
+
+.social-icon.tiktok {
+    background-color: #000000;
+}
+
+.social-icon.youtube {
+    background-color: #ff0000;
+}
+
+/* Social icon hover effects */
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+    color: white !important;
+}
+
+/* Section headers */
+.footer h6.text-danger {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer h6.text-danger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer .col-md-3 {
+        text-align: center !important;
+        margin-bottom: 2rem;
+    }
+    
+    .footer h6.text-danger::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-icon {
+        margin: 0 5px 10px 5px;
+    }
+}
+
+/* Contact info styling */
+.contact-info p {
+    font-size: 0.9rem;
+}
+
+.contact-info .footer-link:hover {
+    transform: none;
+    padding-left: 5px;
+}
+
+/* Bottom footer border */
+.footer hr {
+    opacity: 0.3;
+}
 
 
 
