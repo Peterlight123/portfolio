@@ -37,7 +37,7 @@
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://peterlight123.github.io/portfolio">
-    <!-- Add this JSON-LD script to your <head> -->
+   <!-- ADD THIS JSON-LD SCRIPT TO YOUR <head> -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,30 +45,56 @@
   "name": "Peter Eluwade Toluwanimi",
   "alternateName": "Peter Lightspeed",
   "jobTitle": "Virtual Assistant & Web Developer",
-  "description": "Professional virtual assistant specializing in web development, graphic design, and digital marketing services.",
   "url": "https://peterlight123.github.io/portfolio/",
-  "image": "https://your-domain.com/images/peter-profile.jpg",
+  "image": "https://peterlight123.github.io/portfolio/images/peter.jpg",
   "sameAs": [
     "https://x.com/peter8118533304",
     "https://www.instagram.com/eluwadepeter",
-    "https://www.linkedin.com/in/peter-eluwade-5b8a73363/",
-    "https://www.facebook.com/profile.php?id=61575074189195"
+    "https://www.linkedin.com/in/peter-eluwade-5b8a73363/"
   ],
-  "knowsAbout": [
-    "Web Development",
-    "Graphic Design",
-    "Virtual Assistant Services",
-    "Digital Marketing",
-    "Data Entry",
-    "Social Media Management"
-  ],
+  "knowsAbout": ["Web Development", "Graphic Design", "Virtual Assistant"],
   "offers": {
     "@type": "Service",
-    "serviceType": "Virtual Assistant Services",
-    "description": "Professional virtual assistant services including web development, graphic design, data entry, and digital marketing."
+    "serviceType": "Virtual Assistant Services"
   }
 }
 </script>
+
+ /* ADD THESE CSS FIXES */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .social-links a {
+        margin: 0.25rem;
+    }
+}
+
+/* FIX NAVBAR ON MOBILE */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(0,0,0,0.95);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
