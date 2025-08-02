@@ -1,4 +1,4 @@
-lass PeterChatbot {
+class PeterChatbot {
     constructor() {
         this.isOpen = false;
         this.chatHistory = [];
@@ -21,7 +21,7 @@ What would you like to ask?`
                 pricing: {
                     keywords: ['how much', 'price', 'cost', 'rate', 'budget', 'charge', 'quote', 'payment'],
                     responses: [
-                        `💰 Here’s a quick guide:
+                        `💰 Here's a quick guide:
 • Website: ₦150k – ₦500k
 • Logo/Graphics: ₦30k – ₦100k
 • VA Services: From ₦10k/week
@@ -56,7 +56,7 @@ View more: https://peterlight123.github.io/portfolio/index.html`
 • Logo: 2–3 days
 • Website: 5–10 days
 • Graphics Pack: 2–5 days
-Let’s confirm based on your specific need.`
+Let's confirm based on your specific need.`
                     ]
                 },
                 revisions: {
@@ -66,6 +66,32 @@ Let’s confirm based on your specific need.`
 • 2–5 free edits (within agreed scope)
 • Quick changes handled within 24 hours
 Just let us know what needs fixing.`
+                    ]
+                },
+                urgent: {
+                    keywords: ['urgent', 'quick job', 'fast', 'asap', 'immediately', 'need now'],
+                    responses: [
+                        `⚡ Yes, I accept urgent projects depending on my schedule.
+Please send your details and timeline. Rush fees may apply.`
+                    ]
+                },
+                installment: {
+                    keywords: ['installment', 'two parts', 'split payment', 'half now', 'pay later'],
+                    responses: [
+                        `💳 Yes, payment in 2 parts is available:
+• 50% upfront to begin
+• 50% after completion
+Let's discuss the project scope!`
+                    ]
+                },
+                training: {
+                    keywords: ['train', 'teach', 'class', 'learn', 'tutorial'],
+                    responses: [
+                        `🎓 I offer training on:
+• Web development
+• Design with Canva & Photoshop
+• Digital freelancing tips
+Let me know which you're interested in!`
                     ]
                 }
             },
@@ -126,6 +152,32 @@ Just talk wetin you need, make we run am.`
 • Small changes na quick run
 Just talk wetin you wan make we change.`
                     ]
+                },
+                urgent: {
+                    keywords: ['urgent', 'sharp sharp', 'fast fast', 'now now', 'asap'],
+                    responses: [
+                        `⚡ If na urgent work, e possible o!
+Just drop wetin you wan make I run, but rush job dey get extra fee sha.`
+                    ]
+                },
+                installment: {
+                    keywords: ['two part', 'half pay', 'balance later', 'installment'],
+                    responses: [
+                        `💳 You fit pay am twice:
+• Half now make we start
+• Balance when we finish
+No wahala. Just talk your budget.`
+                    ]
+                },
+                training: {
+                    keywords: ['train', 'learn', 'teach', 'school me', 'tutor'],
+                    responses: [
+                        `🎓 I dey train people:
+• Website design
+• Canva or Photoshop
+• How to do online hustle
+Tell me wetin you wan learn.`
+                    ]
                 }
             },
             default: {
@@ -138,7 +190,7 @@ Just talk wetin you wan make we change.`
 • "How much you dey collect?"
 • "Your contact"`]
             }
-        }
+        };
     }
 
     detectLanguage(msg) {
@@ -152,13 +204,13 @@ Just talk wetin you wan make we change.`
 
     scrollToSection(query) {
         const keywordMap = {
-            'testimonials': '#Testimonials',
+            'testimonials': '#testimonial',
             'services': '#Services',
             'contact': '#Contact',
             'about': '#About',
             'projects': '#Projects',
             'highlights': '#highlights',
-            'sponsor': '#Sponsor',
+            'sponsor': '#sponsor',
             'cv': '#cv'
         };
         for (const keyword in keywordMap) {
@@ -171,30 +223,88 @@ Just talk wetin you wan make we change.`
 
     init() {
         this.bindEvents();
+        
+        // Set up chat open/close buttons
+        const openChatButton = document.getElementById('open-chat-button');
+        const closeChatButton = document.getElementById('close-chat');
+        const chatbotWidget = document.getElementById('chatbot-widget');
+        
+        if (openChatButton && chatbotWidget) {
+            openChatButton.addEventListener('click', () => {
+                chatbotWidget.style.transform = 'scale(1)';
+                openChatButton.style.transform = 'scale(0)';
+                
+                // Add welcome message if chat is empty
+                const chatArea = document.getElementById('chat-area-widget');
+                if (chatArea && chatArea.children.length === 0) {
+                    this.displayMessage(`👋 Hello! I'm Peter's virtual assistant. How can I help you today?`, 'bot');
+                }
+            });
+        }
+        
+        if (closeChatButton && chatbotWidget && openChatButton) {
+            closeChatButton.addEventListener('click', () => {
+                chatbotWidget.style.transform = 'scale(0)';
+                openChatButton.style.transform = 'scale(1)';
+            });
+        }
     }
 
     bindEvents() {
         const sendBtn = document.getElementById('send-button-widget');
         const input = document.getElementById('user-input-widget');
-        sendBtn?.addEventListener('click', () => this.sendMessage());
-        input?.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                this.sendMessage();
-            }
-        });
+        if (sendBtn) {
+            sendBtn.addEventListener('click', () => this.sendMessage());
+        }
+        if (input) {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    this.sendMessage();
+                }
+            });
+        }
     }
 
     sendMessage() {
         const input = document.getElementById('user-input-widget');
-        const message = input?.value.trim();
+        if (!input) return;
+        
+        const message = input.value.trim();
         if (!message) return;
 
         this.displayMessage(message, 'user');
         input.value = '';
-        const response = this.getResponse(message);
-        this.scrollToSection(message);
-        this.displayMessage(response, 'bot');
+        
+        // Show typing indicator
+        const chatArea = document.getElementById('chat-area-widget');
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'typing-indicator d-flex align-items-center mb-3';
+        typingIndicator.innerHTML = `
+            <div class="bg-light rounded p-3">
+                <div class="d-flex">
+                    <div class="spinner-grow spinner-grow-sm text-primary me-1" role="status"></div>
+                    <div class="spinner-grow spinner-grow-sm text-primary me-1" role="status"></div>
+                    <div class="spinner-grow spinner-grow-sm text-primary" role="status"></div>
+                </div>
+            </div>
+        `;
+        if (chatArea) {
+            chatArea.appendChild(typingIndicator);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+        
+        // Delay response for natural feel
+        setTimeout(() => {
+            // Remove typing indicator
+            if (chatArea && typingIndicator.parentNode === chatArea) {
+                chatArea.removeChild(typingIndicator);
+            }
+            
+            const response = this.getResponse(message);
+            this.scrollToSection(message);
+            this.displayMessage(response, 'bot');
+        }, 1000);
     }
 
     getResponse(message) {
@@ -203,7 +313,7 @@ Just talk wetin you wan make we change.`
 
         for (const key in kb) {
             const block = kb[key];
-            if (block.keywords.some(word => message.toLowerCase().includes(word))) {
+            if (block.keywords && block.keywords.some(word => message.toLowerCase().includes(word))) {
                 return block.responses[Math.floor(Math.random() * block.responses.length)];
             }
         }
@@ -213,110 +323,23 @@ Just talk wetin you wan make we change.`
 
     displayMessage(text, sender) {
         const chatArea = document.getElementById('chat-area-widget');
+        if (!chatArea) return;
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = sender === 'user' ? 'd-flex justify-content-end mb-3' : 'd-flex mb-3';
+        
         const bubble = document.createElement('div');
-        bubble.className = `message-bubble ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+        bubble.className = sender === 'user' ? 'bg-primary text-white rounded p-3' : 'bg-light rounded p-3';
+        bubble.style.maxWidth = '80%';
         bubble.innerHTML = text.replace(/\n/g, '<br>');
-        chatArea.appendChild(bubble);
+        
+        messageDiv.appendChild(bubble);
+        chatArea.appendChild(messageDiv);
         chatArea.scrollTop = chatArea.scrollHeight;
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+// Initialize the chatbot when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
     window.PeterBot = new PeterChatbot();
-});
-// 📌 Enhanced Chatbot Script (Continued: New FAQ Categories)
-// This continues the knowledgeBase to include more human-like inquiries
-
-class PeterChatbot {
-  // ... Existing code remains the same ...
-
-  get knowledgeBase() {
-    return {
-      // Existing blocks...
-      en: {
-        // ... existing entries ...
-
-        urgent: {
-          keywords: ['urgent', 'quick job', 'fast', 'asap', 'immediately', 'need now'],
-          responses: [
-            `⚡ Yes, I accept urgent projects depending on my schedule.
-Please send your details and timeline. Rush fees may apply.`
-          ]
-        },
-
-        installment: {
-          keywords: ['installment', 'two parts', 'split payment', 'half now', 'pay later'],
-          responses: [
-            `💳 Yes, payment in 2 parts is available:
-• 50% upfront to begin
-• 50% after completion
-Let’s discuss the project scope!`
-          ]
-        },
-
-        training: {
-          keywords: ['train', 'teach', 'class', 'learn', 'tutorial'],
-          responses: [
-            `🎓 I offer training on:
-• Web development
-• Design with Canva & Photoshop
-• Digital freelancing tips
-Let me know which you're interested in!`
-          ]
-        }
-      },
-
-      pidgin: {
-        // ... existing entries ...
-
-        urgent: {
-          keywords: ['urgent', 'sharp sharp', 'fast fast', 'now now', 'asap'],
-          responses: [
-            `⚡ If na urgent work, e possible o!
-Just drop wetin you wan make I run, but rush job dey get extra fee sha.`
-          ]
-        },
-
-        installment: {
-          keywords: ['two part', 'half pay', 'balance later', 'installment'],
-          responses: [
-            `💳 You fit pay am twice:
-• Half now make we start
-• Balance when we finish
-No wahala. Just talk your budget.`
-          ]
-        },
-
-        training: {
-          keywords: ['train', 'learn', 'teach', 'school me', 'tutor'],
-          responses: [
-            `🎓 I dey train people:
-• Website design
-• Canva or Photoshop
-• How to do online hustle
-Tell me wetin you wan learn.`
-          ]
-        }
-      }
-      // ... default still intact ...
-    }
-  }
-
-  // ... Remaining methods stay unchanged ...
-}
-
-// Already running at bottom:
-window.addEventListener('DOMContentLoaded', () => {
-  window.PeterBot = new PeterChatbot();
-});
-document.getElementById('open-chat-button')?.addEventListener('click', () => {
-    const widget = document.getElementById('chatbot-widget');
-    widget.classList.remove('scale-0');
-    widget.classList.add('scale-100');
-});
-
-document.getElementById('close-chat')?.addEventListener('click', () => {
-    const widget = document.getElementById('chatbot-widget');
-    widget.classList.remove('scale-100');
-    widget.classList.add('scale-0');
 });
