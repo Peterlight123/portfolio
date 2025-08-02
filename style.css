@@ -146,8 +146,8 @@ img {
 
 .card-body {
     padding: 25px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
+/*     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+} */
 
 .card-title {
     font-weight: bold;
@@ -157,8 +157,8 @@ img {
 }
 
 .card-description {
-    color: #6c757d;
-    font-size: 0.9rem;
+/*     color: #6c757d;
+    font-size: 0.9rem; */
     margin-bottom: 15px;
     line-height: 1.5;
 }
@@ -556,3 +556,4 @@ emoji-picker {
     --outline-color: #e5e7eb;
     --background-color: #ffffff;
 }
+
