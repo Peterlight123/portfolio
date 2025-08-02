@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--   <script src="https://cdn.tailwindcss.com"></script> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Peter Lightspeed - Professional Virtual Assistant, Web Developer & Graphic Designer. Expert in website development, digital marketing, and business solutions.">
@@ -9,14 +8,10 @@
   <meta name="author" content="Peter Eluwade Toluwanimi">
   <meta name="robots" content="index, follow">
   
-  
-  
-
   <link rel="canonical" href="https://peterlight123.github.io/portfolio">
 
   <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- AOS -->
@@ -98,248 +93,8 @@
     }
   }
   </script>
-<script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/index.js" type="module"></script>
-<title>Eluwade Peter Toluwanimi - Virtual Assistant Portfolio</title>
-<!-- External CSS Libraries -->
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="style.css" rel="stylesheet">
-<!-- Favicon -->
-<link href="https://i.imgur.com/2Ocmg4m.png" rel="icon" type="image/png">
-<style>
-        /* ===== GLOBAL STYLES ===== */
-        
-        /* Body background and font styles */
-        body {
-            background-color: #f8f9fa;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-        }
-        
-        /* Smooth scroll offset for fixed navbar */
-        html {
-            scroll-padding-top: 70px; /* Adjust based on navbar height */
-            scroll-behavior: smooth;
-        }
-     /* ADD THESE CSS FIXES */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2rem !important;
-        line-height: 1.2;
-    }
   
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-    
-    .btn-lg {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .card {
-        margin-bottom: 1rem;
-    }
-    
-    .social-links a {
-        margin: 0.25rem;
-    }
-}
-
-/* FIX NAVBAR ON MOBILE */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: rgba(0,0,0,0.95);
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-top: 0.5rem;
-    }
-}
-                 /* ===== NAVIGATION STYLES ===== */
-        
-        /* Custom navbar styling */
-/*         .navbar.bg-primary {
-            background-color: #0d6efd !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        } */
-        
-        /* ===== SOCIAL MEDIA BUTTON STYLES ===== */
-        
-        /* Base social button styling */
-        .social-btn {
-            color: white !important;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease-in-out;
-            display: inline-flex;
-            align-items: center;
-            margin: 4px;
-        }
-        
-        /* Social button hover effects */
-        .social-btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-            color: white !important;
-        }
-        
-        /* Individual social media platform colors */
-        .social-btn.twitter { background-color: #1da1f2; }
-        .social-btn.tiktok { background-color: #000000; }
-        .social-btn.linkedin { background-color: #0077b5; }
-        .social-btn.instagram { background-color: #e4405f; }
-        .social-btn.email { background-color: #ea4335; }
-        .social-btn.whatsapp { background-color: #25d366; }
-        .social-btn.facebook { background-color: #1877f2; }
-        
-        /* ===== TESTIMONIALS SECTION ===== */
-        
-        #Testimonials {
-            padding: 4rem 0;
-        }
-        
-        #Testimonials .carousel-item {
-            padding: 2rem;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .carousel-item img {
-            border: 3px solid #0d6efd;
-        }
-        
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: #0d6efd;
-            border-radius: 50%;
-        }
-        
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
-        }
-        
-        .text-warning i {
-            font-size: 1.25rem;
-        }
-        
-        .blockquote {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .carousel-item footer {
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-        
-        /* ===== ANIMATIONS ===== */
-        
-        /* Slide in from right animation */
-        @keyframes slideInRight {
-            from {
-                transform: translateX(-300px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        /* Fade in and slide up animation */
-        @keyframes fadeInSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Highlights section animation */
-        #highlights .col-md-4 {
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInSlideUp 0.6s ease-out forwards;
-        }
-        
-        /* Staggered animation delays for highlights */
-        #highlights .col-md-4:nth-child(1) { animation-delay: 0.1s; }
-        #highlights .col-md-4:nth-child(2) { animation-delay: 0.2s; }
-        #highlights .col-md-4:nth-child(3) { animation-delay: 0.3s; }
-        #highlights .col-md-4:nth-child(4) { animation-delay: 0.4s; }
-        #highlights .col-md-4:nth-child(5) { animation-delay: 0.5s; }
-        #highlights .col-md-4:nth-child(6) { animation-delay: 0.6s; }
-        
-        /* ===== CARD STYLES ===== */
-        
-        /* Custom card styling for dark theme */
-        .card.bg-dark {
-            border: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card.bg-dark:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* ===== BUTTON STYLES ===== */
-        
-        .btn-danger {
-            background-color: #dc3545;
-            border-color: #dc3545;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-danger:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-            transform: translateY(-2px);
-        }
-        
-        /* ===== RESPONSIVE DESIGN ===== */
-        
-        /* Mobile responsive adjustments */
-        @media (max-width: 768px) {
-            .carousel-item {
-                margin: 0 1rem;
-            }
-            
-            .display-4 {
-                font-size: 2rem;
-            }
-            
-            .social-btn {
-                font-size: 0.9rem;
-                padding: 6px 12px;
-            }
-            
-            #highlights .col-md-4 {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .container {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            
-            .card-body {
-                padding: 1rem;
-            }
-        }
-    </style>
+  <title>Eluwade Peter Toluwanimi - Virtual Assistant Portfolio</title>
 </head>
 <body>
 <!-- ===== NAVIGATION BAR ===== -->
@@ -364,8 +119,8 @@
                         <li><a class="dropdown-item" href="#Services">Services</a></li>
                         <li><a class="dropdown-item" href="#Testimonials">Testimonials</a></li>
                         <li><a class="dropdown-item" href="sponsor.html">Sponsor Me</a></li>
-                        <li><a class="dropdown-item" href="cv">Download My CV</a></li>
-                        <li><a class="dropdown-item" href="#licenses">Licenses &amp; Certifications</a></li>
+                        <li><a class="dropdown-item" href="#cv">Download My CV</a></li>
+                        <li><a class="dropdown-item" href="#licenses">Licenses & Certifications</a></li>
                     </ul>
                 </li>
             </ul>
@@ -375,1143 +130,1148 @@
 
 <!-- ===== HERO SECTION ===== -->
 <section class="bg-primary text-light text-center text-md-start" role="banner">
-<div class="container pb-3">
-<div class="d-md-flex align-items-center">
-<!-- Hero Text Content -->
-<div class="bg-primary px-md-5 text-white rounded-3">
-<h1 class="display-4 fw-bold text-3xl md:text-4xl font-bold mb-4">
-                        Hi, I'm <span class="text-danger fw-bold">Eluwade Peter Toluwanimi</span>
-</h1>
-<p class="lead py-2">
-                        I build modern websites for businesses, vendors, and stores that want to grow online 
-                        and I handle content management, and creative services. 
-                        <strong>You can also call me Peter Lightspeed</strong>
-</p>
-<a aria-label="Contact me to hire my services" class="btn btn-danger btn-lg" href="#Contact" id="cta-button">
-                        Hire me!
-                    </a>
-</div>
-<!-- Hero Image -->
-<img alt="Peter Toluwanimi - Virtual Assistant" class="img-fluid d-none d-md-block bg-dark mt-5 rounded-circle w-50 p-1" loading="lazy" src="images/IMG-20250507-WA0143.jpg" style="max-width: 430px">
-</div>
-</div>
+    <div class="container pb-3">
+        <div class="d-md-flex align-items-center">
+            <!-- Hero Text Content -->
+            <div class="bg-primary px-md-5 text-white rounded-3">
+                <h1 class="display-4 fw-bold mb-4">
+                    Hi, I'm <span class="text-danger fw-bold">Eluwade Peter Toluwanimi</span>
+                </h1>
+                <p class="lead py-2">
+                    I build modern websites for businesses, vendors, and stores that want to grow online 
+                    and I handle content management, and creative services. 
+                    <strong>You can also call me Peter Lightspeed</strong>
+                </p>
+                <a aria-label="Contact me to hire my services" class="btn btn-danger btn-lg" href="#Contact" id="cta-button">
+                    Hire me!
+                </a>
+            </div>
+            <!-- Hero Image -->
+            <img alt="Peter Toluwanimi - Virtual Assistant" class="img-fluid d-none d-md-block bg-dark mt-5 rounded-circle w-50 p-1" loading="lazy" src="images/IMG-20250507-WA0143.jpg" style="max-width: 430px">
+        </div>
+    </div>
 </section>
+
 <!-- ===== HIGHLIGHTS SECTION ===== -->
 <section class="container py-5" id="highlights" role="main">
-<div class="container mt-5">
-<h2 class="text-center text-dark mb-5 fw-bold h3">My Highlights</h2>
-<div class="row text-center g-2">
-<!-- Soft Skills Certificate -->
-<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-<div class="card shadow-sm bg-dark text-light h-100 text-center">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-person-vcard-fill text-light fs-1 mb-3"></i>
-<h5 class="card-title">Soft Skills Training Certificate</h5>
-<h6 class="text-muted mb-2">Issued by: West Africa Vocational Education (WAVE)</h6>
-<p class="card-text">
-                                Completed soft skills training focused on communication, emotional intelligence, 
-                                problem-solving, and entrepreneurship management. This program equipped me with 
-                                essential tools for workplace excellence and client interaction.
+    <div class="container mt-5">
+        <h2 class="text-center text-dark mb-5 fw-bold h3">My Highlights</h2>
+        <div class="row text-center g-2">
+            <!-- Soft Skills Certificate -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card shadow-sm bg-dark text-light h-100 text-center">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-person-vcard-fill text-light fs-1 mb-3"></i>
+                        <h5 class="card-title">Soft Skills Training Certificate</h5>
+                        <h6 class="text-muted mb-2">Issued by: West Africa Vocational Education (WAVE)</h6>
+                        <p class="card-text">
+                            Completed soft skills training focused on communication, emotional intelligence, 
+                            problem-solving, and entrepreneurship management. This program equipped me with 
+                            essential tools for workplace excellence and client interaction.
+                        </p>
+                        <small class="text-muted">Date: July 29, 2024</small>
+                        <br>
+                        <a aria-label="View Soft Skills Certificate" class="btn text-light bg-danger mt-3" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:fe4db523-f86e-4486-964a-17c73cbbf9e3" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- PLSWorldNews Blog -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 bg-dark text-light">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-globe2 fs-1 mb-3"></i>
+                        <h5 class="card-title">PLSWorldNews Blog</h5>
+                        <p class="card-text">Entertainment and lifestyle blog with daily posts.</p>
+                        <div class="mt-2">
+                            <p class="card-text small">
+                                I created and maintain a Blogger site, designing the layout, managing SEO, 
+                                writing content, and integrating Google AdSense for monetization.
                             </p>
-<small class="text-muted">Date: July 29, 2024</small>
-<br>
-<a aria-label="View Soft Skills Certificate" class="btn text-light bg-danger mt-3" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:fe4db523-f86e-4486-964a-17c73cbbf9e3" rel="noopener noreferrer" target="_blank">
+                            <a aria-label="Visit PLSWorldNews Blog" class="btn bg-danger btn-sm text-light py-2 mt-4" href="https://plsworldnews.blogspot.com" rel="noopener noreferrer" target="_blank">
+                                Visit Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rizz Script Video Management -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 bg-dark text-light">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-camera-reels-fill fs-1 mb-3"></i>
+                        <h5 class="card-title">Rizz Script Video Management</h5>
+                        <p class="card-text">Managed engaging flirty content across platforms.</p>
+                        <div class="mt-2">
+                            <p class="card-text small">
+                                I handled idea generation, script writing, captions, and cross-platform posting 
+                                on YouTube, Facebook, and TikTok using Canva and CapCut. Focused on maximizing 
+                                views and engagement.
+                            </p>
+                            <a aria-label="View YouTube Channel" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://www.youtube.com/@peterlightspeedvibes" rel="noopener noreferrer" target="_blank">
+                                View Channel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FreeCodeCamp Certificate -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 bg-dark text-light">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-code-slash fs-1 mb-3"></i>
+                        <h5 class="card-title">FreeCodeCamp Frontend Certificate</h5>
+                        <p class="card-text">Learned HTML, CSS, JavaScript, and responsive web design.</p>
+                        <div class="mt-2">
+                            <p class="card-text small">
+                                Completed FreeCodeCamp's responsive web design certification, gaining hands-on 
+                                experience building websites and layouts with HTML5, Flexbox, and CSS Grid.
+                            </p>
+                            <a aria-label="View FreeCodeCamp Certificate" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://www.freecodecamp.org/certification/Peterlightspeed/responsive-web-design" rel="noopener noreferrer" target="_blank">
                                 View Certificate
                             </a>
-</div>
-</div>
-</div>
-<!-- PLSWorldNews Blog -->
-<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-<div class="card h-100 bg-dark text-light">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-globe2 fs-1 mb-3"></i>
-<h5 class="card-title">PLSWorldNews Blog</h5>
-<p class="card-text">Entertainment and lifestyle blog with daily posts.</p>
-<div class="mt-2">
-<p class="card-text small">
-                                    I created and maintain a Blogger site, designing the layout, managing SEO, 
-                                    writing content, and integrating Google AdSense for monetization.
-                                </p>
-<a aria-label="Visit PLSWorldNews Blog" class="btn bg-danger btn-sm text-light py-2 mt-4" href="https://plsworldnews.blogspot.com" rel="noopener noreferrer" target="_blank">
-                                    Visit Blog
-                                </a>
-</div>
-</div>
-</div>
-</div>
-<!-- Rizz Script Video Management -->
-<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-<div class="card h-100 bg-dark text-light">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-camera-reels-fill fs-1 mb-3"></i>
-<h5 class="card-title">Rizz Script Video Management</h5>
-<p class="card-text">Managed engaging flirty content across platforms.</p>
-<div class="mt-2">
-<p class="card-text small">
-                                    I handled idea generation, script writing, captions, and cross-platform posting 
-                                    on YouTube, Facebook, and TikTok using Canva and CapCut. Focused on maximizing 
-                                    views and engagement.
-                                </p>
-<a aria-label="View YouTube Channel" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://www.youtube.com/@peterlightspeedvibes" rel="noopener noreferrer" target="_blank">
-                                    View Channel
-                                </a>
-</div>
-</div>
-</div>
-</div>
-<!-- FreeCodeCamp Certificate -->
-<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-<div class="card h-100 bg-dark text-light">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-code-slash fs-1 mb-3"></i>
-<h5 class="card-title">FreeCodeCamp Frontend Certificate</h5>
-<p class="card-text">Learned HTML, CSS, JavaScript, and responsive web design.</p>
-<div class="mt-2">
-<p class="card-text small">
-                                    Completed FreeCodeCamp's responsive web design certification, gaining hands-on 
-                                    experience building websites and layouts with HTML5, Flexbox, and CSS Grid.
-                                </p>
-<a aria-label="View FreeCodeCamp Certificate" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://www.freecodecamp.org/certification/Peterlightspeed/responsive-web-design" rel="noopener noreferrer" target="_blank">
-                                    View Certificate
-                                </a>
-</div>
-</div>
-</div>
-</div>
-<!-- Trade Test Certificates -->
-<div class="col-md-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="500">
-<div class="card h-100 bg-dark text-light">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-patch-check-fill fs-1 mb-3"></i>
-<h5 class="card-title">Trade Test I &amp; II - Labour Ministry</h5>
-<p class="card-text">Certified by Federal Ministry of Labour and Productivity.</p>
-<div class="mt-1">
-<p class="card-text small">
-                                    Successfully passed Trade Test Grade II and III under the Federal Ministry of Labour 
-                                    in ICT/Office Support, demonstrating key workplace skills and industry-standard knowledge.
-                                </p>
-<a aria-label="View Trade Test Certificate" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:31d8cdb2-3afd-4e28-893a-8445cac9a2a9" rel="noopener noreferrer" target="_blank">
-                                    View Certificate
-                                </a>
-</div>
-</div>
-</div>
-</div>
-<!-- Digital Services Certificate -->
-<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-<div class="card shadow-sm h-100 text-center bg-dark text-light">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-award-fill text-light fs-1 mb-3"></i>
-<h5 class="card-title">Digital Services Certificate</h5>
-<h6 class="text-muted mb-2">Issued by: Camex Global Concept</h6>
-<p class="card-text">
-                                Certified in a variety of digital skills including typing, basic graphic design, 
-                                file conversion, and document formatting during hands-on training at Camex Global Concept.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trade Test Certificates -->
+            <div class="col-md-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100 bg-dark text-light">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-patch-check-fill fs-1 mb-3"></i>
+                        <h5 class="card-title">Trade Test I & II - Labour Ministry</h5>
+                        <p class="card-text">Certified by Federal Ministry of Labour and Productivity.</p>
+                        <div class="mt-1">
+                            <p class="card-text small">
+                                Successfully passed Trade Test Grade II and III under the Federal Ministry of Labour 
+                                in ICT/Office Support, demonstrating key workplace skills and industry-standard knowledge.
                             </p>
-<a aria-label="View Digital Services Certificate" class="btn btn-outline-danger bg-danger text-light" href="https://i.imgur.com/3MUPR3u.png" rel="noopener noreferrer" target="_blank">
+                            <a aria-label="View Trade Test Certificate" class="btn bg-danger btn-sm text-light py-2 mt-3" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:31d8cdb2-3afd-4e28-893a-8445cac9a2a9" rel="noopener noreferrer" target="_blank">
                                 View Certificate
                             </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Digital Services Certificate -->
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="card shadow-sm h-100 text-center bg-dark text-light">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-award-fill text-light fs-1 mb-3"></i>
+                        <h5 class="card-title">Digital Services Certificate</h5>
+                        <h6 class="text-muted mb-2">Issued by: Camex Global Concept</h6>
+                        <p class="card-text">
+                            Certified in a variety of digital skills including typing, basic graphic design, 
+                            file conversion, and document formatting during hands-on training at Camex Global Concept.
+                        </p>
+                        <a aria-label="View Digital Services Certificate" class="btn btn-outline-danger bg-danger text-light" href="https://i.imgur.com/3MUPR3u.png" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== CONTACT SECTION ===== -->
 <section class="container py-5 bg-light" id="Contact" role="complementary">
-<div class="container mt-5">
-<h2 class="text-center text-danger mb-5 fw-bold display-4">Contact Me</h2>
-<p class="text-center mb-5">
-                Got a project in mind or a service inquiry? Reach out via the form below — 
-                I'll get back to you within 24 hours.
-            </p>
-<!-- Contact Form -->
-<div class="row justify-content-center mb-5">
-<div class="col-lg-8">
-<form action="https://formspree.io/f/xpwrbkrr" class="bg-white p-4 shadow-lg rounded-3" id="contact-form" method="POST" novalidate="">
-<div class="mb-3">
-<label class="form-label fw-semibold" for="name">Your Name *</label>
-<input aria-describedby="nameHelp" class="form-control" id="name" name="name" required="" type="text">
-<div class="invalid-feedback">Please provide your name.</div>
-</div>
-<div class="mb-3">
-<label class="form-label fw-semibold" for="email">Your Email *</label>
-<input aria-describedby="emailHelp" class="form-control" id="email" name="email" required="" type="email">
-<div class="invalid-feedback">Please provide a valid email address.</div>
-</div>
-<div class="mb-3">
-<label class="form-label fw-semibold" for="message">Your Message *</label>
-<textarea aria-describedby="messageHelp" class="form-control" id="message" name="message" required="" rows="5"></textarea>
-<div class="invalid-feedback">Please provide your message.</div>
-</div>
-<div class="text-center">
-<button aria-label="Send contact message" class="btn btn-danger px-4" type="submit">
-<span aria-hidden="true" class="spinner-border spinner-border-sm d-none" role="status"></span>
-                                Send Message
-                            </button>
-</div>
-<!-- Form Status Messages -->
-<div aria-live="polite" class="mt-3 text-center" id="form-status" role="alert"></div>
-</form>
-</div>
-</div>
-<!-- Social Media Links -->
-<div class="text-center bg-dark py-4 rounded">
-<p class="text-white fw-bold mb-3">Connect with me:</p>
-<div class="d-flex flex-wrap justify-content-center gap-2">
-<a aria-label="Follow me on Twitter" class="btn social-btn twitter" href="https://x.com/peter8118533304" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-twitter me-1"></i> Twitter
-                    </a>
-<a aria-label="Follow me on TikTok" class="btn social-btn tiktok" href="https://www.tiktok.com/@eluwadepeter" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-tiktok me-1"></i> TikTok
-                    </a>
-<a aria-label="Connect with me on LinkedIn" class="btn social-btn linkedin" href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-linkedin me-1"></i> LinkedIn
-                    </a>
-<a aria-label="Follow me on Instagram" class="btn social-btn instagram" href="https://www.instagram.com/eluwadepeter" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-instagram me-1"></i> Instagram
-                    </a>
-<a aria-label="Send me an email" class="btn social-btn email" href="mailto:petereluwade55@gmail.com">
-<i aria-hidden="true" class="bi bi-envelope me-1"></i> Email
-                    </a>
-<a aria-label="Contact me on WhatsApp" class="btn social-btn whatsapp" href="https://wa.me/2348108821809" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-whatsapp me-1"></i> WhatsApp
-                    </a>
-<a aria-label="Follow me on Facebook" class="btn social-btn facebook" href="https://www.facebook.com/profile.php?id=61575074189195" rel="noopener noreferrer" target="_blank">
-<i aria-hidden="true" class="bi bi-facebook me-1"></i> Facebook
-                    </a>
-</div>
-</div>
-</div>
+    <div class="container mt-5">
+        <h2 class="text-center text-danger mb-5 fw-bold display-4">Contact Me</h2>
+        <p class="text-center mb-5">
+            Got a project in mind or a service inquiry? Reach out via the form below — 
+            I'll get back to you within 24 hours.
+        </p>
+        <!-- Contact Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <form action="https://formspree.io/f/xpwrbkrr" class="bg-white p-4 shadow-lg rounded-3" id="contact-form" method="POST" novalidate="">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="name">Your Name *</label>
+                        <input aria-describedby="nameHelp" class="form-control" id="name" name="name" required="" type="text">
+                        <div class="invalid-feedback">Please provide your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="email">Your Email *</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="email" name="email" required="" type="email">
+                        <div class="invalid-feedback">Please provide a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="message">Your Message *</label>
+                        <textarea aria-describedby="messageHelp" class="form-control" id="message" name="message" required="" rows="5"></textarea>
+                        <div class="invalid-feedback">Please provide your message.</div>
+                    </div>
+                    <div class="text-center">
+                        <button aria-label="Send contact message" class="btn btn-danger px-4" type="submit">
+                            <span aria-hidden="true" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                            Send Message
+                        </button>
+                    </div>
+                    <!-- Form Status Messages -->
+                    <div aria-live="polite" class="mt-3 text-center" id="form-status" role="alert"></div>
+                </form>
+            </div>
+        </div>
+        <!-- Social Media Links -->
+        <div class="text-center bg-dark py-4 rounded">
+            <p class="text-white fw-bold mb-3">Connect with me:</p>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <a aria-label="Follow me on Twitter" class="btn social-btn twitter" href="https://x.com/peter8118533304" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-twitter me-1"></i> Twitter
+                </a>
+                <a aria-label="Follow me on TikTok" class="btn social-btn tiktok" href="https://www.tiktok.com/@eluwadepeter" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-tiktok me-1"></i> TikTok
+                </a>
+                <a aria-label="Connect with me on LinkedIn" class="btn social-btn linkedin" href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-linkedin me-1"></i> LinkedIn
+                </a>
+                <a aria-label="Follow me on Instagram" class="btn social-btn instagram" href="https://www.instagram.com/eluwadepeter" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-instagram me-1"></i> Instagram
+                </a>
+                <a aria-label="Send me an email" class="btn social-btn email" href="mailto:petereluwade55@gmail.com">
+                    <i aria-hidden="true" class="bi bi-envelope me-1"></i> Email
+                </a>
+                <a aria-label="Contact me on WhatsApp" class="btn social-btn whatsapp" href="https://wa.me/2348108821809" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+                <a aria-label="Follow me on Facebook" class="btn social-btn facebook" href="https://www.facebook.com/profile.php?id=61575074189195" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-facebook me-1"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== ABOUT SECTION ===== -->
 <section class="py-5" id="About">
-<div class="container">
-<div class="row align-items-center">
-<!-- About Image -->
-<div class="col-md-4 mb-4 mb-md-0 text-center">
-<img alt="Peter Lightspeed - Virtual Assistant" class="img-fluid d-md-flex mt-5 d-none bg-dark rounded-circle p-1" loading="lazy" src="images/peter-picture.png" style="max-width: 250px">
-</div>
-<!-- About Content -->
-<div class="col-md-8 text-center">
-<h2 class="mb-3 py-3 fw-bold text-2xl md:text-3xl font-semibold mb-3">About Me</h2>
-<p>
-                        I'm <strong>Eluwade Peter Toluwanimi</strong>, a passionate Virtual Assistant offering 
-                        digital services like social media management, typing, graphic design, and content creation. 
-                        I've worked on projects involving Rizz videos, blog development, and responsive web design.
-                    </p>
-<p>
-                        With certifications from <strong>FreeCodeCamp</strong>, <strong>Camex Global Concept</strong>, 
-                        and more, I bring hands-on experience and a strong work ethic to every task. Whether you're 
-                        a business, brand, or individual, I'm ready to help you grow online.
-                    </p>
-<a aria-label="Contact me to hire my services" class="btn btn-danger" href="#Contact">
-                        Hire Me
-                    </a>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- About Image -->
+            <div class="col-md-4 mb-4 mb-md-0 text-center">
+                <img alt="Peter Lightspeed - Virtual Assistant" class="img-fluid d-md-flex mt-5 d-none bg-dark rounded-circle p-1" loading="lazy" src="images/peter-picture.png" style="max-width: 250px">
+            </div>
+            <!-- About Content -->
+            <div class="col-md-8 text-center">
+                <h2 class="mb-3 py-3 fw-bold mb-3">About Me</h2>
+                <p>
+                    I'm <strong>Eluwade Peter Toluwanimi</strong>, a passionate Virtual Assistant offering 
+                    digital services like social media management, typing, graphic design, and content creation. 
+                    I've worked on projects involving Rizz videos, blog development, and responsive web design.
+                </p>
+                <p>
+                    With certifications from <strong>FreeCodeCamp</strong>, <strong>Camex Global Concept</strong>, 
+                    and more, I bring hands-on experience and a strong work ethic to every task. Whether you're 
+                    a business, brand, or individual, I'm ready to help you grow online.
+                </p>
+                <a aria-label="Contact me to hire my services" class="btn btn-danger" href="#Contact">
+                    Hire Me
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== SERVICES SECTION ===== -->
 <section class="py-5 bg-light" id="Services">
-<div class="container">
-<h2 class="text-center text-dark mb-5 fw-bold h3">My Services</h2>
-<div class="row g-3">
-<!-- Typing & Data Entry Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-keyboard fs-1 text-light mb-3"></i>
-<h5 class="card-title">Typing &amp; Data Entry</h5>
-<p class="card-text">
-                                Fast and accurate typing, file conversion, document formatting, and data management services.
-                            </p>
-</div>
-</div>
-</div>
-<!-- Graphics Design Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-palette fs-1 text-light mb-3"></i>
-<h5 class="card-title">Graphics Design</h5>
-<p class="card-text">
-                                Eye-catching designs for social media, logos, flyers, and ads using Canva and Photoshop.
-                            </p>
-</div>
-</div>
-</div>
-<!-- Blogger Setup Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-globe fs-1 text-light mb-3"></i>
-<h5 class="card-title">Blogger Setup &amp; Content</h5>
-<p class="card-text">
-                                Professional Blogger blog creation, layout design, SEO optimization, and AdSense integration.
-                            </p>
-</div>
-</div>
-</div>
-<!-- Website Design Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-laptop fs-1 text-light mb-3"></i>
-<h5 class="card-title">Website Design</h5>
-<p class="card-text">
-                                Responsive websites that work perfectly on both mobile and desktop screens with swift loading speeds.
-                            </p>
-</div>
-</div>
-</div>
-<!-- SEO Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-bar-chart-line-fill fs-1 text-light mb-3"></i>
-<h5 class="card-title">SEO &amp; Meta Setup</h5>
-<p class="card-text">
-                                Boost your blog or website visibility with proper keyword research, SEO optimization, and meta setup.
-                            </p>
-</div>
-</div>
-</div>
-<!-- Social Media Management Service -->
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-<div class="card h-100 text-center bg-dark text-light shadow-sm">
-<div class="card-body">
-<i aria-hidden="true" class="bi bi-share-fill fs-1 text-light mb-3"></i>
-<h5 class="card-title">Social Media Management</h5>
-<p class="card-text">
-                                Manage and grow social platforms (YouTube, TikTok, Facebook) with posting schedules, branding &amp; analytics.
-                            </p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <h2 class="text-center text-dark mb-5 fw-bold h3">My Services</h2>
+        <div class="row g-3">
+            <!-- Typing & Data Entry Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-keyboard fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">Typing & Data Entry</h5>
+                        <p class="card-text">
+                            Fast and accurate typing, file conversion, document formatting, and data management services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Graphics Design Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-palette fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">Graphics Design</h5>
+                        <p class="card-text">
+                            Eye-catching designs for social media, logos, flyers, and ads using Canva and Photoshop.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Blogger Setup Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-globe fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">Blogger Setup & Content</h5>
+                        <p class="card-text">
+                            Professional Blogger blog creation, layout design, SEO optimization, and AdSense integration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Website Design Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-laptop fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">Website Design</h5>
+                        <p class="card-text">
+                            Responsive websites that work perfectly on both mobile and desktop screens with swift loading speeds.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- SEO Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-bar-chart-line-fill fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">SEO & Meta Setup</h5>
+                        <p class="card-text">
+                            Boost your blog or website visibility with proper keyword research, SEO optimization, and meta setup.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Social Media Management Service -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="card h-100 text-center bg-dark text-light shadow-sm">
+                    <div class="card-body">
+                        <i aria-hidden="true" class="bi bi-share-fill fs-1 text-light mb-3"></i>
+                        <h5 class="card-title">Social Media Management</h5>
+                        <p class="card-text">
+                            Manage and grow social platforms (YouTube, TikTok, Facebook) with posting schedules, branding & analytics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== LICENSES & CERTIFICATIONS SECTION ===== -->
 <section class="py-5 bg-white" id="licenses">
-<div class="container">
-<h2 class="text-center text-dark mb-5 fw-bold display-4">Licenses &amp; Certifications</h2>
-<div class="row g-4">
-<!-- Google Digital Marketing Certificate -->
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-<div class="card h-100 shadow bg-dark text-light">
-<div class="card-body">
-<h5 class="card-title fw-bold">Google Digital Marketing Certificate</h5>
-<p class="card-text">Gained skills in online marketing, SEO, and Google tools.</p>
-<a aria-label="View Google Digital Marketing Certificate" class="btn btn-danger btn-sm mt-2" href="https://skillshop.credential.net/2656d9be-a41b-477e-a518-17d364c69a32#acc.A1aYmZSz" rel="noopener noreferrer" target="_blank">
-                                View Certificate
-                            </a>
-</div>
-</div>
-</div>
-<!-- Responsive Web Design Certificate -->
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-<div class="card h-100 shadow bg-dark text-light">
-<div class="card-body">
-<h5 class="card-title fw-bold">Responsive Web Design</h5>
-<p class="card-text">Learned HTML, CSS, Flexbox &amp; Grid. Built fully responsive websites.</p>
-<a aria-label="View Responsive Web Design Certificate" class="btn btn-danger btn-sm mt-2" href="https://www.freecodecamp.org/certification/Peterlightspeed/responsive-web-design" rel="noopener noreferrer" target="_blank">
-                                View Certificate
-                            </a>
-</div>
-</div>
-</div>
-<!-- Trade Test Certificate -->
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-<div class="card h-100 shadow bg-dark text-light">
-<div class="card-body">
-<h5 class="card-title fw-bold">Trade Test I &amp; II</h5>
-<p class="card-text">Issued by Federal Ministry of Labour. Certified in ICT/Office Support.</p>
-<a aria-label="View Trade Test Certificate" class="btn btn-danger btn-sm mt-2" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:31d8cdb2-3afd-4e28-893a-8445cac9a2a9" rel="noopener noreferrer" target="_blank">
-                                View Certificate
-                            </a>
-</div>
-</div>
-</div>
-<!-- Digital Services Certificate -->
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-<div class="card h-100 shadow bg-dark text-light">
-<div class="card-body">
-<h5 class="card-title fw-bold">Digital Services Certificate</h5>
-<p class="card-text">Skills in graphics, typing, file conversion, and formatting (Camex Global Concept).</p>
-<a aria-label="View Digital Services Certificate" class="btn btn-danger btn-sm mt-2" href="https://imgur.com/3MUPR3u" rel="noopener noreferrer" target="_blank">
-                                View Certificate
-                            </a>
-</div>
-</div>
-</div>
-<!-- Soft Skills Certificate -->
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-<div class="card h-100 shadow bg-dark text-light">
-<div class="card-body">
-<h5 class="card-title fw-bold">Soft Skills Certificate</h5>
-<p class="card-text">Completed WAVE training in emotional intelligence, communication, and leadership.</p>
-<a aria-label="View Soft Skills Certificate" class="btn btn-danger btn-sm mt-2" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:fe4db523-f86e-4486-964a-17c73cbbf9e3" rel="noopener noreferrer" target="_blank">
-                                View Certificate
-                            </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <h2 class="text-center text-dark mb-5 fw-bold display-4">Licenses & Certifications</h2>
+        <div class="row g-4">
+            <!-- Google Digital Marketing Certificate -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Google Digital Marketing Certificate</h5>
+                        <p class="card-text">Gained skills in online marketing, SEO, and Google tools.</p>
+                        <a aria-label="View Google Digital Marketing Certificate" class="btn btn-danger btn-sm mt-2" href="https://skillshop.credential.net/2656d9be-a41b-477e-a518-17d364c69a32#acc.A1aYmZSz" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Responsive Web Design Certificate -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Responsive Web Design</h5>
+                        <p class="card-text">Learned HTML, CSS, Flexbox & Grid. Built fully responsive websites.</p>
+                        <a aria-label="View Responsive Web Design Certificate" class="btn btn-danger btn-sm mt-2" href="https://www.freecodecamp.org/certification/Peterlightspeed/responsive-web-design" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Trade Test Certificate -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Trade Test I & II</h5>
+                        <p class="card-text">Issued by Federal Ministry of Labour. Certified in ICT/Office Support.</p>
+                        <a aria-label="View Trade Test Certificate" class="btn btn-danger btn-sm mt-2" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:31d8cdb2-3afd-4e28-893a-8445cac9a2a9" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Digital Services Certificate -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 shadow bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Digital Services Certificate</h5>
+                        <p class="card-text">Skills in graphics, typing, file conversion, and formatting (Camex Global Concept).</p>
+                        
+                        <a aria-label="View Digital Services Certificate" class="btn btn-danger btn-sm mt-2" href="https://imgur.com/3MUPR3u" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Soft Skills Certificate -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100 shadow bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Soft Skills Certificate</h5>
+                        <p class="card-text">Completed WAVE training in emotional intelligence, communication, and leadership.</p>
+                        <a aria-label="View Soft Skills Certificate" class="btn btn-danger btn-sm mt-2" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:fe4db523-f86e-4486-964a-17c73cbbf9e3" rel="noopener noreferrer" target="_blank">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== CV DOWNLOAD SECTION ===== -->
 <section class="py-5 bg-light" id="cv">
-<div class="container text-center">
-<h2 class="fw-bold mb-4 text-2xl md:text-3xl font-semibold mb-3">Download My CV</h2>
-<p class="mb-4">
-                Click the button below to download my full résumé as a PDF document. 
-                It contains detailed information about my experience, skills, and qualifications.
-            </p>
-<a aria-label="Download Peter Toluwanimi's CV" class="btn btn-danger btn-lg" download="Peter's CV.pdf" href="path/to/your-cv.pdf">
-<i aria-hidden="true" class="bi bi-download me-2"></i>
-                Download CV
-            </a>
-</div>
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Download My CV</h2>
+        <p class="mb-4">
+            Click the button below to download my full résumé as a PDF document. 
+            It contains detailed information about my experience, skills, and qualifications.
+        </p>
+        <a aria-label="Download Peter Toluwanimi's CV" class="btn btn-danger btn-lg" download="Peter's CV.pdf" href="path/to/your-cv.pdf">
+            <i aria-hidden="true" class="bi bi-download me-2"></i>
+            Download CV
+        </a>
+    </div>
 </section>
-<!-- Testimonial Carousel Section -->
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
 <section class="py-5" id="testimonial" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-<div class="container">
-<div class="row">
-<div class="col-12">
-  <h2 class="text-center text-white mb-5 fw-bold display-4">What People Say About My Work</h2>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-lg-8">
-<div class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel" id="testimonialCarousel">
-<div class="carousel-inner">
-<!-- Gideon -->
-<div class="carousel-item active">
-<div class="card border-0 bg-transparent">
-<div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-<i class="fas fa-quote-left text-warning fs-1 mb-3"></i>
-<p class="fs-5 mb-4 fst-italic lh-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center text-white mb-5 fw-bold display-4">What People Say About My Work</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel" id="testimonialCarousel">
+                    <div class="carousel-inner">
+                        <!-- Gideon -->
+                        <div class="carousel-item active">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <i class="bi bi-quote fs-1 mb-3"></i>
+                                    <p class="fs-5 mb-4 fst-italic lh-lg">
                                         "Peter lightspeed delivered a flier that perfectly matched the energy of Gidi Beat Blast. The design was bold, rhytmic and instantly got attention just like a good drum beat. Highly professional and easy to work with!"
                                     </p>
-<div class="d-flex align-items-center justify-content-center">
-<img alt="Gideon" class="rounded-circle me-3" height="60" src="gideon-oluwapelumi.jpeg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
-<div class="text-start">
-<h5 class="mb-1">Gideon Oluwapelumi</h5>
-<small class="opacity-75">HOST, Beat Blast Flier</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Andrew -->
-<div class="carousel-item">
-<div class="card border-0 bg-transparent">
-<div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-<i class="fas fa-quote-left text-warning fs-1 mb-3"></i>
-<p class="fs-5 mb-4 fst-italic lh-lg">
-                                     "Peter completely exceeded my expectations with the forex flier design. The layout was sleek, the colors were well balanced, and it captured the professionalism I needed to attract serious client. I will definetly work with him again"
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img alt="Gideon" class="rounded-circle me-3" height="60" src="gideon-oluwapelumi.jpeg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
+                                        <div class="text-start">
+                                            <h5 class="mb-1">Gideon Oluwapelumi</h5>
+                                            <small class="opacity-75">HOST, Beat Blast Flier</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Andrew -->
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <i class="bi bi-quote fs-1 mb-3"></i>
+                                    <p class="fs-5 mb-4 fst-italic lh-lg">
+                                        "Peter completely exceeded my expectations with the forex flier design. The layout was sleek, the colors were well balanced, and it captured the professionalism I needed to attract serious client. I will definetly work with him again"
                                     </p>
-<div class="d-flex align-items-center justify-content-center">
-<img alt="Andrew" class="rounded-circle me-3" height="60" src="andrew.jpg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
-<div class="text-start">
-<h5 class="mb-1">Andrew Stephen</h5>
-<small class="opacity-75">Forex Mentor, Andrew carse fx village</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Isaac-->
-<div class="carousel-item">
-<div class="card border-0 bg-transparent">
-<div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-<i class="fas fa-quote-left text-warning fs-1 mb-3"></i>
-<p class="fs-5 mb-4 fst-italic lh-lg">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img alt="Andrew" class="rounded-circle me-3" height="60" src="andrew.jpg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
+                                        <div class="text-start">
+                                            <h5 class="mb-1">Andrew Stephen</h5>
+                                            <small class="opacity-75">Forex Mentor, Andrew carse fx village</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Isaac -->
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <i class="bi bi-quote fs-1 mb-3"></i>
+                                    <p class="fs-5 mb-4 fst-italic lh-lg">
                                         "Peter's full-stack development skills are impressive. He built our entire web platform from scratch, and the result exceeded our expectations. Professional and reliable!"
                                     </p>
-<div class="d-flex align-items-center justify-content-center">
-<img alt="Client" class="rounded-circle me-3" height="60" src="pic-2.jpeg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
-<div class="text-start">
-<h5 class="mb-1">Isaac Oluwadamilare</h5>
-<small class="opacity-75">Data analyst and Excel expert</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--Tochukwu -->
-<div class="carousel-item">
-<div class="card border-0 bg-transparent">
-<div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-<i class="fas fa-quote-left text-warning fs-1 mb-3"></i>
-<p class="fs-5 mb-4 fst-italic lh-lg">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img alt="Client" class="rounded-circle me-3" height="60" src="pic-2.jpeg" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
+                                        <div class="text-start">
+                                            <h5 class="mb-1">Isaac Oluwadamilare</h5>
+                                            <small class="opacity-75">Data analyst and Excel expert</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tochukwu -->
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-md-5 text-center text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <i class="bi bi-quote fs-1 mb-3"></i>
+                                    <p class="fs-5 mb-4 fst-italic lh-lg">
                                         "Working with peter lightspeed was a slam dunk. the basketball flier he designed for my academy was eye catching and energetic which was perfect for th vibe i was looking for. I highly recommend him for any creative design"
                                     </p>
-<div class="d-flex align-items-center justify-content-center">
-<img alt="Client" class="rounded-circle me-3" height="60" src="tochukwu.png" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
-<div class="text-start">
-<h5 class="mb-1">Tochukwu</h5>
-<small class="opacity-75">Basket Ball hub, Graphics design</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Carousel Controls -->
-<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#testimonialCarousel" type="button"><span class="rounded-circle p-3" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
-<i class="fas fa-chevron-left text-white"></i>
-</div>
-<span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#testimonialCarousel" type="button"><span class="rounded-circle p-3" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
-<i class="fas fa-chevron-right text-white"></i>
-</div>
-<span class="visually-hidden">Next</span>
-</button>
-<!-- Carousel Indicators -->
-<div class="carousel-indicators">
-<button class="active rounded-circle" data-bs-slide-to="0" data-bs-target="#testimonialCarousel" style="width: 12px; height: 12px; background-color: #ffd700;" type="button"></button>
-<button class="rounded-circle" data-bs-slide-to="1" data-bs-target="#testimonialCarousel" style="width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.4);" type="button"></button>
-<button class="rounded-circle" data-bs-slide-to="2" data-bs-target="#testimonialCarousel" style="width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.4);" type="button"></button>
-<button class="rounded-circle" data-bs-slide-to="3" data-bs-target="#testimonialCarousel" style="width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.4);" type="button"></button>
-</div>
-</div>
-</div>
-</div>
-</div>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img alt="Client" class="rounded-circle me-3" height="60" src="tochukwu.png" style="border: 3px solid rgba(255, 255, 255, 0.3); object-fit: cover;" width="60">
+                                        <div class="text-start">
+                                            <h5 class="mb-1">Tochukwu</h5>
+                                            <small class="opacity-75">Basket Ball hub, Graphics design</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#testimonialCarousel" type="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#testimonialCarousel" type="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        <button class="active" data-bs-slide-to="0" data-bs-target="#testimonialCarousel" type="button"></button>
+                        <button data-bs-slide-to="1" data-bs-target="#testimonialCarousel" type="button"></button>
+                        <button data-bs-slide-to="2" data-bs-target="#testimonialCarousel" type="button"></button>
+                        <button data-bs-slide-to="3" data-bs-target="#testimonialCarousel" type="button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Sponsorship Section -->
+
+<!-- ===== SPONSORSHIP SECTION ===== -->
 <section class="py-5 bg-light" id="sponsor">
-<div class="container">
-<div class="row align-items-center g-5">
-<!-- Sponsor Text Content -->
-<div class="col-lg-6">
-<div class="pe-lg-4">
-<h2 class="display-4 fw-bold text-dark mb-4">Support My Development Journey</h2>
-<p class="fs-5 text-muted mb-4 lh-lg">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Sponsor Text Content -->
+            <div class="col-lg-6">
+                <div class="pe-lg-4">
+                    <h2 class="display-4 fw-bold text-dark mb-4">Support My Development Journey</h2>
+                    <p class="fs-5 text-muted mb-4 lh-lg">
                         I'm Peter Light, a passionate full-stack web developer dedicated to creating innovative digital solutions. 
                         Your sponsorship helps me continue developing open-source projects, learning new technologies, and 
                         contributing to the developer community.
                     </p>
-<div class="mb-4">
-<h3 class="h4 mb-3 fw-semibold text-xl md:text-2xl font-medium mb-2">Why Sponsor Me?</h3>
-<ul class="list-unstyled">
-<li class="d-flex align-items-center mb-3">
-<i class="fas fa-code text-primary me-3 fs-5"></i>
-<span class="text-muted">Active contributor to open-source projects</span>
-</li>
-<li class="d-flex align-items-center mb-3">
-<i class="fas fa-graduation-cap text-primary me-3 fs-5"></i>
-<span class="text-muted">Continuous learning and skill development</span>
-</li>
-<li class="d-flex align-items-center mb-3">
-<i class="fas fa-users text-primary me-3 fs-5"></i>
-<span class="text-muted">Mentoring aspiring developers</span>
-</li>
-<li class="d-flex align-items-center mb-3">
-<i class="fas fa-rocket text-primary me-3 fs-5"></i>
-<span class="text-muted">Building innovative web solutions</span>
-</li>
-</ul>
-</div>
-<div class="alert alert-info border-0 mb-4" style="background-color: #e8f4fd; border-left: 4px solid #667eea !important;">
-<p class="mb-2">
-<strong>Check out my work:</strong>
-</p>
-<a class="text-decoration-none fw-semibold" href="https://peterlight123.github.io/portfolio" rel="noopener" style="color: #667eea;" target="_blank">
-                            View My Portfolio <i class="fas fa-external-link-alt ms-1"></i>
-</a>
-</div>
-<a class="btn btn-lg px-4 py-3 rounded-pill fw-semibold text-white" href="sponsor.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
-<i class="fas fa-heart me-2"></i>
+                    <div class="mb-4">
+                        <h3 class="h4 mb-3 fw-semibold">Why Sponsor Me?</h3>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-code text-primary me-3 fs-5"></i>
+                                <span class="text-muted">Active contributor to open-source projects</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-mortarboard text-primary me-3 fs-5"></i>
+                                <span class="text-muted">Continuous learning and skill development</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-people text-primary me-3 fs-5"></i>
+                                <span class="text-muted">Mentoring aspiring developers</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-rocket text-primary me-3 fs-5"></i>
+                                <span class="text-muted">Building innovative web solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info border-0 mb-4" style="background-color: #e8f4fd; border-left: 4px solid #667eea !important;">
+                        <p class="mb-2">
+                            <strong>Check out my work:</strong>
+                        </p>
+                        <a class="text-decoration-none fw-semibold" href="https://peterlight123.github.io/portfolio" rel="noopener" style="color: #667eea;" target="_blank">
+                            View My Portfolio <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                    <a class="btn btn-lg px-4 py-3 rounded-pill fw-semibold text-white" href="sponsor.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                        <i class="bi bi-heart me-2"></i>
                         Sponsor Now
                     </a>
-</div>
-</div>
-<!-- Sponsor Visual Card -->
-<div class="col-lg-6">
-<div class="card border-0 shadow-lg h-100" style="border-radius: 20px;">
-<div class="card-body p-4 p-md-5">
-<!-- Profile Section -->
-<div class="text-center mb-4">
-<div class="mb-3">
-<i class="fas fa-user-circle text-primary" style="font-size: 4rem;"></i>
-</div>
-<h3 class="h4 mb-1 text-xl md:text-2xl font-medium mb-2">Peter Light</h3>
-<p class="text-muted mb-0">Full-Stack Web Developer</p>
-</div>
-<!-- Stats Section -->
-<div class="row g-3 mb-4">
-<div class="col-4">
-<div class="text-center p-3 bg-light rounded-3">
-<div class="h4 fw-bold text-primary mb-1">20+</div>
-<small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Projects Completed</small>
-</div>
-</div>
-<div class="col-4">
-<div class="text-center p-3 bg-light rounded-3">
-<div class="h4 fw-bold text-primary mb-1">1+</div>
-<small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Years Experience</small>
-</div>
-</div>
-<div class="col-4">
-<div class="text-center p-3 bg-light rounded-3">
-<div class="h4 fw-bold text-primary mb-1">100%</div>
-<small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Client Satisfaction</small>
-</div>
-</div>
-</div>
-<!-- Tech Stack -->
-<div class="text-center">
-<h4 class="h5 text-dark mb-3">Tech Stack</h4>
-<div class="d-flex flex-wrap justify-content-center gap-2">
-<span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">UI/UX</span>
-<span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">HTML5</span>
-<span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">JavaScript</span> <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">Python</span>
-<span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">BootStrap</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+            <!-- Sponsor Visual Card -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg h-100" style="border-radius: 20px;">
+                    <div class="card-body p-4 p-md-5">
+                        <!-- Profile Section -->
+                        <div class="text-center mb-4">
+                            <div class="mb-3">
+                                <i class="bi bi-person-circle text-primary" style="font-size: 4rem;"></i>
+                            </div>
+                            <h3 class="h4 mb-1">Peter Light</h3>
+                            <p class="text-muted mb-0">Full-Stack Web Developer</p>
+                        </div>
+                        <!-- Stats Section -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-4">
+                                <div class="text-center p-3 bg-light rounded-3">
+                                    <div class="h4 fw-bold text-primary mb-1">20+</div>
+                                    <small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Projects Completed</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-center p-3 bg-light rounded-3">
+                                    <div class="h4 fw-bold text-primary mb-1">1+</div>
+                                    <small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Years Experience</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-center p-3 bg-light rounded-3">
+                                    <div class="h4 fw-bold text-primary mb-1">100%</div>
+                                    <small class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Client Satisfaction</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tech Stack -->
+                        <div class="text-center">
+                            <h4 class="h5 text-dark mb-3">Tech Stack</h4>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">UI/UX</span>
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">HTML5</span>
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">JavaScript</span>
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">Python</span>
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background-color: #667eea;">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="bg-dark text-light text-center text-md-start py-5 mt-5 footer">
-<div class="container">
-<div class="row">
-<!-- Brand Section -->
-<div class="col-md-3 mb-4" data-aos="fade-up">
-<h5 class="fw-bold mb-3">
-<i class="bi bi-lightning-charge me-2"></i>Peter Lightspeed
+    <div class="container">
+        <div class="row">
+            <!-- Brand Section -->
+            <div class="col-md-3 mb-4" data-aos="fade-up">
+                <h5 class="fw-bold mb-3">
+                    <i class="bi bi-lightning-charge me-2"></i>Peter Lightspeed
                 </h5>
-<p class="mb-3">Your Reliable Virtual Assistant for Digital Services</p>
-<small class="text-muted">© 2025 Eluwade Peter Toluwanimi. All rights reserved.</small>
-</div>
-<!-- Quick Links Section -->
-<div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-<h6 class="text-uppercase fw-bold mb-3 text-danger">Quick Links</h6>
-<ul class="list-unstyled">
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#About">
-<i class="bi bi-person me-2"></i>About Me
+                <p class="mb-3">Your Reliable Virtual Assistant for Digital Services</p>
+                <small class="text-muted">© 2025 Eluwade Peter Toluwanimi. All rights reserved.</small>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <h6 class="text-uppercase fw-bold mb-3 text-danger">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#About">
+                            <i class="bi bi-person me-2"></i>About Me
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-gear me-2"></i>Services
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-gear me-2"></i>Services
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Contact">
-<i class="bi bi-envelope me-2"></i>Contact
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Contact">
+                            <i class="bi bi-envelope me-2"></i>Contact
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="project.html">
-<i class="bi bi-folder me-2"></i>Projects
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="project.html">
+                            <i class="bi bi-folder me-2"></i>Projects
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#highlights">
-<i class="bi bi-star me-2"></i>Highlights
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#highlights">
+                            <i class="bi bi-star me-2"></i>Highlights
                         </a>
-</li>
-</ul>
-</div>
-<!-- Skills & Services Section -->
-<div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-<h6 class="text-uppercase fw-bold mb-3 text-danger">My Services</h6>
-<ul class="list-unstyled">
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-laptop me-2"></i>Web Design
+                    </li>
+                </ul>
+            </div>
+            <!-- Skills & Services Section -->
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <h6 class="text-uppercase fw-bold mb-3 text-danger">My Services</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-laptop me-2"></i>Web Design
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-palette me-2"></i>Graphics Design
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-palette me-2"></i>Graphics Design
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-keyboard me-2"></i>Typing &amp; Data Entry
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-keyboard me-2"></i>Typing & Data Entry
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-globe me-2"></i>Blogger Setup
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-globe me-2"></i>Blogger Setup
                         </a>
-</li>
-<li class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
-<i class="bi bi-share me-2"></i>Social Media Management
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#Services">
+                            <i class="bi bi-share me-2"></i>Social Media Management
                         </a>
-</li>
-</ul>
-</div>
-<!-- Social Media & Contact Section -->
-<div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-<h6 class="text-uppercase fw-bold mb-3 text-danger">Connect With Me</h6>
-<!-- Social Media Links -->
-<div class="social-links mb-3">
-<a aria-label="Follow me on Twitter" class="social-icon twitter me-2 mb-2 d-inline-block" href="https://x.com/peter8118533304" rel="noopener noreferrer" target="_blank" title="@peter8118533304">
-<i class="bi bi-twitter-x fs-5"></i>
-</a>
-<a aria-label="Follow me on Instagram" class="social-icon instagram me-2 mb-2 d-inline-block" href="https://www.instagram.com/eluwadepeter" rel="noopener noreferrer" target="_blank" title="@eluwadepeter">
-<i class="bi bi-instagram"></i>
-</a>
-<a aria-label="Connect with me on LinkedIn" class="social-icon linkedin me-2 mb-2 d-inline-block" href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" rel="noopener noreferrer" target="_blank" title="Peter Eluwade">
-<i class="bi bi-linkedin"></i>
-</a>
-<a aria-label="Follow me on Facebook" class="social-icon facebook me-2 mb-2 d-inline-block" href="https://www.facebook.com/profile.php?id=61575074189195" rel="noopener noreferrer" target="_blank" title="Peter Lightspeed">
-<i class="bi bi-facebook"></i>
-</a>
-<a aria-label="Follow me on TikTok" class="social-icon tiktok me-2 mb-2 d-inline-block" href="https://www.tiktok.com/@eluwadepeter" rel="noopener noreferrer" target="_blank" title="@eluwadepeter">
-<i class="bi bi-tiktok"></i>
-</a>
-<a aria-label="Subscribe to my YouTube channel" class="social-icon youtube me-2 mb-2 d-inline-block" href="https://www.youtube.com/@peterlightspeedvibes" rel="noopener noreferrer" target="_blank" title="@peterlightspeedvibes">
-<i class="bi bi-youtube"></i>
-</a>
-</div>
-<!-- Contact Information -->
-<div class="contact-info">
-<p class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="mailto:petereluwade55@gmail.com">
-<i class="bi bi-envelope me-2"></i>petereluwade55@gmail.com
+                    </li>
+                </ul>
+            </div>
+            <!-- Social Media & Contact Section -->
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <h6 class="text-uppercase fw-bold mb-3 text-danger">Connect With Me</h6>
+                <!-- Social Media Links -->
+                <div class="social-links mb-3">
+                    <a aria-label="Follow me on Twitter" class="social-icon twitter me-2 mb-2 d-inline-block" href="https://x.com/peter8118533304" rel="noopener noreferrer" target="_blank" title="@peter8118533304">
+                        <i class="bi bi-twitter-x fs-5"></i>
+                    </a>
+                    <a aria-label="Follow me on Instagram" class="social-icon instagram me-2 mb-2 d-inline-block" href="https://www.instagram.com/eluwadepeter" rel="noopener noreferrer" target="_blank" title="@eluwadepeter">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a aria-label="Connect with me on LinkedIn" class="social-icon linkedin me-2 mb-2 d-inline-block" href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" rel="noopener noreferrer" target="_blank" title="Peter Eluwade">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a aria-label="Follow me on Facebook" class="social-icon facebook me-2 mb-2 d-inline-block" href="https://www.facebook.com/profile.php?id=61575074189195" rel="noopener noreferrer" target="_blank" title="Peter Lightspeed">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a aria-label="Follow me on TikTok" class="social-icon tiktok me-2 mb-2 d-inline-block" href="https://www.tiktok.com/@eluwadepeter" rel="noopener noreferrer" target="_blank" title="@eluwadepeter">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a aria-label="Subscribe to my YouTube channel" class="social-icon youtube me-2 mb-2 d-inline-block" href="https://www.youtube.com/@peterlightspeedvibes" rel="noopener noreferrer" target="_blank" title="@peterlightspeedvibes">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <p class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="mailto:petereluwade55@gmail.com">
+                            <i class="bi bi-envelope me-2"></i>petereluwade55@gmail.com
                         </a>
-</p>
-<p class="mb-2">
-<a class="text-light text-decoration-none footer-link" href="https://wa.me/2348108821809" rel="noopener noreferrer" target="_blank">
-<i class="bi bi-whatsapp me-2"></i>+234 810 882 1809
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-light text-decoration-none footer-link" href="https://wa.me/2348108821809" rel="noopener noreferrer" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i>+234 810 882 1809
                         </a>
-</p>
-<!-- Featured Projects -->
-<div class="mt-3">
-<small class="text-muted d-block mb-2">Featured Projects:</small>
-<p class="mb-1">
-<a class="text-light text-decoration-none footer-link small" href="https://plsworldnews.blogspot.com" rel="noopener noreferrer" target="_blank">
-<i class="bi bi-globe2 me-1"></i>PLSWorldNews Blog
+                    </p>
+                    <!-- Featured Projects -->
+                    <div class="mt-3">
+                        <small class="text-muted d-block mb-2">Featured Projects:</small>
+                        <p class="mb-1">
+                            <a class="text-light text-decoration-none footer-link small" href="https://plsworldnews.blogspot.com" rel="noopener noreferrer" target="_blank">
+                                <i class="bi bi-globe2 me-1"></i>PLSWorldNews Blog
                             </a>
-</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Bottom Footer -->
-<hr class="my-4 border-secondary">
-<div class="row align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<small class="text-muted">
-                    Built with the speed of light by Peter Lightspeed | Virtual Assistant &amp; Web Developer
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Footer -->
+        <hr class="my-4 border-secondary">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <small class="text-muted">
+                    Built with the speed of light by Peter Lightspeed | Virtual Assistant & Web Developer
                 </small>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<small class="text-muted">
-<a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#licenses">
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <small class="text-muted">
+                    <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#licenses">
                         View Certifications
                     </a>
                     |
                     <a class="text-light text-decoration-none footer-link" href="https://peterlight123.github.io/portfolio/index.html#cv">
                         Download CV
                     </a>
-</small>
-</div>
-</div>
-</div>
+                </small>
+            </div>
+        </div>
+    </div>
 </footer>
-<style>
-/* ===== FOOTER STYLES ===== */
 
-.footer {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-top: 3px solid #dc3545;
-}
+<!-- ===== CHATBOT WIDGET ===== -->
+<div id="chatbot-widget" class="position-fixed bottom-0 end-0 m-4 bg-white border rounded-lg shadow-lg" style="width: 320px; transform: scale(0); transition: transform 0.3s; z-index: 1050;">
+  <div class="d-flex align-items-center justify-content-between bg-primary text-white p-3 rounded-top">
+    <span class="fw-semibold">Peter Assistant</span>
+    <button id="close-chat" class="btn btn-sm text-white">✖</button>
+  </div>
+  <div id="chat-area-widget" class="p-3" style="height: 300px; overflow-y: auto;"></div>
+  <div class="d-flex align-items-center p-2 border-top">
+    <input id="user-input-widget" type="text" placeholder="Type something..." class="form-control form-control-sm me-2">
+    <button id="send-button-widget" class="btn btn-primary btn-sm">Send</button>
+  </div>
+</div>
 
-/* Footer link hover effects */
-.footer-link {
-    transition: all 0.3s ease;
-    position: relative;
-}
+<!-- ===== FLOATING CHAT BUTTON ===== -->
+<button id="open-chat-button" class="position-fixed bottom-0 end-0 m-4 bg-primary text-white rounded-circle shadow-lg border-0" style="width: 56px; height: 56px; z-index: 1040;">
+  💬
+  <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">1</span>
+</button>
 
-.footer-link:hover {
-    color: #dc3545 !important;
-    transform: translateX(5px);
-}
-
-.footer-link:hover i {
-    color: #dc3545;
-}
-
-/* Social media icons styling */
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: white !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-}
-
-/* Individual social media colors */
-.social-icon.twitter {
-    background-color: #1da1f2;
-}
-
-.social-icon.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.social-icon.linkedin {
-    background-color: #0077b5;
-}
-/* Add this to your existing <style> block */
-emoji-picker {
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 0;
-    --emoji-size: 28px;
-    --border-radius: 0.75rem;
-    --num-columns: 8;
-    --outline-color: #e5e7eb;
-    --background-color: #ffffff;
-}
-.social-icon.facebook {
-    background-color: #1877f2;
-}
-
-.social-icon.tiktok {
-    background-color: #000000;
-}
-
-.social-icon.youtube {
-    background-color: #ff0000;
-}
-
-/* Social icon hover effects */
-.social-icon:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
-    color: white !important;
-}
-
-/* Section headers */
-.footer h6.text-danger {
-    position: relative;
-    padding-bottom: 8px;
-}
-
-.footer h6.text-danger::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: #dc3545;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .footer .col-md-3 {
-        text-align: center !important;
-        margin-bottom: 2rem;
-    }
-    
-    .footer h6.text-danger::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .social-icon {
-        margin: 0 5px 10px 5px;
-    }
-}
-
-/* Contact info styling */
-.contact-info p {
-    font-size: 0.9rem;
-}
-
-.contact-info .footer-link:hover {
-    transform: none;
-    padding-left: 5px;
-}
-
-/* Bottom footer border */
-.footer hr {
-    opacity: 0.3;
-}
-</style>
 <!-- ===== JAVASCRIPT LIBRARIES ===== -->
 <!-- Bootstrap JavaScript -->
-<script crossorigin="anonymous" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoDQHOZefdfd1z0ar3xS4FBcXlRSJoC7E4CkFjZVhFQ51Ym" crossorigin="anonymous"></script>
 <!-- AOS Animation Library -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- Custom JavaScript -->
 <script>
-        // ===== INITIALIZATION =====
-        
-        // Initialize AOS animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS (Animate On Scroll) library
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100
-            });
-            
-            // Show welcome message
-            showWelcomeMessage();
-            
-            // Initialize form validation
-            initializeFormValidation();
+    // ===== INITIALIZATION =====
+    
+    // Initialize AOS animations when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS (Animate On Scroll) library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
         });
-
-        // ===== WELCOME MESSAGE =====
         
-        /**
-         * Display a professional welcome message
-         * Replaced intrusive alert with a better UX approach
-         */
-        function showWelcomeMessage() {
-            // Create a toast notification instead of alert
-            const toastHTML = `
-                <div class="toast-container position-fixed top-0 end-0 p-3">
-                    <div id="welcomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header bg-primary text-white">
-                            <strong class="me-auto">Welcome!</strong>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Welcome to Eluwade Peter's Portfolio! Explore my services and get in touch.
-                        </div>
+        // Show welcome message
+        showWelcomeMessage();
+        
+        // Initialize form validation
+        initializeFormValidation();
+    });
+
+    // ===== WELCOME MESSAGE =====
+    
+    /**
+     * Display a professional welcome message
+     * Replaced intrusive alert with a better UX approach
+     */
+    function showWelcomeMessage() {
+        // Create a toast notification instead of alert
+        const toastHTML = `
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="welcomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-primary text-white">
+                        <strong class="me-auto">Welcome!</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Welcome to Eluwade Peter's Portfolio! Explore my services and get in touch.
                     </div>
                 </div>
-            `;
-            
-            // Add toast to body
-            document.body.insertAdjacentHTML('beforeend', toastHTML);
-            
-            // Show toast
-            const toastElement = document.getElementById('welcomeToast');
-            const toast = new bootstrap.Toast(toastElement, {
-                autohide: true,
-                delay: 5000
-            });
-            toast.show();
-        }
-
-        // ===== FORM HANDLING =====
+            </div>
+        `;
         
-        /**
-         * Initialize form validation and submission handling
-         */
-        function initializeFormValidation() {
-            const form = document.getElementById('contact-form');
-            const statusDiv = document.getElementById('form-status');
-            
-            if (form) {
-                form.addEventListener('submit', handleFormSubmission);
-            }
-        }
+        // Add toast to body
+        document.body.insertAdjacentHTML('beforeend', toastHTML);
+        
+        // Show toast
+        const toastElement = document.getElementById('welcomeToast');
+        const toast = new bootstrap.Toast(toastElement, {
+            autohide: true,
+            delay: 5000
+        });
+        toast.show();
+    }
 
-        /**
-         * Handle form submission with validation and user feedback
-         * @param {Event} event - Form submission event
-         */
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const spinner = submitButton.querySelector('.spinner-border');
-            const statusDiv = document.getElementById('form-status');
-            
-            // Validate form
-            if (!form.checkValidity()) {
-                event.stopPropagation();
-                form.classList.add('was-validated');
-                return;
+    // ===== FORM HANDLING =====
+    
+    /**
+     * Initialize form validation and submission handling
+     */
+    function initializeFormValidation() {
+        const form = document.getElementById('contact-form');
+        const statusDiv = document.getElementById('form-status');
+        
+        if (form) {
+            form.addEventListener('submit', handleFormSubmission);
+        }
+    }
+
+    /**
+     * Handle form submission with validation and user feedback
+     * @param {Event} event - Form submission event
+     */
+    function handleFormSubmission(event) {
+        event.preventDefault();
+        
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const spinner = submitButton.querySelector('.spinner-border');
+        const statusDiv = document.getElementById('form-status');
+        
+        // Validate form
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            form.classList.add('was-validate        // Validate form
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            form.classList.add('was-validated');
+            return;
+        }
+        
+        // Show loading state
+        submitButton.disabled = true;
+        spinner.classList.remove('d-none');
+        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        
+        // Prepare form data
+        const formData = new FormData(form);
+        
+        // Submit form
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
-            
-            // Show loading state
-            submitButton.disabled = true;
-            spinner.classList.remove('d-none');
-            submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-            
-            // Prepare form data
-            const formData = new FormData(form);
-            
-            // Submit form
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
+        })
+        .then(response => {
+            if (response.ok) {
+                showFormStatus('success', 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.');
+                form.reset();
+                form.classList.remove('was-validated');
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showFormStatus('error', 'Sorry, there was an error sending your message. Please try again or contact me directly via email.');
+        })
+        .finally(() => {
+            // Reset button state
+            submitButton.disabled = false;
+            spinner.classList.add('d-none');
+            submitButton.innerHTML = 'Send Message';
+        });
+    }
+
+    /**
+     * Display form submission status message
+     * @param {string} type - Status type ('success' or 'error')
+     * @param {string} message - Status message to display
+     */
+    function showFormStatus(type, message) {
+        const statusDiv = document.getElementById('form-status');
+        const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+        const iconClass = type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill';
+        
+        statusDiv.innerHTML = `
+            <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
+                <i class="bi ${iconClass} me-2"></i>
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        `;
+        
+        // Auto-hide success messages after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                const alert = statusDiv.querySelector('.alert');
+                if (alert) {
+                    const bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
                 }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showFormStatus('success', 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.');
-                    form.reset();
-                    form.classList.remove('was-validated');
-                } else {
-                    throw new Error('Network response was not ok');
+            }, 5000);
+        }
+    }
+
+    // ===== SMOOTH SCROLLING =====
+    
+    /**
+     * Enhanced smooth scrolling for navigation links
+     */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            if (target) {
+                const headerOffset = 80; // Account for fixed navbar
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ===== PERFORMANCE OPTIMIZATIONS =====
+    
+    /**
+     * Lazy load images for better performance
+     */
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
                 }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                showFormStatus('error', 'Sorry, there was an error sending your message. Please try again or contact me directly via email.');
-            })
-            .finally(() => {
-                // Reset button state
-                submitButton.disabled = false;
-                spinner.classList.add('d-none');
-                submitButton.innerHTML = 'Send Message';
             });
-        }
+        });
 
-        /**
-         * Display form submission status message
-         * @param {string} type - Status type ('success' or 'error')
-         * @param {string} message - Status message to display
-         */
-        function showFormStatus(type, message) {
-            const statusDiv = document.getElementById('form-status');
-            const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
-            const iconClass = type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill';
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // ===== ACCESSIBILITY ENHANCEMENTS =====
+    
+    /**
+     * Keyboard navigation support for custom elements
+     */
+    document.addEventListener('keydown', function(e) {
+        // Add keyboard support for social buttons
+        if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.classList.contains('social-btn')) {
+                e.preventDefault();
+                e.target.click();
+            }
+        }
+    });
+
+    // ===== ERROR HANDLING =====
+    
+    /**
+     * Global error handler for better user experience
+     */
+    window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        // You could implement error reporting here
+    });
+
+    /**
+     * Handle unhandled promise rejections
+     */
+    window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled promise rejection:', e.reason);
+        // You could implement error reporting here
+    });
+
+    // ===== CHATBOT FUNCTIONALITY =====
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotWidget = document.getElementById('chatbot-widget');
+        const openChatButton = document.getElementById('open-chat-button');
+        const closeChatButton = document.getElementById('close-chat');
+        const chatArea = document.getElementById('chat-area-widget');
+        const userInput = document.getElementById('user-input-widget');
+        const sendButton = document.getElementById('send-button-widget');
+        const notificationBadge = document.getElementById('notification-badge');
+        
+        // Open chat widget
+        openChatButton.addEventListener('click', function() {
+            chatbotWidget.style.transform = 'scale(1)';
+            openChatButton.style.transform = 'scale(0)';
+            notificationBadge.classList.add('d-none');
             
-            statusDiv.innerHTML = `
-                <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
-                    <i class="bi ${iconClass} me-2"></i>
+            // Add welcome message if chat is empty
+            if (chatArea.children.length === 0) {
+                addBotMessage("Hi there! I'm Peter's virtual assistant. How can I help you today?");
+            }
+        });
+        
+        // Close chat widget
+        closeChatButton.addEventListener('click', function() {
+            chatbotWidget.style.transform = 'scale(0)';
+            openChatButton.style.transform = 'scale(1)';
+        });
+        
+        // Send message on button click
+        sendButton.addEventListener('click', sendMessage);
+        
+        // Send message on Enter key
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Show notification after 15 seconds if chat not opened
+        setTimeout(function() {
+            if (chatbotWidget.style.transform !== 'scale(1)') {
+                notificationBadge.classList.remove('d-none');
+            }
+        }, 15000);
+        
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                // Add user message to chat
+                addUserMessage(message);
+                userInput.value = '';
+                
+                // Simulate typing indicator
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'typing-indicator d-flex align-items-center mb-3';
+                typingIndicator.innerHTML = `
+                    <div class="bg-light rounded p-3">
+                        <div class="d-flex">
+                            <div class="spinner-grow spinner-grow-sm text-primary me-1" role="status"></div>
+                            <div class="spinner-grow spinner-grow-sm text-primary me-1" role="status"></div>
+                            <div class="spinner-grow spinner-grow-sm text-primary" role="status"></div>
+                        </div>
+                    </div>
+                `;
+                chatArea.appendChild(typingIndicator);
+                chatArea.scrollTop = chatArea.scrollHeight;
+                
+                // Process the message and respond (simulated delay)
+                setTimeout(() => {
+                    // Remove typing indicator
+                    chatArea.removeChild(typingIndicator);
+                    
+                    // Add bot response
+                    const response = getBotResponse(message);
+                    addBotMessage(response);
+                }, 1000);
+            }
+        }
+        
+        function addUserMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'd-flex justify-content-end mb-3';
+            messageElement.innerHTML = `
+                <div class="bg-primary text-white rounded p-3" style="max-width: 80%;">
                     ${message}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             `;
+            chatArea.appendChild(messageElement);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+        
+        function addBotMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'd-flex mb-3';
+            messageElement.innerHTML = `
+                <div class="bg-light rounded p-3" style="max-width: 80%;">
+                    ${message}
+                </div>
+            `;
+            chatArea.appendChild(messageElement);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+        
+        function getBotResponse(message) {
+            message = message.toLowerCase();
             
-            // Auto-hide success messages after 5 seconds
-            if (type === 'success') {
-                setTimeout(() => {
-                    const alert = statusDiv.querySelector('.alert');
-                    if (alert) {
-                        const bsAlert = new bootstrap.Alert(alert);
-                        bsAlert.close();
-                    }
-                }, 5000);
+            if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                return "Hello! How can I help you today?";
+            } else if (message.includes('services') || message.includes('what do you do')) {
+                return "Peter offers services including web design, graphic design, typing & data entry, blogger setup, SEO optimization, and social media management. Would you like to know more about any specific service?";
+            } else if (message.includes('contact') || message.includes('reach') || message.includes('email')) {
+                return "You can contact Peter via email at petereluwade55@gmail.com or WhatsApp at +234 810 882 1809. Would you like me to help you with anything else?";
+            } else if (message.includes('price') || message.includes('cost') || message.includes('rate')) {
+                return "Pricing depends on the specific project requirements. Please use the contact form to describe your project, and Peter will provide you with a custom quote.";
+            } else if (message.includes('portfolio') || message.includes('work') || message.includes('projects')) {
+                return "You can view Peter's portfolio and past projects in the Projects section. Would you like me to direct you there?";
+            } else {
+                return "Thanks for your message! For specific inquiries, please use the contact form and Peter will get back to you within 24 hours.";
             }
         }
-
-        // ===== SMOOTH SCROLLING =====
-        
-        /**
-         * Enhanced smooth scrolling for navigation links
-         */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                
-                if (target) {
-                    const headerOffset = 80; // Account for fixed navbar
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // ===== PERFORMANCE OPTIMIZATIONS =====
-        
-        /**
-         * Lazy load images for better performance
-         */
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // ===== ACCESSIBILITY ENHANCEMENTS =====
-        
-        /**
-         * Keyboard navigation support for custom elements
-         */
-        document.addEventListener('keydown', function(e) {
-            // Add keyboard support for social buttons
-            if (e.key === 'Enter' || e.key === ' ') {
-                if (e.target.classList.contains('social-btn')) {
-                    e.preventDefault();
-                    e.target.click();
-                }
-            }
-        });
-
-        // ===== ERROR HANDLING =====
-        
-        /**
-         * Global error handler for better user experience
-         */
-        window.addEventListener('error', function(e) {
-            console.error('Global error:', e.error);
-            // You could implement error reporting here
-        });
-
-        /**
-         * Handle unhandled promise rejections
-         */
-        window.addEventListener('unhandledrejection', function(e) {
-            console.error('Unhandled promise rejection:', e.reason);
-            // You could implement error reporting here
-        });
-    
-
-
-    </script>
-
-<!-- ===== Chatbot Widget ===== -->
-<div id="chatbot-widget" class="fixed bottom-4 right-4 z-50 bg-white border rounded-lg shadow-lg w-80 scale-0 transition-transform duration-300">
-  <div class="flex items-center justify-between bg-blue-600 text-white p-3 rounded-t-lg">
-    <span class="font-semibold">Peter Assistant</span>
-    <button id="close-chat" class="text-sm hover:text-red-300">✖</button>
-  </div>
-  <div id="chat-area-widget" class="p-3 h-64 overflow-y-auto flex flex-col gap-2 text-sm"></div>
-  <div class="flex items-center p-2 border-t">
-    <input id="user-input-widget" type="text" placeholder="Type something..." class="flex-1 border rounded px-2 py-1 text-sm outline-none" >
-    <button id="send-button-widget" class="ml-2 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Send</button>
-  </div>
-</div>
-
-<!-- ===== Floating Chat Button ===== -->
-<button id="open-chat-button" class="fixed bottom-4 right-4 z-40 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:bg-blue-700 transition scale-100">
-  💬
-  <div id="notification-badge" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1 hidden">1</span></button>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    });
+</script>
 
 <!-- Link bot.js -->
 <script src="bot.js"></script>
