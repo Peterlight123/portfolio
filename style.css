@@ -13,6 +13,30 @@ html {
     /* Offset for fixed navbar to prevent content from being hidden */
     scroll-padding-top: 70px; 
 }
+/* Chatbot Styles */
+#chatbot-widget {
+    transition: transform 0.3s ease;
+}
+
+#chat-area-widget {
+    height: 300px;
+    overflow-y: auto;
+}
+
+#open-chat-button {
+    transition: transform 0.3s ease;
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.spinner-grow {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
 
 body {
     /* Main typography and font smoothing */
@@ -556,4 +580,5 @@ emoji-picker {
     --outline-color: #e5e7eb;
     --background-color: #ffffff;
 }
+
 
