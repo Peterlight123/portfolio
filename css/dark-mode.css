@@ -1,0 +1,257 @@
+/* Dark Mode Styles */
+:root {
+  /* Light mode colors (default) */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --nav-bg: #ffffff;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #007bff;
+  --secondary-bg: #e9ecef;
+  --hover-bg: #f8f9fa;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --nav-bg: #2d2d2d;
+  --button-bg: #0d6efd;
+  --button-text: #ffffff;
+  --input-bg: #3d3d3d;
+  --input-border: #555555;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-color: #4dabf7;
+  --secondary-bg: #404040;
+  --hover-bg: #404040;
+}
+
+/* Apply dark mode styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation */
+.navbar,
+nav,
+header {
+  background-color: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand,
+.nav-link,
+.navbar-nav .nav-link {
+  color: var(--text-color) !important;
+}
+
+.nav-link:hover {
+  background-color: var(--hover-bg);
+  border-radius: 5px;
+}
+
+/* Cards and containers */
+.card,
+.container,
+.content-section,
+.section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+/* Buttons */
+.btn,
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--button-bg);
+}
+
+.btn:hover,
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--button-text);
+}
+
+/* Forms */
+.form-control,
+input,
+textarea,
+select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(77, 171, 247, 0.25);
+}
+
+/* Tables */
+.table {
+  color: var(--text-color);
+  background-color: var(--card-bg);
+}
+
+.table th,
+.table td {
+  border-color: var(--border-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--secondary-bg);
+}
+
+/* Modals */
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border-color);
+}
+
+/* Alerts */
+.alert {
+  border: 1px solid var(--border-color);
+}
+
+.alert-info {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dark-mode-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.dark-mode-toggle .icon {
+  font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Chatbot dark mode compatibility */
+.chatbot-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.chatbot-header {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chatbot-messages {
+  background-color: var(--bg-color);
+}
+
+.user-message {
+  background-color: var(--accent-color);
+  color: var(--button-text);
+}
+
+.bot-message {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.chatbot-input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
