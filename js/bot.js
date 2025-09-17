@@ -10,7 +10,7 @@ const botConfig = (function() {
         initialMessage: "👋 Hello! I'm Peter's virtual assistant. How can I help you today? I can provide information about Peter's services, projects, or answer any questions you might have.",
         typingSpeed: 50,
         responseDelay: 500,
-        botAvatar: "/images/profile/bot-img.jpeg",
+        botAvatar: "images/profile/bot-img.jpeg",
         knowledgeBase: {
             // General information
             "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is a professional virtual assistant and web developer based in Nigeria. He offers services including web development, graphic design, social media management, data entry, content creation, and digital marketing. With his expertise and dedication, he helps businesses establish a strong online presence.",
@@ -947,3 +947,4 @@ function formatTimestamp(timestamp) {
         return getCurrentTime();
     }
 }
+
