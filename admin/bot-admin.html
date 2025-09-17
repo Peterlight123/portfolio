@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #dc3545;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>404 - Page Not Found</h1>
+    <p>The page you are looking for does not exist.</p>
+    <p><a href="/">Return to Homepage</a></p>
+    
+    <script>
+        // Log access attempt
+        (function() {
+            try {
+                const attempts = JSON.parse(localStorage.getItem('accessAttempts')) || [];
+                attempts.push({
+                    timestamp: new Date().toISOString(),
+                    success: false,
+                    userAgent: navigator.userAgent,
+                    note: "Attempted to access decoy admin page"
+                });
+                
+                localStorage.setItem('accessAttempts', JSON.stringify(attempts));
+            } catch (error) {
+                console.error('Error logging access attempt');
+            }
+            
+            // Redirect after a delay
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3000);
+        })();
+    </script>
+</body>
+</html>
+<!-- Add Response Button -->
