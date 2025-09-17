@@ -19,23 +19,26 @@ class DarkModeManager {
     }
 
     createToggleButton() {
-        // Check if button already exists
-        if (document.querySelector('.dark-mode-toggle')) {
-            return;
-        }
-
-        const toggleButton = document.createElement('button');
-        toggleButton.className = 'dark-mode-toggle';
-        toggleButton.innerHTML = `
-            <span class="icon">🌙</span>
-            <span class="text">Dark</span>
-        `;
-        toggleButton.setAttribute('aria-label', 'Toggle dark mode');
-        toggleButton.setAttribute('title', 'Toggle dark mode');
-        
-        document.body.appendChild(toggleButton);
-        this.toggleButton = toggleButton;
+    if (document.querySelector('.dark-mode-toggle')) {
+        return;
     }
+
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'dark-mode-toggle';
+    toggleButton.innerHTML = `
+        <div class="toggle-slider">
+            <div class="toggle-circle">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </div>
+        </div>
+    `;
+    toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+    
+    document.body.appendChild(toggleButton);
+    this.toggleButton = toggleButton;
+}
+
 
     addEventListeners() {
         // Toggle button click
