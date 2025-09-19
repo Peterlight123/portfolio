@@ -225,7 +225,6 @@ function createChatbotElements() {
             position: fixed;
             bottom: 20px;
             right: 0px;
-            margin-bottom: 30px;
             width: 350px;
             height: 500px;
             background-color: #fff;
@@ -397,7 +396,8 @@ function createChatbotElements() {
         #open-chat-button {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: 0px;
+            margin-bottom: 30px;
             width: 60px;
             height: 60px;
             margin-right: 30px;
@@ -948,6 +948,7 @@ function formatTimestamp(timestamp) {
         return getCurrentTime();
     }
 }
+
 
 
 
