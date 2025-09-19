@@ -225,6 +225,7 @@ function createChatbotElements() {
             position: fixed;
             bottom: 20px;
             right: 0px;
+            margin-bottom: 30px;
             width: 350px;
             height: 500px;
             background-color: #fff;
@@ -947,5 +948,6 @@ function formatTimestamp(timestamp) {
         return getCurrentTime();
     }
 }
+
 
 
