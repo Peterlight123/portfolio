@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Preload logo image to prevent loading delay
 document.addEventListener('DOMContentLoaded', function() {
     const logoImg = new Image();
-    logoImg.src = 'images/logo/peter-logo.png'; // Preload your logo
+    logoImg.src = 'images/logos/peter-logo.png'; // Preload your logo
 });
+
 
