@@ -806,7 +806,7 @@ h2::after {
 /* Animation for social links */
 .social-link {
     position: relative;
-    /* overflow: hidden; */
+     overflow: hidden; 
 }
 
 .social-link::before {
@@ -1096,6 +1096,7 @@ h2::after {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
+
 
 
 
