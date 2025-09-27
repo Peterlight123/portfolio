@@ -216,3 +216,96 @@ function declineCookies() {
     document.getElementById('cookieConsent').classList.remove('show');
     window['ga-disable-G-9NKNYWDH33'] = true;
 }
+// Enhanced form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Dynamic form behavior
+    const projectType = document.getElementById('projectType');
+    const logoStatus = document.getElementById('logoStatus');
+    
+    // Show/hide logo upload based on selection
+    logoStatus.addEventListener('change', function() {
+        const logoUploadSection = document.querySelector('#logoUpload').closest('.mb-3');
+        if (this.value === 'I have a logo') {
+            logoUploadSection.style.display = 'block';
+            document.getElementById('logoUpload').required = true;
+        } else {
+            logoUploadSection.style.display = 'none';
+            document.getElementById('logoUpload').required = false;
+        }
+    });
+    
+    // Form submission with file handling
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            const formData = new FormData(form);
+            
+            // Add additional info
+            formData.append('submission_time', new Date().toISOString());
+            formData.append('user_agent', navigator.userAgent);
+            
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                showMessage('success', '🎉 Amazing! Your project inquiry has been sent successfully. I\'ll get back to you within 24 hours with a detailed quote and next steps!');
+                form.reset();
+                
+                // Track successful submission
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        'event_category': 'Contact',
+                        'event_label': 'Project Inquiry'
+                    });
+                }
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            showMessage('error', '❌ Oops! Something went wrong. Please try again or contact me directly via WhatsApp: +234 810 882 1809');
+        } finally {
+            submitBtn.innerHTML = '<i class="bi bi-rocket-takeoff me-2"></i>Launch My Project';
+            submitBtn.disabled = false;
+        }
+    });
+    
+    function showMessage(type, message) {
+        formMessage.className = `alert alert-${type === 'success' ? 'success' : 'danger'}`;
+        formMessage.innerHTML = message;
+        formMessage.style.display = 'block';
+        formMessage.scrollIntoView({ behavior: 'smooth' });
+        
+        if (type === 'success') {
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 10000);
+        }
+    }
+    
+    // File size validation
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const maxSize = 5 * 1024 * 1024; // 5MB
+            const files = Array.from(this.files);
+            
+            files.forEach(file => {
+                if (file.size > maxSize) {
+                    alert(`File "${file.name}" is too large. Maximum size is 5MB.`);
+                    this.value = '';
+                }
+            });
+        });
+    });
+});
+
