@@ -3,7 +3,7 @@ name: IndexNow Submit
 on:
   push:
     branches:
-      - main   # or 'master', depending on your repo
+      - main   # change to "master" if your default branch is master
 
 jobs:
   indexnow:
@@ -17,14 +17,38 @@ jobs:
           curl -H "Content-Type: application/json; charset=utf-8" -X POST "https://api.indexnow.org/IndexNow" -d '{
             "host": "peterlight123.github.io",
             "key": "5bcae238ca7e46f59f179c03bf8ce433",
-            "keyLocation": "https://peterlight123.github.io/5bcae238ca7e46f59f179c03bf8ce433",
+            "keyLocation": "https://peterlight123.github.io/5bcae238ca7e46f59f179c03bf8ce433.txt",
             "urlList": [
-              "https://peterlight123.github.io/portfolio/",
+              name: IndexNow Submit
+
+on:
+  push:
+    branches:
+      - main   # change to "master" if your default branch is master
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Submit URLs to IndexNow
+        run: |
+          curl -H "Content-Type: application/json; charset=utf-8" -X POST "https://api.indexnow.org/IndexNow" -d '{
+            "host": "peterlight123.github.io",
+            "key": "5bcae238ca7e46f59f179c03bf8ce433",
+            "keyLocation": "https://peterlight123.github.io/5bcae238ca7e46f59f179c03bf8ce433.txt",
+            "urlList": [
+             "https://peterlight123.github.io/portfolio/",
               "https://peterlight123.github.io/portfolio/about.html",
               "https://peterlight123.github.io/portfolio/contact.html",
               "https://peterlight123.github.io/portfolio/testimonials.html",
               "https://peterlight123.github.io/portfolio/sponsor.html",
               "https://peterlight123.github.io/portfolio/cv.html",
               "https://peterlight123.github.io/portfolio/projects.html"
+            ]
+          }'
+
             ]
           }'
