@@ -1,0 +1,26 @@
+name: IndexNow Submit
+
+on:
+  push:
+    branches:
+      - main   # or 'master', depending on your repo
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Submit URLs to IndexNow
+        run: |
+          curl -H "Content-Type: application/json; charset=utf-8" -X POST "https://api.indexnow.org/IndexNow" -d '{
+            "host": "peterlight123.github.io",
+            "key": "f8a6cd2575504cd0b2d3518254abdc9b",
+            "keyLocation": "https://peterlight123.github.io/f8a6cd2575504cd0b2d3518254abdc9b.txt",
+            "urlList": [
+              "https://peterlight123.github.io/portfolio/",
+              "https://peterlight123.github.io/portfolio/about.html",
+              "https://peterlight123.github.io/portfolio/projects.html"
+            ]
+          }'
