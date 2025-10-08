@@ -1097,18 +1097,8 @@ h2::after {
     image-rendering: crisp-edges;
 }
 
-/* ===== FIX MOBILE OVERFLOW ===== */
-html, body {
-  overflow-x: hidden !important;
-}
 
-.social-sidebar {
-  overflow-x: hidden;
-}
 
-.social-sidebar-toggle {
-  overflow: hidden;
-}
 
 
 
