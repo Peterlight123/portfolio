@@ -554,7 +554,9 @@ h2::after {
 .social-sidebar {
     position: fixed;
     top: 50%;
-    right: -280px;
+    /* right: -280px; */
+   transform: translateX(280px);
+   right: 0;
     transform: translateY(-50%);
     z-index: 1060;
     transition: right 0.3s ease-in-out;
@@ -1096,6 +1098,7 @@ h2::after {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
+
 
 
 
