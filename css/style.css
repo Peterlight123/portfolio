@@ -554,9 +554,7 @@ h2::after {
 .social-sidebar {
     position: fixed;
     top: 50%;
-    /* right: -280px; */
-   transform: translateX(280px);
-   right: 0;
+    right: -280px; 
     transform: translateY(-50%);
     z-index: 1060;
     transition: right 0.3s ease-in-out;
@@ -1097,6 +1095,19 @@ h2::after {
 .loading-logo {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+}
+
+/* ===== FIX MOBILE OVERFLOW ===== */
+html, body {
+  overflow-x: hidden !important;
+}
+
+.social-sidebar {
+  overflow-x: hidden;
+}
+
+.social-sidebar-toggle {
+  overflow: hidden;
 }
 
 
