@@ -62,31 +62,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// window.addEventListener("load", function () {
-//   // Create a message box
-//   const notice = document.createElement("div");
-//   notice.innerText = "⚠️ You might have issues scrolling, but we are working on it.";
+window.addEventListener("load", function () {
+  // Create a message box
+  const notice = document.createElement("div");
+  notice.innerText = "⚠️ You might have issues scrolling, but we are working on it.";
   
-//   // Style the message box
-//   notice.style.position = "fixed";
-//   notice.style.bottom = "20px";
-//   notice.style.right = "20px";
-//   notice.style.background = "#ffcc00";
-//   notice.style.color = "#000";
-//   notice.style.padding = "10px 15px";
-//   notice.style.borderRadius = "8px";
-//   notice.style.boxShadow = "0 4px 6px rgba(0,0,0,0.2)";
-//   notice.style.fontFamily = "Arial, sans-serif";
-//   notice.style.zIndex = "9999";
+  // Style the message box
+  notice.style.position = "fixed";
+  notice.style.bottom = "20px";
+  notice.style.right = "20px";
+  notice.style.background = "#ffcc00";
+  notice.style.color = "#000";
+  notice.style.padding = "10px 15px";
+  notice.style.borderRadius = "8px";
+  notice.style.boxShadow = "0 4px 6px rgba(0,0,0,0.2)";
+  notice.style.fontFamily = "Arial, sans-serif";
+  notice.style.zIndex = "9999";
 
-//   // Add it to the page
-//   document.body.appendChild(notice);
+  // Add it to the page
+  document.body.appendChild(notice);
 
-//   // Auto-hide after 10 seconds
-//   setTimeout(() => {
-//     notice.remove();
-//   }, 10000);
-// });
+  // Auto-hide after 10 seconds
+  setTimeout(() => {
+    notice.remove();
+  }, 10000);
+});
+
 
 
 
