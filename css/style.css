@@ -872,7 +872,7 @@ h2::after {
 /* =====================================================================
    PROFESSIONAL LOADING SCREEN
    ===================================================================== */
-/*  
+
 .loading-screen {
     position: fixed;
     top: 0;
@@ -1092,7 +1092,7 @@ h2::after {
     }
 }
 
-/* Preload logo image 
+/* Preload logo image */
 .loading-logo {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -1100,7 +1100,8 @@ h2::after {
 
 
 
-*/
+
+
 
 
 
