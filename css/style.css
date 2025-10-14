@@ -872,6 +872,7 @@ h2::after {
 /* =====================================================================
    PROFESSIONAL LOADING SCREEN
    ===================================================================== */
+/*  
 .loading-screen {
     position: fixed;
     top: 0;
@@ -898,7 +899,7 @@ h2::after {
     padding: 2rem;
 }
 
-/* Logo Animation */
+/* Logo Animation 
 .logo-loader {
     margin-bottom: 3rem;
 }
@@ -926,7 +927,7 @@ h2::after {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Loading Progress */
+/* Loading Progress 
 .loading-progress {
     position: relative;
 }
@@ -967,7 +968,7 @@ h2::after {
     animation: percentageGlow 1.5s ease-in-out infinite alternate;
 }
 
-/* Animations */
+/* Animations 
 @keyframes logoFloat {
     0%, 100% { 
         transform: translateY(0px) rotate(0deg);
@@ -1019,7 +1020,7 @@ h2::after {
     }
 }
 
-/* Particle Effect Background */
+/* Particle Effect Background 
 .loading-screen::before {
     content: '';
     position: absolute;
@@ -1040,7 +1041,7 @@ h2::after {
     66% { transform: translateY(-10px) rotate(-1deg); }
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive 
 @media (max-width: 768px) {
     .loading-container {
         padding: 1rem;
@@ -1091,7 +1092,7 @@ h2::after {
     }
 }
 
-/* Preload logo image */
+/* Preload logo image 
 .loading-logo {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -1099,6 +1100,7 @@ h2::after {
 
 
 
+*/
 
 
 
