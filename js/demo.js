@@ -5,8 +5,7 @@ const projects = [
         description: 'A responsive portfolio website showcasing my skills, projects, and services as a virtual assistant.',
         tech: 'bootstrap,html, css, javascript, usebasin, formspree',
         url: 'https://peterlight123.github.io/portfolio/index.html',
-        status: 'live'
-        url: 'https://i.imgur.com/YhCPbz5.png',
+        status: 'live',
         image: 'https://i.imgur.com/YhCPbz5.png'
     },
     {
