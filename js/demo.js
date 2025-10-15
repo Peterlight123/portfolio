@@ -1,62 +1,58 @@
-/**
- * Demo Page JavaScript
- */
-
-// Your projects data - Add your actual project URLs here
 const projects = [
     {
-        id: 'ecommerce-store',
-        title: 'E-Commerce Store',
-        description: 'Full-stack e-commerce platform with payment integration',
-        tech: 'React, Node.js, MongoDB, Stripe',
-        url: 'https://your-ecommerce-demo.vercel.app', // Replace with actual URL
-        status: 'live', // live, demo, coming-soon
-        image: 'assets/images/projects/ecommerce.jpg'
+        id: 'portfolio',
+        title: 'Personal Portfolio Website',
+        description: 'A responsive portfolio website showcasing my skills, projects, and services as a virtual assistant.',
+        tech: 'bootstrap,html, css, javascript, usebasin, formspree',
+        url: 'https://peterlight123.github.io/portfolio/index.html',
+        status: 'live'
+        url: 'https://i.imgur.com/YhCPbz5.png',
+        image: 'https://i.imgur.com/YhCPbz5.png'
     },
     {
-        id: 'task-manager',
-        title: 'Task Management App',
-        description: 'Collaborative task management with real-time updates',
-        tech: 'Vue.js, Firebase, Vuetify',
-        url: 'https://your-task-manager-demo.netlify.app', // Replace with actual URL
-        status: 'live',
-        image: 'assets/images/projects/task-manager.jpg'
-    },
-    {
-        id: 'weather-app',
-        title: 'Weather Dashboard',
-        description: 'Real-time weather app with location-based forecasts',
-        tech: 'JavaScript, OpenWeather API, Chart.js',
-        url: 'https://your-weather-app.github.io', // Replace with actual URL
+        id: 'form',
+        title: 'Formspree Contact Form',
+        description: 'A professional contact form built with HTML, CSS, and Bootstrap, integrated with Formspree',
+        tech: 'formspree, HTML, CSS, javascript',
+        url: 'https://peterlight123.github.io/formspree/', 
         status: 'demo',
-        image: 'assets/images/projects/weather.jpg'
+        image: 'https://i.imgur.com/YpEEkNu.png'
     },
     {
-        id: 'blog-platform',
-        title: 'Blog Platform',
-        description: 'Content management system with admin dashboard',
-        tech: 'PHP, Laravel, MySQL, Bootstrap',
-        url: 'https://your-blog-demo.herokuapp.com', // Replace with actual URL
+        id: 'web3',
+        title: 'Dynamic Hero Page',
+        description: 'An engaging hero page with interactive animations and a strong call-to-action',
+        tech: 'JavaScript, HTML, CSS',
+        url: 'https://peterlight123.github.io/website3/',
+        status: 'live',
+        image: 'https://i.imgur.com/bXmX09r.png'
+    },
+    {
+        id: 'blog',
+        title: 'PLS WorldNews',
+        description: 'SEO-Optimized Blog',
+        tech: 'Blogger, Html',
+        url: 'https://plsworldnews.com',
         status: 'live',
         image: 'assets/images/projects/blog.jpg'
     },
     {
-        id: 'portfolio-v2',
-        title: 'Portfolio Website v2',
-        description: 'Modern portfolio with animations and dark mode',
-        tech: 'HTML5, CSS3, JavaScript, GSAP',
-        url: 'https://peterlight123.github.io/portfolio-v2', // Replace with actual URL
-        status: 'coming-soon',
-        image: 'assets/images/projects/portfolio-v2.jpg'
+        id: 'hospital',
+        title: 'Lightspeed hospital template',
+        description: 'Modern hospital template',
+        tech: 'HTML5, CSS3, JavaScript',
+        url: 'https://peterlight123.github.io/lightspeed-hospital-template/', 
+        status: 'demo',
+        image: 'https://peterlight123.github.io/portfolio/images/projects/lightspeed-hospital.png'
     },
     {
-        id: 'chat-app',
-        title: 'Real-time Chat App',
-        description: 'WebSocket-based chat application with rooms',
-        tech: 'Socket.io, Express, React',
-        url: 'https://your-chat-app.onrender.com', // Replace with actual URL
-        status: 'demo',
-        image: 'assets/images/projects/chat.jpg'
+        id: 'basketball',
+        title: 'Freedom Reign Basketball academy',
+        description: 'Responsive Basketball academy website',
+        tech: 'HTML, CSS, Bootstrap',
+        url: 'https://peterlight123.github.io/freedomreign/', 
+        status: 'live',
+        image: 'https://i.imgur.com/sEc0qgE.png'
     }
 ];
 
