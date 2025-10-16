@@ -6,7 +6,7 @@
     <title>Client Testimonials - Peter Lightspeed | Virtual Assistant & Web Developer</title>
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Read what clients say about Peter Lightspeed's virtual assistant services, including web development, graphic design, and digital marketing.">
+    <meta name="description" content=" Read what clients say about Peter Lightspeed's virtual assistant services, including web development, graphic design, and digital marketing.">
     <meta name="keywords" content="Peter Lightspeed testimonials, client reviews, virtual assistant feedback, web development reviews, client satisfaction">
     <meta name="author" content="Peter Eluwade Toluwanimi">
     <meta name="robots" content="index, follow">
@@ -17,14 +17,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://peterlight123.github.io/portfolio/testimonials.html">
     <meta property="og:title" content="Client Testimonials - Peter Lightspeed">
-    <meta property="og:description" content="Read what clients say about Peter Lightspeed's virtual assistant services and web development.">
+    <meta property="og:description" content=" Read what clients say about Peter Lightspeed's virtual assistant services and web development.">
     <meta property="og:image" content="https://peterlight123.github.io/portfolio/images/profile/peter-picture.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://peterlight123.github.io/portfolio/testimonials.html">
     <meta property="twitter:title" content="Client Testimonials - Peter Lightspeed">
-    <meta property="twitter:description" content="Read what clients say about Peter Lightspeed's virtual assistant services and web development.">
+    <meta property="twitter:description" content=" Read what clients say about Peter Lightspeed's virtual assistant services and web development.">
     <meta property="twitter:image" content="https://peterlight123.github.io/portfolio/images/profile/peter-picture.png">
     
     <!-- Preload critical resources -->
@@ -405,108 +405,258 @@
             </div>
         </section>
 
-        <!-- LEAVE A TESTIMONIAL -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                        <h2 class="section-title mb-4">Worked With Me Before?</h2>
-                        <p class="lead mb-4">I'd love to hear about your experience! Your feedback helps me improve my services and assists other potential clients in making informed decisions.</p>
-                        <div class="d-flex flex-wrap">
-                            <a href="#testimonialForm" class="btn btn-primary me-3 mb-2">
-                                <i class="bi bi-pencil-square me-2"></i>Leave a Testimonial
-                            </a>
-                            <a href="contact.html" class="btn btn-outline-primary mb-2">
-                                <i class="bi bi-chat-text me-2"></i>Contact Me
-                            </a>
+<!-- LEAVE A TESTIMONIAL -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h2 class="section-title mb-4">Worked With Me Before?</h2>
+                <p class="lead mb-4">I'd love to hear about your experience! Your feedback helps me improve my services and assists other potential clients in making informed decisions.</p>
+                <div class="d-flex flex-wrap">
+                    <a href="#testimonialForm" class="btn btn-primary me-3 mb-2">
+                        <i class="bi bi-pencil-square me-2"></i>Leave a Testimonial
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-primary mb-2">
+                        <i class="bi bi-chat-text me-2"></i>Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="testimonial-form-wrapper" id="testimonialForm">
+                    <h3 class="h4 mb-4">Share Your Experience</h3>
+                    
+                    <form id="leaveTestimonialForm" action="https://formspree.io/f/meoljzde" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="testimonial-form-wrapper" id="testimonialForm">
-                            <h3 class="h4 mb-4">Share Your Experience</h3>
-                            <p>Sent images directly to my mail: petereluwade55@gmail.com or any other source of communication you can send it to</p>
-                            <form id="leaveTestimonialForm" action="https://formspree.io/f/meoljzde" method="POST">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="company" class="form-label">Company/Position</label>
-                                    <input type="text" class="form-control" id="company" name="company">
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                    <div class="form-text">Your email won't be published.</div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="service" class="form-label">Service Used <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="service" name="service" required>
-                                        <option value="" selected disabled>Select a service</option>
-                                        <option value="Web Development">Web Development</option>
-                                        <option value="Graphic Design">Graphic Design</option>
-                                        <option value="Social Media Management">Social Media Management</option>
-                                        <option value="Content Creation">Content Creation</option>
-                                        <option value="Data Entry & Typing">Data Entry & Typing</option>
-                                        <option value="Digital Marketing">Digital Marketing</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Rating <span class="text-danger">*</span></label>
-                                    <div class="rating-input">
-                                        <input type="radio" id="star5" name="rating" value="5" required>
-                                        <label for="star5" title="5 stars"><i class="bi bi-star-fill"></i></label>
-                                        
-                                        <input type="radio" id="star4" name="rating" value="4">
-                                        <label for="star4" title="4 stars"><i class="bi bi-star-fill"></i></label>
-                                        
-                                        <input type="radio" id="star3" name="rating" value="3">
-                                        <label for="star3" title="3 stars"><i class="bi bi-star-fill"></i></label>
-                                        
-                                        <input type="radio" id="star2" name="rating" value="2">
-                                        <label for="star2" title="2 stars"><i class="bi bi-star-fill"></i></label>
-                                        
-                                        <input type="radio" id="star1" name="rating" value="1">
-                                        <label for="star1" title="1 star"><i class="bi bi-star-fill"></i></label>
+                        
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company/Position</label>
+                            <input type="text" class="form-control" id="company" name="company">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="form-text">Your email won't be published.</div>
+                        </div>
+                        
+                        <!-- PROFILE PICTURE UPLOAD SECTION -->
+                        <div class="mb-4">
+                            <label class="form-label">Profile Picture (Optional)</label>
+                            <div class="image-upload-container">
+                                <!-- Image Preview -->
+                                <div class="image-preview-wrapper mb-3">
+                                    <div class="image-preview" id="imagePreview">
+                                        <div class="preview-placeholder">
+                                            <i class="bi bi-person-circle"></i>
+                                            <p>No image selected</p>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label for="testimonial" class="form-label">Your Testimonial <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="testimonial" name="testimonial" rows="4" required></textarea>
+                                <!-- Upload Options -->
+                                <div class="upload-options">
+                                    <div class="row g-2">
+                                        <div class="col-md-6">
+                                            <label for="profileImage" class="btn btn-outline-primary w-100">
+                                                <i class="bi bi-cloud-upload me-2"></i>Upload Image
+                                            </label>
+                                            <input type="file" class="form-control d-none" id="profileImage" name="profileImage" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-outline-secondary w-100" onclick="clearImage()">
+                                                <i class="bi bi-trash me-2"></i>Remove
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="permission" name="permission" required>
-                                    <label class="form-check-label" for="permission">
-                                        I give permission to display my testimonial on this website <span class="text-danger">*</span>
-                                    </label>
+                                <!-- Alternative Upload Methods -->
+                                <div class="alternative-uploads mt-3">
+                                    <div class="text-center">
+                                        <small class="text-muted">Or send your photo via:</small>
+                                    </div>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-4">
+                                            <a href="mailto:petereluwade55@gmail.com?subject=Testimonial Photo&body=Hi Peter, I'm sending my photo for the testimonial." 
+                                               class="btn btn-sm btn-outline-info w-100">
+                                                <i class="bi bi-envelope"></i>
+                                                <small class="d-block">Email</small>
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="https://wa.me/2348123456789?text=Hi Peter, I want to send my photo for testimonial" 
+                                               class="btn btn-sm btn-outline-success w-100" target="_blank">
+                                                <i class="bi bi-whatsapp"></i>
+                                                <small class="d-block">WhatsApp</small>
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-sm btn-outline-warning w-100" onclick="showImageInstructions()">
+                                                <i class="bi bi-question-circle"></i>
+                                                <small class="d-block">Help</small>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <!-- Hidden fields -->
-                                <input type="hidden" name="_subject" value="New Testimonial Submission">
-                                <input type="hidden" name="source" value="Testimonials Page">
-                                <input type="text" name="_gotcha" style="display:none !important">
-                                
-                                <div class="text-end">
-                                    <button type="submit" class="btn btn-primary" id="submitTestimonialBtn">
-                                        <i class="bi bi-send me-2"></i>Submit Testimonial
-                                    </button>
+                                <div class="form-text mt-2">
+                                    <i class="bi bi-info-circle me-1"></i>
+                                    Accepted formats: JPG, PNG, GIF (Max 5MB). Your photo will be displayed with your testimonial.
                                 </div>
-                            </form>
-                            
-                            <!-- Form submission message -->
-                            <div id="testimonialFormMessage" class="mt-4" style="display: none;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Used <span class="text-danger">*</span></label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="Social Media Management">Social Media Management</option>
+                                <option value="Content Creation">Content Creation</option>
+                                <option value="Data Entry & Typing">Data Entry & Typing</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Rating <span class="text-danger">*</span></label>
+                            <div class="rating-input">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5" title="5 stars"><i class="bi bi-star-fill"></i></label>
+                                
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" title="4 stars"><i class="bi bi-star-fill"></i></label>
+                                
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" title="3 stars"><i class="bi bi-star-fill"></i></label>
+                                
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" title="2 stars"><i class="bi bi-star-fill"></i></label>
+                                
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" title="1 star"><i class="bi bi-star-fill"></i></label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="testimonial" class="form-label">Your Testimonial <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="testimonial" name="testimonial" rows="4" required 
+                                      placeholder="Share your experience working with me. What did you like most? How did I help your business?"></textarea>
+                            <div class="form-text">
+                                <span id="charCount">0</span>/500 characters
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="permission" name="permission" required>
+                            <label class="form-check-label" for="permission">
+                                I give permission to display my testimonial and photo on this website <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="_subject" value="New Testimonial Submission with Photo">
+                        <input type="hidden" name="source" value="Testimonials Page">
+                        <input type="text" name="_gotcha" style="display:none !important">
+                        
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary" id="submitTestimonialBtn">
+                                <span class="btn-text">
+                                    <i class="bi bi-send me-2"></i>Submit Testimonial
+                                </span>
+                                <span class="btn-loading d-none">
+                                    <span class="spinner-border spinner-border-sm me-2"></span>Sending...
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Form submission message -->
+                    <div id="testimonialFormMessage" class="mt-4" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Instructions Modal -->
+<div class="modal fade" id="imageInstructionsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-camera me-2"></i>How to Add Your Photo
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <strong>1</strong>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6>Upload Directly</h6>
+                                <p class="mb-0 text-muted">Click "Upload Image" button above to select a photo from your device.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <strong>2</strong>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6>Send via Email</h6>
+                                <p class="mb-0 text-muted">Email your photo to <strong>petereluwade55@gmail.com</strong> with subject "Testimonial Photo".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <strong>3</strong>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6>Send via WhatsApp</h6>
+                                <p class="mb-0 text-muted">Send your photo through WhatsApp for quick processing.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="alert alert-info mt-4">
+                    <i class="bi bi-lightbulb me-2"></i>
+                    <strong>Tips for best results:</strong>
+                    <ul class="mb-0 mt-2">
+                        <li>Use a clear, professional headshot</li>
+                        <li>Good lighting and high resolution</li>
+                        <li>Square format works best (1:1 ratio)</li>
+                        <li>File size under 5MB</li>
+                    </ul>
+                </div>
             </div>
-        </section>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         <!-- CTA SECTION -->
         <section class="py-5 bg-primary text-white">
@@ -886,6 +1036,7 @@
 
 </body>
 </html>
+
 
 
 
