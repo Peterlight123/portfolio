@@ -18,7 +18,7 @@ body {
     /* Main typography and font smoothing */
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa;f
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
      overflow-x: hidden;
@@ -556,6 +556,7 @@ h2::after {
     position: fixed;
     top: 50%;
     right: -280px; 
+    max-width: 100%;
     transform: translateY(-50%);
     z-index: 1060;
     transition: right 0.3s ease-in-out;
@@ -1099,6 +1100,7 @@ h2::after {
     image-rendering: crisp-edges;
 }
  */
+
 
 
 
