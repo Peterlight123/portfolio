@@ -21,6 +21,7 @@ body {
     background-color: #f8f9fa;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+     overflow-x: hidden;
     /* Main fade-in animation for the entire page */
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
@@ -1098,6 +1099,7 @@ h2::after {
     image-rendering: crisp-edges;
 }
  */
+
 
 
 
