@@ -826,7 +826,7 @@ h2::after {
     left: 100%;
 }
 
-/* Notification badge (optional) */
+/* Notification badge */
 .social-sidebar-toggle::after {
     content: '';
     position: absolute;
@@ -1100,6 +1100,7 @@ h2::after {
     image-rendering: crisp-edges;
 }
  */
+
 
 
 
