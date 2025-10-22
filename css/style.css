@@ -848,6 +848,10 @@ h2::after {
 .social-sidebar.interacted .social-sidebar-toggle::after {
     display: none;
 }
+/* Ensure sidebar toggle remains visible */
+.social-sidebar-toggle {
+  z-index: 1100;
+}
 
 /* Fix hero text overlap */
 .hero-section h1 {
@@ -1100,6 +1104,7 @@ h2::after {
     image-rendering: crisp-edges;
 }
  */
+
 
 
 
