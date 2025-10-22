@@ -86,9 +86,42 @@
   padding: 0.8rem 1rem;
   font-size: 0.95rem;
 }
-body{
-    overflow-x: hidden;
+/* 🌐 Universal Mobile Responsiveness Fix */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
 }
+
+/* Force all elements to stay within screen width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+}
+
+/* Make images and videos responsive */
+img, video {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* Fix flex and grid items from overflowing */
+.row, .container, .container-fluid, section, div {
+  overflow-x: hidden !important;
+}
+
+/* Responsive text scaling for small screens */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+
 </style>
 </head>
 <body>
@@ -1275,6 +1308,7 @@ body{
     <!-- <script src="js/interface.js"></script> -->
 </body>
 </html>
+
 
 
 
