@@ -56,6 +56,35 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logos/peter-logo.png">
+    <style>
+        /* 🌐 Universal Mobile Responsiveness Fix */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Keep layout clean but allow sidebar to show */
+.row, .container, .container-fluid, section {
+  overflow-x: hidden !important;
+}
+
+/* Specifically allow sidebar overflow */
+.social-sidebar {
+  overflow-x: visible !important;
+}
+
+
+/* Responsive text scaling for small screens */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+
+
+    </style>
 </head>
 <body>
     <!-- HEADER & NAVBAR -->
@@ -1091,6 +1120,7 @@
 
 </body>
 </html>
+
 
 
 
