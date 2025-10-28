@@ -100,22 +100,7 @@ html, body {
   max-width: 100% !important;
   word-wrap: break-word !important;
 }
-/*LinkedIn newsletter  */
-           .libutton {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 7px;
-        text-align: center;
-        outline: none;
-        text-decoration: none !important;
-        color: #ffffff !important;
-        width: 200px;
-        height: 32px;
-        border-radius: 16px;
-        background-color: #0A66C2;
-        font-family: "SF Pro Text", Helvetica, sans-serif;
-      }
+
 /* Make images and videos responsive */
 img, video {
   max-width: 100% !important;
@@ -123,16 +108,10 @@ img, video {
   display: block;
 }
 
-/* Keep layout clean but allow sidebar to show */
-.row, .container, .container-fluid, section {
+/* Fix flex and grid items from overflowing */
+.row, .container, .container-fluid, section, div {
   overflow-x: hidden !important;
 }
-
-/* Specifically allow sidebar overflow */
-.social-sidebar {
-  overflow-x: visible !important;
-}
-
 
 /* Responsive text scaling for small screens */
 @media (max-width: 768px) {
@@ -849,7 +828,6 @@ img, video {
                     </div>
                 </div>
 
-               <a class="libutton" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7387099061989974016" target="_blank">Subscribe to my newsletter on LinkedIn</a>
                 <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h6 class="text-uppercase fw-bold mb-3 text-warning">Quick Links</h6>
@@ -1330,7 +1308,6 @@ img, video {
     <!-- <script src="js/interface.js"></script> -->
 </body>
 </html>
-
 
 
 
