@@ -108,10 +108,16 @@ img, video {
   display: block;
 }
 
-/* Fix flex and grid items from overflowing */
-.row, .container, .container-fluid, section, div {
+/* Keep layout clean but allow sidebar to show */
+.row, .container, .container-fluid, section {
   overflow-x: hidden !important;
 }
+
+/* Specifically allow sidebar overflow */
+.social-sidebar {
+  overflow-x: visible !important;
+}
+
 
 /* Responsive text scaling for small screens */
 @media (max-width: 768px) {
@@ -1308,8 +1314,6 @@ img, video {
     <!-- <script src="js/interface.js"></script> -->
 </body>
 </html>
-
-
 
 
 
