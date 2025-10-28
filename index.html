@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Lightspeed - AI Powered Web Developer Portfolio</title>
+    <title>Peter Lightspeed - AI-Powered Web Developer Portfolio</title>
     
     <!-- Meta tags for SEO -->
     <meta name="description" content="Peter Lightspeed - Professional Virtual Assistant, Web Developer & Graphic Designer offering website development, content creation, and digital marketing services.">
@@ -89,37 +89,43 @@
 /* 🌐 Universal Mobile Responsiveness Fix */
 html, body {
   max-width: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden; /* no !important here */
 }
 
-/* Force all elements to stay within screen width */
+/* Make all elements box-model consistent */
 *,
 *::before,
 *::after {
-  box-sizing: border-box !important;
-  max-width: 100% !important;
-  word-wrap: break-word !important;
+  box-sizing: border-box;
 }
 
-/* Make images and videos responsive */
+/* ✅ Images and media stay responsive */
 img, video {
-  max-width: 100% !important;
-  height: auto !important;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Keep layout clean but allow sidebar to show */
-.row, .container, .container-fluid, section {
-  overflow-x: hidden !important;
+/* ✅ Prevent container overflow but keep visible children */
+.container, .container-fluid, section, .row {
+  overflow-x: clip; /* instead of hidden — safer for dropdowns */
 }
 
-/* Specifically allow sidebar overflow */
-.social-sidebar {
-  overflow-x: visible !important;
+/* ✅ Allow specific elements like dropdowns or sidebars to overflow properly */
+.dropdown-menu,
+.offcanvas,
+.social-sidebar,
+.navbar-collapse,
+.navbar-nav {
+  overflow: visible !important;
 }
 
+/* ✅ Fix for padding and layout shifting */
+body {
+  padding-right: 0 !important; /* prevents scrollbar compensation issue */
+}
 
-/* Responsive text scaling for small screens */
+/* Responsive font scaling */
 @media (max-width: 768px) {
   html {
     font-size: 90%;
@@ -128,6 +134,8 @@ img, video {
   h1, h2, h3, h4, h5, h6 {
     word-break: break-word;
   }
+}
+
 </style>
 </head>
 <body>
@@ -1314,6 +1322,7 @@ img, video {
     <!-- <script src="js/interface.js"></script> -->
 </body>
 </html>
+
 
 
 
