@@ -59,24 +59,46 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logos/peter-logo.png">
     <style>
-        /* 🌐 Universal Mobile Responsiveness Fix */
+    /* 🌐 Universal Mobile Responsiveness Fix */
 html, body {
   max-width: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden; /* no !important here */
 }
 
-/* Keep layout clean but allow sidebar to show */
-.row, .container, .container-fluid, section {
-  overflow-x: hidden !important;
+/* Make all elements box-model consistent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Specifically allow sidebar overflow */
-.social-sidebar {
-  overflow-x: visible !important;
+/* ✅ Images and media stay responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* ✅ Prevent container overflow but keep visible children */
+.container, .container-fluid, section, .row {
+  overflow-x: clip; /* instead of hidden — safer for dropdowns */
+}
 
-/* Responsive text scaling for small screens */
+/* ✅ Allow specific elements like dropdowns or sidebars to overflow properly */
+.dropdown-menu,
+.offcanvas,
+.social-sidebar,
+.navbar-collapse,
+.navbar-nav {
+  overflow: visible !important;
+}
+
+/* ✅ Fix for padding and layout shifting */
+body {
+  padding-right: 0 !important; /* prevents scrollbar compensation issue */
+}
+
+/* Responsive font scaling */
 @media (max-width: 768px) {
   html {
     font-size: 90%;
@@ -84,8 +106,8 @@ html, body {
 
   h1, h2, h3, h4, h5, h6 {
     word-break: break-word;
-
-
+  }
+}
     </style>
 </head>
 <body>
@@ -1224,9 +1246,112 @@ html, body {
     </script>
 
 <script src="js/bot.js"></script>
+<!-- ===== SOCIAL MEDIA SIDEBAR ===== -->
+<div class="social-sidebar">
+    <div class="social-sidebar-toggle" id="socialToggle">
+        <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="social-sidebar-content" id="socialContent">
+        <div class="social-sidebar-header">
+            <h6>Follow Me</h6>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="social-links-sidebar">
+            <a href="https://x.com/peterlightspeed" target="_blank" rel="noopener" class="social-link twitter">
+                <i class="bi bi-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/eluwadepeter" target="_blank" rel="noopener" class="social-link instagram">
+                <i class="bi bi-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener" class="social-link linkedin">
+                <i class="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.tiktok.com/@eluwadepeter" target="_blank" rel="noopener" class="social-link tiktok">
+                <i class="bi bi-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="https://www.youtube.com/@petereluwade" target="_blank" rel="noopener" class="social-link youtube">
+                <i class="bi bi-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575074189195" target="_blank" rel="noopener" class="social-link facebook">
+                <i class="bi bi-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://wa.me/2348108821809" target="_blank" rel="noopener" class="social-link whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:petereluwade55@gmail.com" class="social-link email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>Email</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <small>Connect with Peter Lightspeed</small>
+        </div>
+    </div>
+</div>
+<!-- ===== SOCIAL MEDIA SIDEBAR ===== -->
+<div class="social-sidebar">
+    <div class="social-sidebar-toggle" id="socialToggle">
+        <i class="bi bi-share-fill"></i>
+    </div>
+    <div class="social-sidebar-content" id="socialContent">
+        <div class="social-sidebar-header">
+            <h6>Follow Me</h6>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="social-links-sidebar">
+            <a href="https://x.com/peterlightspeed" target="_blank" rel="noopener" class="social-link twitter">
+                <i class="bi bi-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/eluwadepeter" target="_blank" rel="noopener" class="social-link instagram">
+                <i class="bi bi-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" rel="noopener" class="social-link linkedin">
+                <i class="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.tiktok.com/@eluwadepeter" target="_blank" rel="noopener" class="social-link tiktok">
+                <i class="bi bi-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="https://www.youtube.com/@petereluwade" target="_blank" rel="noopener" class="social-link youtube">
+                <i class="bi bi-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575074189195" target="_blank" rel="noopener" class="social-link facebook">
+                <i class="bi bi-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://wa.me/2348108821809" target="_blank" rel="noopener" class="social-link whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:petereluwade55@gmail.com" class="social-link email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>Email</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <small>Connect with Peter Lightspeed</small>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
+
 
 
 
