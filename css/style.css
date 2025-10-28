@@ -1104,20 +1104,7 @@ h2::after {
     image-rendering: crisp-edges;
 }
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Ensure sidebar toggle remains visible */
+.social-sidebar-toggle {
+  z-index: 1100;
+}
