@@ -249,7 +249,7 @@ h2::after {
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.2rem;
-    margin: 0 5px 10px 5px;
+    margin: 10px 5px 10px 5px;
 }
 
 /* Individual social media colors for icons */
@@ -1108,3 +1108,4 @@ h2::after {
 .social-sidebar-toggle {
   z-index: 1100;
 }
+
