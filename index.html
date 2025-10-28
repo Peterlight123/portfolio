@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Lightspeed - AI-Powered Web Developer Portfolio</title>
+    <title>Peter Lightspeed - AI Powered Web Developer Portfolio</title>
     
     <!-- Meta tags for SEO -->
     <meta name="description" content="Peter Lightspeed - Professional Virtual Assistant, Web Developer & Graphic Designer offering website development, content creation, and digital marketing services.">
@@ -92,6 +92,37 @@ html, body {
   overflow-x: hidden !important;
 }
 
+/* Force all elements to stay within screen width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+}
+/*LinkedIn newsletter  */
+           .libutton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 7px;
+        text-align: center;
+        outline: none;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        width: 200px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #0A66C2;
+        font-family: "SF Pro Text", Helvetica, sans-serif;
+      }
+/* Make images and videos responsive */
+img, video {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
 /* Keep layout clean but allow sidebar to show */
 .row, .container, .container-fluid, section {
   overflow-x: hidden !important;
@@ -111,7 +142,7 @@ html, body {
 
   h1, h2, h3, h4, h5, h6 {
     word-break: break-word;
-  }
+
 </style>
 </head>
 <body>
@@ -816,13 +847,9 @@ html, body {
                             <div id="newsletterMessage" class="mt-2" style="display: none;"></div>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7387099061989974016" target="_blank" class="bg-primary text-light p-3 ">
-                      Subscribe to My LinkedIn Newsletter
-                    </a>
-                    
-
                 </div>
 
+               <a class="libutton" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7387099061989974016" target="_blank">Subscribe to my newsletter on LinkedIn</a>
                 <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h6 class="text-uppercase fw-bold mb-3 text-warning">Quick Links</h6>
@@ -1303,9 +1330,6 @@ html, body {
     <!-- <script src="js/interface.js"></script> -->
 </body>
 </html>
-
-
-
 
 
 
