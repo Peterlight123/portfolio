@@ -1102,3 +1102,71 @@ h2::after {
   z-index: 1100;
 }
 
+
+/* =====================================================================
+   VISUAL ENHANCEMENTS - Professional Backgrounds & Images
+   ===================================================================== */
+
+/* Professional Summary Background */
+#summary {
+    background: 
+        linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)),
+        url('../images/backgrounds/summary-background.jpg') center/cover no-repeat fixed;
+    position: relative;
+}
+
+/* Service Cards with Images */
+.service-preview-card {
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.service-preview-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+}
+
+/* Testimonials Section Background */
+#testimonials-preview {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+        url('../images/backgrounds/testimonials-background.jpg') center/cover no-repeat fixed;
+    position: relative;
+}
+
+/* Contact CTA Background */
+#contact-preview {
+    background: 
+        linear-gradient(rgba(13, 110, 253, 0.9), rgba(10, 88, 202, 0.9)),
+        url('../images/backgrounds/contact-cta.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* Stat Cards Enhancement */
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+

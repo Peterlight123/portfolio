@@ -6,17 +6,31 @@ This is a static portfolio website for Peter Lightspeed (Eluwade Peter Toluwanim
 
 ## Recent Changes
 
-### November 23, 2025 - Professional Polish & Bug Fixes
+### November 23, 2025 - Professional Polish & Visual Enhancements
 - **Loading Screen**: Enabled professional loading screen with progress animation (previously commented out)
   - Uncommented HTML in index.html
   - Uncommented CSS animations in style.css
   - Rewrote interface.js with simplified, time-based animation (completes in 1 second)
   - Fixed stuck loading issue using requestAnimationFrame for smooth 0-100% progress
+- **Visual Enhancements**:
+  - Added professional stock images from Unsplash to enhance visual appeal
+  - Hero section now features tech workspace background with gradient overlay
+  - Service cards enhanced with professional images (web development, graphic design, digital marketing)
+  - Professional Summary section has subtle workspace background
+  - Added background images ready for Testimonials and Contact CTA sections
+  - All images optimized and organized in images/backgrounds/ and images/services/ folders
+- **Back-to-Top Button Fix**:
+  - Added missing back-to-top button functionality to home page (js/home.js)
+  - Button now appears after scrolling 300px and smoothly returns user to top
 - **Chatbot Improvements**:
   - Fixed response formatting - removed excessive `<br>` tags from "what services" response
   - Improved formatting with bullet points for better readability
   - Fixed bot avatar path inconsistency (now uses images/logos/peter-logo.png consistently)
   - Synced admin panel knowledge base with main bot.js configuration
+- **CSS Enhancements**:
+  - Added service card hover effects with shadow and transform animations
+  - Enhanced stat cards with gradient backgrounds and hover effects
+  - Improved responsive design for service card images
 - **UI Polish**:
   - Removed unprofessional "site under improvement" notice banner
   - Removed associated CSS styling for the notice
