@@ -78,7 +78,7 @@ function loadDefaultKnowledgeBase() {
     // This would be the same as in bot.js
     currentKnowledgeBase = {
         "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is a professional virtual assistant and web developer offering services including web development, graphic design, social media management, data entry, content creation, and digital marketing.",
-        "what services": "Peter offers a range of services including: 1) Web Development, 2) Graphic Design, 3) Social Media Management, 4) Data Entry & Typing, 5) Content Creation, and 6) Digital Marketing. You can learn more on the Services page.",
+        "what services": "Peter offers a comprehensive range of services including:<br><br>• Web Development - creating responsive, user-friendly websites<br>• Graphic Design - crafting visually appealing designs<br>• Social Media Management - building and maintaining your online presence<br>• Data Entry & Typing - accurate and efficient data processing<br>• Content Creation - engaging content for your audience<br>• Digital Marketing - strategies to increase your online visibility<br><br>You can learn more on the <a href='services.html' target='_blank'>Services page</a>.",
         "contact": "You can contact Peter via email at petereluwade55@gmail.com or through WhatsApp at +234 810 882 1809. Alternatively, you can use the contact form on the Contact page.",
         "location": "Peter is based in Nigeria but provides remote services to clients worldwide.",
         "experience": "Peter has extensive experience in web development, graphic design, and virtual assistance, having worked on over 50 projects for various clients across different industries.",

@@ -75,17 +75,7 @@
       "knowsAbout": ["Web Development", "Graphic Design", "Virtual Assistant"]
     }
     </script>
-    <style>#siteNotice {
-  position: relative;
-  z-index: 2000;
-  font-weight: 500;
-  background: linear-gradient(90deg, #fff3cd, #ffeeba);
-  color: #856404;
-  border: 1px solid #ffeeba;
-  border-radius: 0;
-  padding: 0.8rem 1rem;
-  font-size: 0.95rem;
-}
+    <style>
 /* 🌐 Universal Mobile Responsiveness Fix */
 html, body {
   max-width: 100%;
@@ -179,28 +169,22 @@ body {
 </head>
 <body>
     <!-- Loading Screen -->
-<!-- <div id="loadingScreen" class="loading-screen">
-    <div class="loading-container">
-        <!-- Logo Image --> 
-        <!--<div class="logo-loader">
-            <img src="images/logos/peter-logo.png" alt="Peter Lightspeed Logo" class="loading-logo">
-            <h3 class="logo-text">Peter Lightspeed</h3>
-        </div>
-        
-        <!-- Loading Progress -->
-        <!--<div class="loading-progress">
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-container">
+            <div class="logo-loader">
+                <img src="images/logos/peter-logo.png" alt="Peter Lightspeed Logo" class="loading-logo">
+                <h3 class="logo-text">Peter Lightspeed</h3>
             </div>
-            <p class="loading-text">Loading Portfolio...</p>
-            <span class="progress-percentage">0%</span>
+            
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="loading-text">Loading Portfolio...</p>
+                <span class="progress-percentage">0%</span>
+            </div>
         </div>
-    </div>
- </div> 
-    <div class="alert alert-warning alert-dismissible fade show text-center mb-0" role="alert" id="siteNotice">
-  <strong>Hey there! 👋</strong> We’re currently improving this website, so a few things might not look perfect yet. Thanks for your patience!
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div> 
+    </div> 
 
 
     <!-- HEADER & NAVBAR -->
@@ -1366,7 +1350,7 @@ body {
 </div>
 
     <script src="js/bot.js"></script>
-    <!-- <script src="js/interface.js"></script> -->
+    <script src="js/interface.js"></script>
 </body>
 </html>
 

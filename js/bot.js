@@ -10,11 +10,11 @@ const botConfig = (function() {
         initialMessage: "👋 Hello! I'm Peter's virtual assistant. How can I help you today? I can provide information about Peter's services, projects, or answer any questions you might have.",
         typingSpeed: 50,
         responseDelay: 500,
-        botAvatar: "images/profile/bot-img.jpeg",
+        botAvatar: "images/logos/peter-logo.png",
         knowledgeBase: {
             // General information
             "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is a professional virtual assistant and web developer based in Nigeria. He offers services including web development, graphic design, social media management, data entry, content creation, and digital marketing. With his expertise and dedication, he helps businesses establish a strong online presence.",
-            "what services": "Peter offers a comprehensive range of services including: 1) Web Development - creating responsive, user-friendly websites, <br> 2) Graphic Design - crafting visually appealing designs, <br><br><br><br> 3) Social Media Management - building and maintaining your online presence,<br> <br><br><br><br>4) Data Entry & Typing - accurate and efficient data processing, <br><br><br><br> 5) Content Creation - engaging content for your audience, and 6) Digital Marketing - strategies to increase your online visibility.",
+            "what services": "Peter offers a comprehensive range of services including:<br><br>• Web Development - creating responsive, user-friendly websites<br>• Graphic Design - crafting visually appealing designs<br>• Social Media Management - building and maintaining your online presence<br>• Data Entry & Typing - accurate and efficient data processing<br>• Content Creation - engaging content for your audience<br>• Digital Marketing - strategies to increase your online visibility<br><br>You can learn more on the <a href='services.html' target='_blank'>Services page</a>.",
             "contact": "You can contact Peter via email at petereluwade55@gmail.com or through WhatsApp at +234 810 882 1809. Alternatively, you can use the contact form on the Contact page of this website for a prompt response.",
             "location": "Peter is based in Nigeria but provides remote services to clients worldwide. His virtual assistance knows no geographical boundaries, allowing him to serve clients across different time zones effectively.",
             "experience": "Peter has extensive experience in web development, graphic design, and virtual assistance, having worked on over 50 projects for various clients across different industries. His portfolio showcases his versatility and ability to adapt to different project requirements.",
