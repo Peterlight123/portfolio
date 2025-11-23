@@ -6,6 +6,16 @@ This is a static portfolio website for Peter Lightspeed (Eluwade Peter Toluwanim
 
 ## Recent Changes
 
+### November 23, 2025 - Social Media Integration & Visual Enhancements
+
+**Social Media Updates:**
+- Updated chatbot knowledge base with comprehensive social media handles information
+- Added new "social media handles" response with clickable links to all platforms
+- Added "handles" shortcut for quick text-based response
+- Enhanced "social media" service entry to include Peter's handles
+- All handles now properly linked: @peterlightspeed (Twitter/X), @eluwadepeter (Instagram & TikTok), @peterphonist (Music/Saxophone Instagram)
+- Admin dashboard automatically syncs with updated knowledge base via localStorage
+
 ### November 23, 2025 - Professional Polish & Visual Enhancements
 - **Loading Screen**: Enabled professional loading screen with progress animation (previously commented out)
   - Uncommented HTML in index.html
