@@ -1,6 +1,6 @@
 
 // =====================================================================
-// PROFESSIONAL LOADING SCREEN
+// PROFESSIONAL LOADING SCREEN - Simplified and Reliable
 // =====================================================================
 class ProfessionalLoader {
     constructor() {
@@ -10,8 +10,8 @@ class ProfessionalLoader {
         this.loadingText = document.querySelector('.loading-text');
         
         this.progress = 0;
-        this.targetProgress = 0;
-        this.isComplete = false;
+        this.startTime = Date.now();
+        this.duration = 1000; // Complete in 1 second
         
         this.messages = [
             'Initializing...',
@@ -21,6 +21,11 @@ class ProfessionalLoader {
             'Welcome!'
         ];
         
+        // Check if elements exist
+        if (!this.loadingScreen) {
+            return;
+        }
+        
         this.init();
     }
     
@@ -28,69 +33,25 @@ class ProfessionalLoader {
         // Prevent scrolling during loading
         document.body.style.overflow = 'hidden';
         
-        // Start progress simulation
-        this.simulateProgress();
-        
-        // Track actual page load
-        this.trackPageLoad();
-        
-        // Fallback timer
-        setTimeout(() => {
-            if (!this.isComplete) {
-                this.completeLoading();
-            }
-        }, 5000);
+        // Start smooth animation
+        this.animate();
     }
     
-    simulateProgress() {
-        const progressInterval = setInterval(() => {
-            if (this.progress < this.targetProgress) {
-                this.progress += Math.random() * 3;
-                if (this.progress > this.targetProgress) {
-                    this.progress = this.targetProgress;
-                }
-                this.updateProgress();
-            }
-            
-            if (this.progress >= 100 && this.isComplete) {
-                clearInterval(progressInterval);
-                setTimeout(() => this.hideLoading(), 800);
-            }
-        }, 50);
+    animate() {
+        const elapsed = Date.now() - this.startTime;
         
-        // Gradually increase target progress
-        setTimeout(() => this.targetProgress = 30, 300);
-        setTimeout(() => this.targetProgress = 60, 800);
-        setTimeout(() => this.targetProgress = 85, 1500);
-    }
-    
-    trackPageLoad() {
-        // Check if page is already loaded
-        if (document.readyState === 'complete') {
-            this.completeLoading();
-            return;
-        }
+        // Calculate progress as percentage of duration (0-100)
+        this.progress = Math.min((elapsed / this.duration) * 100, 100);
         
-        // Wait for page load
-        window.addEventListener('load', () => {
-            setTimeout(() => this.completeLoading(), 500);
-        });
+        // Update UI
+        this.updateProgress();
         
-        // Track DOM content loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                this.targetProgress = Math.max(this.targetProgress, 70);
-            });
-        }
-    }
-    
-    completeLoading() {
-        this.isComplete = true;
-        this.targetProgress = 100;
-        
-        // Update message to final state
-        if (this.loadingText) {
-            this.loadingText.textContent = this.messages[4];
+        // Continue animation until complete
+        if (this.progress < 100) {
+            requestAnimationFrame(() => this.animate());
+        } else {
+            // Finished - hide loading screen immediately
+            setTimeout(() => this.hideLoading(), 200);
         }
     }
     
@@ -109,10 +70,18 @@ class ProfessionalLoader {
         
         // Update loading message based on progress
         if (this.loadingText) {
-            const messageIndex = Math.min(
-                Math.floor((roundedProgress / 100) * (this.messages.length - 1)),
-                this.messages.length - 2
-            );
+            let messageIndex;
+            if (roundedProgress < 25) {
+                messageIndex = 0; // Initializing...
+            } else if (roundedProgress < 50) {
+                messageIndex = 1; // Loading assets...
+            } else if (roundedProgress < 75) {
+                messageIndex = 2; // Preparing interface...
+            } else if (roundedProgress < 95) {
+                messageIndex = 3; // Almost ready...
+            } else {
+                messageIndex = 4; // Welcome!
+            }
             this.loadingText.textContent = this.messages[messageIndex];
         }
     }
@@ -124,7 +93,7 @@ class ProfessionalLoader {
             // Re-enable scrolling
             document.body.style.overflow = 'auto';
             
-            // Remove loading screen from DOM
+            // Remove loading screen from DOM after fade-out
             setTimeout(() => {
                 if (this.loadingScreen && this.loadingScreen.parentNode) {
                     this.loadingScreen.parentNode.removeChild(this.loadingScreen);
@@ -134,13 +103,24 @@ class ProfessionalLoader {
     }
 }
 
-// Initialize loading screen
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize loading screen when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new ProfessionalLoader();
+    });
+} else {
+    // DOM already loaded
     new ProfessionalLoader();
-});
+}
 
-// Preload logo image to prevent loading delay
-document.addEventListener('DOMContentLoaded', function() {
+// Preload logo image
+const preloadLogo = () => {
     const logoImg = new Image();
-    logoImg.src = 'images/logos/peter-logo.png'; // Preload your logo
-});
+    logoImg.src = 'images/logos/peter-logo.png';
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', preloadLogo);
+} else {
+    preloadLogo();
+}

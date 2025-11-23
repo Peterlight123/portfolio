@@ -10,7 +10,8 @@ This is a static portfolio website for Peter Lightspeed (Eluwade Peter Toluwanim
 - **Loading Screen**: Enabled professional loading screen with progress animation (previously commented out)
   - Uncommented HTML in index.html
   - Uncommented CSS animations in style.css
-  - Enabled interface.js script for loading functionality
+  - Rewrote interface.js with simplified, time-based animation (completes in 1 second)
+  - Fixed stuck loading issue using requestAnimationFrame for smooth 0-100% progress
 - **Chatbot Improvements**:
   - Fixed response formatting - removed excessive `<br>` tags from "what services" response
   - Improved formatting with bullet points for better readability
