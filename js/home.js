@@ -2,6 +2,9 @@
  * Home page specific JavaScript
  */
 document.addEventListener('DOMContentLoaded', function() {
+    // Get back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
     // Initialize tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -74,4 +77,18 @@ document.addEventListener('DOMContentLoaded', function() {
     stats.forEach(stat => {
         observer.observe(stat);
     });
+    
+    // --- BACK TO TOP BUTTON ---
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
