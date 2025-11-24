@@ -1,6 +1,7 @@
-modules = ["python-3.11"]
+modules = ["python-3.11", "nodejs-22"]
 [agent]
 expertMode = true
+integrations = ["javascript_database:1.0.0"]
 
 [workflows]
 runButton = "Project"
@@ -12,15 +13,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Portfolio Server"
+args = "Next.js Development Server"
 
 [[workflows.workflow]]
-name = "Portfolio Server"
+name = "Next.js Development Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 5000"
+args = "npm run dev"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -31,12 +32,18 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 45263
+localPort = 36139
+externalPort = 3001
+
+[[ports]]
+localPort = 37379
 externalPort = 3000
 
 [nix]
 channel = "stable-25_05"
 
 [deployment]
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
 publicDir = "."
+run = ["npm", "start"]
+build = ["npm", "run", "build"]

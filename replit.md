@@ -2,9 +2,60 @@
 
 ## Overview
 
-This is a static portfolio website for Peter Lightspeed (Eluwade Peter Toluwanimi), a professional virtual assistant and web developer based in Lagos, Nigeria. The website showcases services, projects, certifications, testimonials, and provides contact functionality. It includes an integrated chatbot system and a hidden admin dashboard for managing chatbot responses.
+A modern, full-stack portfolio website for Peter Lightspeed (Eluwade Peter Toluwanimi), a professional virtual assistant and web developer based in Lagos, Nigeria. Built with Next.js 16, TypeScript, Tailwind CSS, and PostgreSQL, this application showcases services, projects, certifications, testimonials, and provides contact functionality with database persistence.
 
 ## Recent Changes
+
+### November 24, 2025 - Complete Modern Upgrade (Version 2.0)
+
+**Major Technology Stack Upgrade:**
+- Migrated from static HTML/CSS/JavaScript to Next.js 16 with App Router
+- Implemented TypeScript for type safety throughout the application
+- Integrated Tailwind CSS 4 for modern, utility-first styling
+- Set up PostgreSQL database with Drizzle ORM for dynamic content management
+- Added Framer Motion for smooth, professional animations
+- Implemented dark mode with next-themes and persistent theme switching
+
+**New Features:**
+- Full-stack architecture with API routes for form submissions and data management
+- Database-backed contact form with persistent storage
+- Newsletter subscription system with duplicate prevention
+- Dynamic blog system with markdown support (ready for content)
+- Database-driven projects and testimonials with admin capabilities
+- Modern AI-powered chatbot with improved UX and animations
+- Responsive navigation with mobile menu and smooth transitions
+- Professional footer with social media integration
+- SEO optimizations with metadata API and OpenGraph tags
+- Image optimization with next/image and proper sizing
+- Modern gradient designs and hover effects throughout
+
+**Technical Improvements:**
+- TypeScript configuration with path aliases (@/, @/shared/, @/server/)
+- Database schema with Drizzle ORM (blog_posts, projects, testimonials, contacts, newsletter)
+- Database seeding script for initial data population
+- API routes: /api/contact, /api/newsletter, /api/blog, /api/projects, /api/testimonials
+- Environment variable management for database credentials
+- Deployment configuration for Replit autoscale with build and start scripts
+- Proper .gitignore for Next.js, database migrations, and old files
+
+**Pages Migrated & Enhanced:**
+- Home: Modern hero section with animated profile, stats, services, testimonials, CTA
+- About: Professional layout with expertise cards and detailed biography
+- Services: Comprehensive service showcase with feature lists and CTAs
+- Projects: Portfolio gallery with tags, descriptions, and live links
+- Certifications: Achievement showcase with logos and dates
+- Testimonials: Client reviews with ratings and company information
+- Blog: Article listing with categories, read time, and excerpts
+- Contact: Working contact form with database storage and validation
+
+**Components Created:**
+- Navigation: Sticky header with smooth scroll, mobile menu, theme toggle
+- Footer: Multi-column layout with links and social media
+- Chatbot: Floating AI assistant with conversation interface
+- ThemeProvider: Dark mode context with system preference detection
+- ThemeToggle: Smooth theme switching button
+
+## Recent Changes (Legacy)
 
 ### November 23, 2025 - Social Media Integration & Visual Enhancements
 
@@ -57,11 +108,14 @@ Preferred communication style: Simple, everyday language.
 ### Frontend Architecture
 
 **Technology Stack:**
-- Pure HTML5, CSS3, and vanilla JavaScript (no frontend framework)
-- Bootstrap 5.3.0 for responsive UI components and grid system
-- Bootstrap Icons for iconography
-- AOS (Animate On Scroll) library for scroll animations
-- Google Fonts (Inter family) for typography
+- Next.js 16.0.4 with App Router for server-side rendering and routing
+- React 19 for component-based UI
+- TypeScript for type safety and better developer experience
+- Tailwind CSS 4 for utility-first styling
+- Framer Motion for animations and transitions
+- next-themes for dark mode implementation
+- Lucide React for modern icon system
+- Inter font family from Google Fonts
 
 **Page Structure:**
 - Multi-page static site with dedicated pages for different sections (index, about, services, projects, certifications, testimonials, contact, cv, sponsor)
@@ -85,15 +139,20 @@ Preferred communication style: Simple, everyday language.
 
 ### Backend Architecture
 
-**Form Processing:**
-- External form services integration (Formspree, UseBasin) for contact forms and newsletter subscriptions
-- No server-side code - all form submissions handled via third-party APIs
-- Client-side form validation before submission
+**API Routes:**
+- Next.js API routes for server-side logic
+- POST /api/contact - Contact form submission with database storage
+- POST /api/newsletter - Newsletter subscription with duplicate checking
+- GET /api/blog - Fetch published blog posts
+- GET /api/projects - Fetch all projects
+- GET /api/testimonials - Fetch approved testimonials
 
 **Data Storage:**
-- Browser localStorage for chatbot knowledge base, chat history, settings, and access logs
-- sessionStorage for temporary authentication tokens
-- No database backend - purely client-side data persistence
+- PostgreSQL database (Neon-backed) for persistent data storage
+- Drizzle ORM for type-safe database queries
+- Tables: blog_posts, projects, testimonials, contacts, newsletter
+- Database seeding script for initial data population
+- Migrations handled via Drizzle Kit push commands
 
 **Authentication Mechanism:**
 - Simple obfuscated client-side authentication for admin dashboard access
@@ -168,9 +227,13 @@ Preferred communication style: Simple, everyday language.
 
 ### Deployment Platform
 
-- GitHub Pages (hosted at peterlight123.github.io/portfolio/)
-- Static file hosting with no server-side processing requirements
-- HTTPS enabled by default through GitHub
+- Replit Autoscale deployment configured
+- Next.js production build with optimizations
+- Environment variables managed through Replit secrets
+- PostgreSQL database connection via DATABASE_URL
+- HTTPS enabled by default through Replit
+- Build command: `npm run build`
+- Start command: `npm start -H 0.0.0.0 -p 5000`
 
 ### Browser APIs Used
 
