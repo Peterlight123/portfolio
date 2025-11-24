@@ -13,6 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.REPL_SLUG 
+    ? `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
+    : 'http://localhost:5000'),
   title: {
     default: "Peter Lightspeed - AI-Powered Web Developer & Virtual Assistant",
     template: "%s | Peter Lightspeed Portfolio"

@@ -6,6 +6,34 @@ A modern, full-stack portfolio website for Peter Lightspeed (Eluwade Peter Toluw
 
 ## Recent Changes
 
+### November 24, 2025 - Database Integration & Security Enhancements (Version 2.1)
+
+**Database Integration Complete:**
+- All pages now fetch real data from PostgreSQL database via Drizzle ORM
+- Testimonials page: Server-side queries for approved testimonials
+- Projects page: Server-side queries with chronological ordering
+- Blog page: Server-side queries for published posts only
+- Home page: Client-side fetching of featured testimonials via API
+- API routes support query parameters (e.g., `/api/testimonials?limit=2`)
+
+**Security & Validation:**
+- Zod validation schemas for contact form and newsletter subscriptions
+- Input sanitization: trimming whitespace, normalizing email addresses
+- Comprehensive error handling with detailed validation messages
+- Type-safe API routes with proper TypeScript types
+
+**Performance & SEO:**
+- Added metadataBase for proper OpenGraph image resolution
+- ISR (Incremental Static Regeneration) with 1-hour revalidation
+- Optimized database queries with proper indexes and filtering
+- Build passing without errors or warnings
+
+**Code Quality:**
+- Removed all hardcoded data arrays from pages
+- Server components for data fetching (optimal performance)
+- Clean separation of client and server logic
+- Organized codebase structure with proper paths
+
 ### November 24, 2025 - Complete Modern Upgrade (Version 2.0)
 
 **Major Technology Stack Upgrade:**
@@ -33,10 +61,12 @@ A modern, full-stack portfolio website for Peter Lightspeed (Eluwade Peter Toluw
 - TypeScript configuration with path aliases (@/, @/shared/, @/server/)
 - Database schema with Drizzle ORM (blog_posts, projects, testimonials, contacts, newsletter)
 - Database seeding script for initial data population
-- API routes: /api/contact, /api/newsletter, /api/blog, /api/projects, /api/testimonials
+- API routes: /api/contact, /api/newsletter, /api/testimonials (with query param support)
+- Zod validation library for input sanitization and type checking
 - Environment variable management for database credentials
 - Deployment configuration for Replit autoscale with build and start scripts
 - Proper .gitignore for Next.js, database migrations, and old files
+- metadataBase configured for production deployment SEO
 
 **Pages Migrated & Enhanced:**
 - Home: Modern hero section with animated profile, stats, services, testimonials, CTA

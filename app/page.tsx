@@ -45,9 +45,9 @@ export default function Home() {
   const [testimonials, setTestimonials] = useState<any[]>([])
 
   useEffect(() => {
-    fetch("/api/testimonials")
+    fetch("/api/testimonials?limit=2")
       .then((res) => res.json())
-      .then((data) => setTestimonials(data.slice(0, 2)))
+      .then((data) => setTestimonials(data))
       .catch((err) => console.error("Error fetching testimonials:", err))
   }, [])
 
