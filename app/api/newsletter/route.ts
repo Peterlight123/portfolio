@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       
       await resend.emails.send({
         from: fromEmail,
-        to: 'peterlight60@gmail.com',
+        to: 'petereluwade55@gmail.com',
         subject: 'New Newsletter Subscription',
         html: `
           <h2>New Newsletter Subscriber</h2>
