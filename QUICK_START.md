@@ -28,7 +28,7 @@ git push origin main
 - Go to https://vercel.com
 - Click "New Project"
 - Import your GitHub repo
-- Click "Deploy" ✨
+- Click "Deploy" 
 
 ### 3. Set Up Database (Supabase)
 - Go to https://supabase.com
@@ -125,7 +125,6 @@ Edit `app/globals.css` (search for `--primary`)
 ## Important Links
 
 **Your site is currently at:**
-- Replit: https://your-repl.replit.app
 - Vercel (after deploy): https://your-project.vercel.app
 
 **Manage your data:**
@@ -138,7 +137,7 @@ Edit `app/globals.css` (search for `--primary`)
 
 ---
 
-## ❓ Need Help?
+## Need Help?
 
 **Read the full guides:**
 1. `USER_GUIDE.md` - Complete website management
