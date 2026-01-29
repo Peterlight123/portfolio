@@ -1,10 +1,10 @@
-# 🚀 Deployment Guide - Peter Lightspeed Portfolio
+# Deployment Guide - Peter Lightspeed Portfolio
 
-This guide covers deploying your portfolio to **Vercel** (recommended), **Netlify**, or keeping it on **Replit**.
+This guide covers deploying your portfolio to **Vercel** (recommended), **Netlify**.
 
 ---
 
-## Option 1: Vercel (Recommended) ⭐
+## Option 1: Vercel (Recommended) 
 
 Vercel is built by the creators of Next.js and provides the best performance and developer experience.
 
@@ -50,8 +50,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 # Database (if using Supabase connection string)
 DATABASE_URL=postgresql://postgres:[password]@db.[project].supabase.co:5432/postgres
 
-# Resend (auto-configured if using Replit integration)
-# If deploying outside Replit, get API key from Resend:
+# Resend
+# get API key from Resend:
 RESEND_API_KEY=re_xxxxxxxxxxxxx
 ```
 
@@ -114,32 +114,6 @@ Netlify is another excellent hosting platform with great features.
 
 ---
 
-## Option 3: Keep on Replit
-
-Your site already works on Replit! Here's how to configure it for production.
-
-### Replit Deployment Steps
-
-1. **Set Production Environment Variables**
-   - Go to **Secrets** tab
-   - Add all required variables
-
-2. **Configure Deployment**
-   
-   Your `replit.nix` and `.replit` are already configured.
-   
-   To deploy:
-   - Click **"Deploy"** button in Replit
-   - Choose **"Autoscale"** deployment
-   - Your site will be at: `https://your-repl.your-username.repl.co`
-
-3. **Custom Domain on Replit**
-   - Replit deployments support custom domains
-   - Go to Deployment settings → Domains
-   - Follow DNS configuration instructions
-
----
-
 ## Database Setup (All Platforms)
 
 ### Supabase Setup
@@ -169,8 +143,6 @@ Your site already works on Replit! Here's how to configure it for production.
 ## Email Setup (Resend)
 
 ### For Vercel/Netlify Deployment
-
-If you're not using Replit's integration:
 
 1. **Get Resend API Key**
    - Go to https://resend.com/api-keys
@@ -220,7 +192,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 # Email (choose one)
 RESEND_API_KEY=re_xxxxxxxxxxxxx  # For Vercel/Netlify
-# OR use Replit Resend integration (auto-configured)
 ```
 
 ### Optional
@@ -464,5 +435,3 @@ git push origin feature/new-design
 - **Resend Docs**: https://resend.com/docs
 
 ---
-
-**🎉 Your portfolio is now live!** Share your link and start receiving opportunities!
