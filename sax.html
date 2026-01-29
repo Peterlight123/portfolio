@@ -94,7 +94,7 @@
           <a href="https://x.com/peterphonist" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Follow on X">
             <i class="bi bi-twitter-x"></i>
           </a>
-          <a href="https://www.youtube.com/@peter_lightspeed" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Subscribe on YouTube">
+          <a href="https://www.youtube.com/@peterphonist" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Subscribe on YouTube">
             <i class="bi bi-youtube"></i>
           </a>
           <a href="https://www.facebook.com/peterphonist" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Follow on Facebook">
@@ -112,7 +112,7 @@
       <div class="col-lg-6 col-md-12 text-center" data-aos="fade-left">
         <div class="hero-image-container">
           <div class="hero-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f?w=500&h=600&fit=crop" 
+            <img src="images/profile/peterphonist.jpg" 
                  alt="Peterphonist - Professional Saxophonist" 
                  class="hero-image img-fluid rounded-4 shadow-lg">
           </div>
@@ -529,7 +529,7 @@
     </div>
     
     <div class="text-center mt-5" data-aos="fade-up">
-      <a href="https://www.youtube.com/@peter_lightspeed" target="_blank" class="btn btn-primary btn-lg rounded-pill">
+      <a href="https://www.youtube.com/@peterphonist" target="_blank" class="btn btn-primary btn-lg rounded-pill">
         <i class="bi bi-youtube me-2"></i>View All Performances on YouTube
       </a>
     </div>
@@ -555,10 +555,10 @@
             <small>@peterphonist</small>
           </a>
           
-          <a href="https://www.youtube.com/@peter_lightspeed" target="_blank" class="social-card youtube" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://www.youtube.com/@peterphonist" target="_blank" class="social-card youtube" data-aos="fade-up" data-aos-delay="200">
             <i class="bi bi-youtube"></i>
             <span>YouTube</span>
-            <small>@peter_lightspeed</small>
+            <small>@peterphonist</small>
           </a>
           
           <a href="https://www.facebook.com/peterphonist" target="_blank" class="social-card facebook" data-aos="fade-up" data-aos-delay="300">
@@ -649,7 +649,7 @@
               <a class="social-icon instagram" href="https://www.instagram.com/peterphonist" target="_blank" data-bs-toggle="tooltip" aria-label="Follow me on Instagram">
                 <i class="bi bi-instagram"></i>
               </a>
-              <a class="social-icon youtube" href="https://www.youtube.com/@peter_lightspeed" target="_blank" data-bs-toggle="tooltip" aria-label="Subscribe to my YouTube">
+              <a class="social-icon youtube" href="https://www.youtube.com/@peterphonist" target="_blank" data-bs-toggle="tooltip" aria-label="Subscribe to my YouTube">
                 <i class="bi bi-youtube"></i>
               </a>
               <a class="social-icon facebook" href="https://www.facebook.com/peterphonist" target="_blank" data-bs-toggle="tooltip" aria-label="Follow me on Facebook">
@@ -819,10 +819,54 @@
   <i class="bi bi-arrow-up"></i>
 </button>
 
+<!-- ===== CHATBOT WIDGET ===== -->
+<div id="chatbot-widget" class="chatbot-hidden">
+  <div class="chatbot-header">
+    <div class="d-flex align-items-center">
+      <div class="chatbot-avatar me-2">
+        <img src="images/logos/peter-logo.png" alt="Peter Assistant">
+      </div>
+      <div>
+        <span class="fw-semibold d-block">Peterphonist Assistant</span>
+        <small class="chatbot-status">
+          <span class="status-dot"></span>
+          Online
+        </small>
+      </div>
+    </div>
+    <button id="close-chat" class="btn btn-sm text-white">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  <div id="chat-area-widget">
+    <div>
+      <div class="message bot-message">🎷 Hello! I'm Peterphonist's virtual assistant. I'm here to help you with questions about saxophone services, bookings, performances, and more. How can I assist you today?</div>
+      <div class="message-time">Just now</div>
+    </div>
+  </div>
+  <div class="chat-form-container">
+    <form id="chat-form">
+      <div class="d-flex">
+        <input id="user-input-widget" type="text" placeholder="Ask about sax services..." class="form-control">
+        <button id="send-button-widget" type="submit" class="btn btn-primary">
+          <i class="bi bi-send-fill"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button id="open-chat-button">
+  <i class="bi bi-chat-dots-fill"></i>
+  <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">1</span>
+</button>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- AOS Animation JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Chatbot JS -->
+<script src="sax-bot.js"></script>
 <!-- Custom JS -->
 <script src="sax.js"></script>
 </body>
