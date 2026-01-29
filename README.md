@@ -8,22 +8,22 @@ A modern, full-stack portfolio website built with Next.js 16, TypeScript, Tailwi
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Design** - Clean, professional interface with smooth animations
-- 🌓 **Dark Mode** - Automatic theme switching with system preference detection  
-- 📱 **Fully Responsive** - Optimized for all devices
-- 💾 **Database-Backed** - Dynamic content from Supabase (PostgreSQL)
-- 📧 **Email Notifications** - Automatic notifications via Resend
-- 🔒 **Type-Safe** - Built with TypeScript for reliability
-- ⚡ **Optimized** - Fast loading with Next.js ISR and image optimization
-- 🎯 **SEO Ready** - Complete metadata and OpenGraph tags
+- **Modern Design** - Clean, professional interface with smooth animations
+- **Dark Mode** - Automatic theme switching with system preference detection  
+- **Fully Responsive** - Optimized for all devices
+- **Database-Backed** - Dynamic content from Supabase (PostgreSQL)
+- **Email Notifications** - Automatic notifications via Resend
+- **Type-Safe** - Built with TypeScript for reliability
+- **Optimized** - Fast loading with Next.js ISR and image optimization
+- **SEO Ready** - Complete metadata and OpenGraph tags
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-See **[QUICK_START.md](./QUICK_START.md)** for 5-minute setup guide.
+See **[QUICK_START.md](./QUICK_START.md)** for a 5-minute setup guide.
 
 ```bash
 npm install
@@ -34,15 +34,15 @@ Visit `http://localhost:5000`
 
 ---
 
-## 📚 Documentation
+## Documentation
 
-- **[QUICK_START.md](./QUICK_START.md)** - Get up and running in 5 minutes ⚡
-- **[USER_GUIDE.md](./USER_GUIDE.md)** - Complete website management guide 📖
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy to Vercel, Netlify, or Replit 🚀
+- **[QUICK_START.md](./QUICK_START.md)** - Get up and running in 5 minutes 
+- **[USER_GUIDE.md](./USER_GUIDE.md)** - Complete website management guide 
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy to github
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:** Next.js 16 · TypeScript · Tailwind CSS 4 · Framer Motion  
 **Backend:** Supabase (PostgreSQL) · Drizzle ORM · Resend (Email) · Zod  
@@ -50,7 +50,7 @@ Visit `http://localhost:5000`
 
 ---
 
-## 🌍 Environment Variables
+## Environment Variables
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
@@ -60,7 +60,7 @@ RESEND_API_KEY=re_xxxxxxxxxxxxx (if not using Replit integration)
 
 ---
 
-## 📝 Managing Your Site
+## Managing Your Site
 
 ### Quick Tasks
 
@@ -77,25 +77,25 @@ See [USER_GUIDE.md](./USER_GUIDE.md) for detailed instructions.
 
 ---
 
-## 🚀 Deploying to Production
+## Deploying to Production
 
 **Recommended: Vercel**
 
 1. Push to GitHub
 2. Import to Vercel  
 3. Add environment variables
-4. Deploy ✨
+4. Deploy 
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete guide.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for a complete guide.
 
 ---
 
-## 👤 About
+## About
 
 **Peter Lightspeed** - Virtual Assistant & Web Developer  
-📍 Lagos, Nigeria  
-📧 peterlight60@gmail.com  
-🐦 [@peterlightspeed](https://twitter.com/peterlightspeed)
+Location: Lagos, Nigeria  
+email: peterlight60@gmail.com  
+Twitter: [@peterlightspeed](https://twitter.com/peterlightspeed)
 
 ---
 
