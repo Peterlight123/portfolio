@@ -1,10 +1,10 @@
-# ⚡ Quick Start Guide
+# Quick Start Guide
 
 **Your portfolio is ready to deploy!** Here's what you need to know in 5 minutes.
 
 ---
 
-## 🎯 What You Have
+## What You Have
 
 ✅ Modern Next.js portfolio website  
 ✅ Database-backed content (Projects, Blog, Testimonials)  
@@ -15,7 +15,7 @@
 
 ---
 
-## 🚀 Deploy to Vercel (5 Minutes)
+## Deploy to Vercel (5 Minutes)
 
 ### 1. Push to GitHub
 ```bash
@@ -47,7 +47,7 @@ Get these from: Supabase → Project Settings → API
 
 ---
 
-## 📧 Your Forms Send Emails
+## Your Forms Send Emails
 
 Both forms already work:
 - **Contact Form** (`/contact`) → Saves to database + Sends you email
@@ -57,7 +57,7 @@ Both forms already work:
 
 ---
 
-## 💾 Managing Content
+## Managing Content
 
 ### View Form Submissions
 **Supabase Dashboard:**
@@ -84,29 +84,29 @@ Both forms already work:
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
-📦 Your Portfolio
-├── 📄 USER_GUIDE.md         ← Full documentation
-├── 📄 DEPLOYMENT.md         ← Deployment details
-├── 📄 QUICK_START.md        ← You are here
-├── 📁 app/                  ← Website pages
+Your Portfolio
+├── USER_GUIDE.md         ← Full documentation
+├── DEPLOYMENT.md         ← Deployment details
+├── QUICK_START.md        ← You are here
+├── app/                  ← Website pages
 │   ├── page.tsx            ← Home page
 │   ├── about/              ← About page
 │   ├── projects/           ← Projects page
 │   ├── contact/            ← Contact form
 │   └── api/                ← Backend endpoints
-├── 📁 public/
+├── public/
 │   ├── images/             ← Your images
 │   └── documents/          ← CV/Resume
-└── 📁 scripts/
+└── scripts/
     └── setup-supabase.sql  ← Database setup
 ```
 
 ---
 
-## 🛠️ Common Tasks
+## Common Tasks
 
 ### Update Your Info
 Edit `app/about/page.tsx` for bio and contact details
@@ -122,7 +122,7 @@ Edit `app/globals.css` (search for `--primary`)
 
 ---
 
-## 🔗 Important Links
+## Important Links
 
 **Your site is currently at:**
 - Replit: https://your-repl.replit.app
@@ -166,11 +166,11 @@ Edit `app/globals.css` (search for `--primary`)
 
 ---
 
-**🎉 That's it! Your portfolio is live and fully functional!**
+**🎉 That's it! My portfolio is live and fully functional!**
 
 **Next steps:**
 1. Add your projects to the database
 2. Write blog posts
-3. Share your link!
+3. Share my link!
 
 For detailed instructions, see `USER_GUIDE.md`.
