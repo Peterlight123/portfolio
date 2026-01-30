@@ -55,7 +55,7 @@ Visit `http://localhost:5000`
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-RESEND_API_KEY=re_xxxxxxxxxxxxx (if not using Replit integration)
+RESEND_API_KEY=re_xxxxxxxxxxxxx 
 ```
 
 ---
