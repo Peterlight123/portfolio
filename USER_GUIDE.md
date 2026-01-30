@@ -1,10 +1,10 @@
-# 🚀 Peter Lightspeed Portfolio - User Guide
+# Peter Lightspeed Portfolio - User Guide
 
 Welcome to your modern portfolio website! This guide will help you manage and customize your site effectively.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Quick Start](#quick-start)
 2. [Managing Your Website](#managing-your-website)
@@ -16,7 +16,7 @@ Welcome to your modern portfolio website! This guide will help you manage and cu
 
 ---
 
-## 🎯 Quick Start
+## Quick Start
 
 ### What You Have
 
@@ -33,12 +33,12 @@ Your portfolio is a **full-stack Next.js application** with:
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS
 - **Database**: Supabase (PostgreSQL)
 - **Email**: Resend integration
-- **Hosting**: Vercel (recommended) or Replit
+- **Hosting**: Vercel (recommended)
 - **Version Control**: Git & GitHub
 
 ---
 
-## 🛠️ Managing Your Website
+## Managing Your Website
 
 ### 1. **Updating Your Profile Information**
 
@@ -86,16 +86,16 @@ const certifications = [
 
 ---
 
-## 💾 Database Management
+## Database Management
 
 ### Accessing Your Database
 
 Your website uses **Supabase** for storing:
-- 📝 Blog posts
-- 🖼️ Projects
-- ⭐ Testimonials
-- 📧 Contact form submissions
-- 📬 Newsletter subscribers
+- Blog posts
+- Projects
+- Testimonials
+- Contact form submissions
+- Newsletter subscribers
 
 ### How to View & Edit Data
 
@@ -203,7 +203,6 @@ If you haven't set up Supabase yet:
      - `anon/public key`
 
 3. **Add to Environment Variables**
-   - In Replit: Go to Secrets tab
    - Add:
      ```
      NEXT_PUBLIC_SUPABASE_URL=your-project-url
@@ -218,15 +217,15 @@ If you haven't set up Supabase yet:
 
 ---
 
-## 📧 Email Notifications
+## Email Notifications
 
 ### How Email Works
 
 When visitors submit forms, you receive automatic email notifications via Resend.
 
 #### Email Triggers:
-- ✉️ **Contact Form**: Get notified when someone contacts you
-- 📬 **Newsletter Signup**: Get notified of new subscribers
+- **Contact Form**: Get notified when someone contacts you
+- **Newsletter Signup**: Get notified of new subscribers
 
 ### Resend Configuration
 
@@ -257,7 +256,7 @@ await resend.emails.send({
 
 ---
 
-## 🚀 Deployment Guide
+## Deployment Guide
 
 ### Deploying to Vercel (Recommended)
 
@@ -308,7 +307,7 @@ git push origin main
 
 ---
 
-## 📝 Common Tasks
+## Common Tasks
 
 ### 1. **Update Your CV/Resume**
 
@@ -363,7 +362,7 @@ const responses = {
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Build Errors
 
@@ -412,7 +411,7 @@ Clear browser cache or check:
 
 ---
 
-## 🎨 Customization Tips
+## Customization Tips
 
 ### Adding New Pages
 
@@ -440,7 +439,7 @@ const poppins = Poppins({
 
 ---
 
-## 📞 Support & Resources
+## Support & Resources
 
 ### Official Documentation
 - **Next.js**: https://nextjs.org/docs
@@ -474,7 +473,7 @@ npm start                # Start production server
 
 ---
 
-## 🎯 Best Practices
+## Best Practices
 
 1. **Regular Backups**
    - Export Supabase data weekly
@@ -497,7 +496,7 @@ npm start                # Start production server
 
 ---
 
-## 🚦 Quick Reference
+## Quick Reference
 
 ### File Structure
 ```
@@ -520,10 +519,7 @@ npm start                # Start production server
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
-# Resend (auto-configured via Replit integration)
-```
 
----
 
 ## ✅ Checklist Before Going Live
 
@@ -542,6 +538,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
 **🎉 Congratulations!** You now have a modern, professional portfolio website. Keep it updated with your latest work and achievements!
 
-For questions or issues, refer to the documentation links above or check the Replit/Vercel logs for debugging information.
+For questions or issues, refer to the documentation links above or check the Vercel logs for debugging information.
 
-**Made with ❤️ by Peter Lightspeed**
+**Made with lightspeed by Peter Lightspeed**
