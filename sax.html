@@ -22,51 +22,82 @@
 
 <!-- HEADER & NAVBAR -->
 <header class="sticky-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
-    <div class="container">
-      <!-- Logo and Brand -->
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div class="brand-logo me-3">
-          <img src="images/logos/peter-logo.png" alt="Peter Logo" class="rounded-circle" width="45" height="45">
-        </div>
-        <div class="brand-text">
-          <span class="fs-4 fw-bold d-none d-sm-inline">Peter Lightspeed</span>
-          <span class="fs-4 fw-bold d-inline d-sm-none">Peter</span>
-        </div>
-      </a>
-      
-      <!-- Mobile Toggle Button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <!-- Navigation Links -->
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link px-3" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3 active" href="sax.html">Sax Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3" href="contact.html">Contact</a>
-          </li>
-          
-          <!-- Contact Button -->
-          <li class="nav-item d-none d-lg-block ms-2">
-            <a href="contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
-              <i class="bi bi-envelope-fill me-1"></i> Hire Me
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="brand-logo me-3">
+                        <img src="images/logos/peter-logo.png" alt="Peter Logo" class="rounded-circle" width="45" height="45">
+                    </div>
+                    <div class="brand-text">
+                        <span class="fs-4 fw-bold d-none d-sm-inline">Peter Lightspeed</span>
+                        <span class="fs-4 fw-bold d-inline d-sm-none">Peter</span>
+                    </div>
+                </a>
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 active" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="about.html">About</a>
+                        </li>
+                      <li class="nav-item">
+                            <a class="nav-link px-3" href="sax.html">Sax Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="demo.html">View Live Demos</a>
+                        </li>
+                        
+                        <!-- Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="testimonials.html">
+                                    <i class="bi bi-chat-quote-fill me-2 text-primary"></i>Testimonials
+                                </a></li>
+                                <li><a class="dropdown-item" href="certifications.html">
+                                    <i class="bi bi-award-fill me-2 text-primary"></i>Certifications
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sponsor.html">
+                                    <i class="bi bi-heart-fill me-2 text-danger"></i>Sponsor Me
+                                </a></li>
+                                <li><a class="dropdown-item" href="cv.html">
+                                    <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>Download CV
+                                </a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Contact Button (visible on larger screens) -->
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a href="contact.html" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary">
+                                <i class="bi bi-envelope-fill me-1"></i> Hire Me
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 <!-- HERO SECTION -->
 <section class="hero-section" id="home">
