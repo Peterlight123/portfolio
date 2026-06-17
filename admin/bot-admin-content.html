@@ -1,0 +1,165 @@
+<div class="admin-header">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h3 mb-0">Chatbot Management System</h1>
+        <button id="logout-btn" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-box-arrow-right me-1"></i> Exit
+        </button>
+    </div>
+</div>
+
+<!-- Knowledge Base Editor -->
+<div class="admin-card">
+    <h2 class="h4 mb-3">Knowledge Base Editor</h2>
+    <p class="text-muted mb-4">Edit the chatbot's responses to different queries. These responses will be used to answer user questions.</p>
+    
+    <div id="save-success" class="alert alert-success" style="display: none;">
+        Knowledge base updated successfully!
+    </div>
+    
+    <div id="knowledge-base-container">
+        <!-- Knowledge base items will be added here dynamically -->
+        <div class="text-center py-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading knowledge base...</p>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-between mt-4">
+        <button id="add-response-btn" class="btn btn-outline-primary">
+            <i class="bi bi-plus-circle me-2"></i> Add New Response
+        </button>
+        <button id="save-knowledge-base-btn" class="btn btn-primary">
+            <i class="bi bi-save me-2"></i> Save Changes
+        </button>
+    </div>
+</div>
+
+<!-- Chat History -->
+<div class="admin-card">
+    <h2 class="h4 mb-3">Chat History</h2>
+    <p class="text-muted mb-4">View recent chat conversations from your website visitors.</p>
+    
+    <div id="chat-history-container">
+        <div class="text-center py-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading chat history...</p>
+        </div>
+    </div>
+    
+    <button id="clear-history-btn" class="btn btn-outline-danger mt-3">
+        <i class="bi bi-trash me-2"></i> Clear Chat History
+    </button>
+</div>
+
+<!-- Settings -->
+<div class="admin-card">
+    <h2 class="h4 mb-3">Chatbot Settings</h2>
+    
+    <form id="settings-form">
+        <div class="mb-3">
+            <label for="bot-name" class="form-label">Bot Name</label>
+            <input type="text" class="form-control" id="bot-name" value="Peter Assistant">
+        </div>
+        
+        <div class="mb-3">
+            <label for="initial-message" class="form-label">Welcome Message</label>
+            <textarea class="form-control" id="initial-message" rows="3"></textarea>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="typing-speed" class="form-label">Typing Speed (ms per character)</label>
+                <input type="number" class="form-control" id="typing-speed" min="10" max="200" value="50">
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label for="response-delay" class="form-label">Response Delay (ms)</label>
+                <input type="number" class="form-control" id="response-delay" min="0" max="3000" value="500">
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-gear me-2"></i> Save Settings
+        </button>
+    </form>
+</div>
+
+<!-- Access Logs -->
+<div class="admin-card">
+    <h2 class="h4 mb-3">Security Logs</h2>
+    <p class="text-muted mb-4">View recent access attempts to the admin interface.</p>
+    
+    <div id="access-logs-container">
+        <div class="text-center py-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading access logs...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Add Response Modal -->
+<div class="modal fade" id="addResponseModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Response</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-response-form">
+                    <div class="mb-3">
+                        <label for="response-key" class="form-label">Trigger Keywords</label>
+                        <input type="text" class="form-control" id="response-key" required>
+                        <div class="form-text">Words or phrases that will trigger this response (e.g., "web development")</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="response-value" class="form-label">Response Text</label>
+                        <textarea class="form-control" id="response-value" rows="5" required></textarea>
+                        <div class="form-text">The chatbot's response when these keywords are mentioned</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="save-new-response-btn">Add Response</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Response Modal -->
+<div class="modal fade" id="editResponseModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Response</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-response-form">
+                    <input type="hidden" id="edit-response-original-key">
+                    <div class="mb-3">
+                        <label for="edit-response-key" class="form-label">Trigger Keywords</label>
+                        <input type="text" class="form-control" id="edit-response-key" required>
+                        <div class="form-text">Words or phrases that will trigger this response</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-response-value" class="form-label">Response Text</label>
+                        <textarea class="form-control" id="edit-response-value" rows="5" required></textarea>
+                        <div class="form-text">The chatbot's response when these keywords are mentioned</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="update-response-btn">Update Response</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peterlight123.github.io/portfolio/sitemap.xml

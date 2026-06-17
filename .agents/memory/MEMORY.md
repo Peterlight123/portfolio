@@ -1,0 +1,3 @@
+- [Portfolio nav pattern](portfolio-nav.md) — standard nav order and More dropdown content for all pages in this portfolio.
+- [Products page architecture](products-phase2.md) — products.html rewritten for Phase 2; PLS TechCompany branding, edition cards, roadmap section.
+- [Phase 3 dark mode fixes](phase3-darkmode.md) — all Phase 3 visibility/contrast fixes applied to darkmode.css and sax.html.

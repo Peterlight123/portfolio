@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Eluwade - CV</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Gray-100 */
+        }
+        
+        /* Print Styles to ensure it exports perfectly to PDF */
+        @media print {
+            body {
+                background-color: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                margin: 0;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+            }
+            /* Hide print margins if possible */
+            @page { 
+                margin: 1.5cm; 
+                size: A4 portrait; 
+            }
+            .no-print { display: none !important; }
+            .page-break-inside-avoid { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="py-10 flex justify-center items-start min-h-screen">
+
+    <!-- Print Instruction Tooltip -->
+    <div class="fixed top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-medium text-slate-700 no-print border-l-4 border-indigo-500 z-50">
+        <i class="fas fa-print mr-2 text-indigo-500"></i> Press <b>Ctrl+P</b> (or Cmd+P) to save as PDF.
+    </div>
+
+    <!-- Main CV Canvas -->
+    <div class="cv-container bg-white w-full max-w-[850px] shadow-2xl rounded-xl overflow-hidden mx-4 md:mx-0">
+        
+        <!-- Header Section -->
+        <header class="bg-slate-900 text-white p-10 relative overflow-hidden">
+            <!-- Subtle background pattern/gradient -->
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-400 via-slate-900 to-slate-900"></div>
+            
+            <div class="relative z-10">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4.5xl font-extrabold tracking-tight uppercase mb-2">Eluwade Peter <span class="text-indigo-400">Toluwanimi</span></h1>
+                    <p class="text-lg md:text-xl text-indigo-300 font-medium tracking-wide">Junior AI Developer & Front-End Web Developer</p>
+                </div>
+                
+                <!-- Contact & Social URLs Info Grid (Pure text links, no styled buttons) -->
+                <div class="mt-6 pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 text-xs md:text-sm text-slate-300">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt w-4 text-indigo-400 text-center"></i>
+                        <span>Surulere, Lagos, Nigeria</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-phone w-4 text-indigo-400 text-center"></i>
+                        <span>+234 810 882 1809</span>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fas fa-envelope w-4 text-indigo-400 text-center"></i>
+                        <a href="mailto:petereluwade55@gmail.com" class="hover:text-indigo-300 underline transition-colors">petereluwade55@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fas fa-briefcase w-4 text-indigo-400 text-center"></i>
+                        <a href="https://peterlight123.github.io/portfolio" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://peterlight123.github.io/portfolio</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fas fa-globe w-4 text-indigo-400 text-center"></i>
+                        <a href="https://peterlight123.github.io" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://peterlight123.github.io</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fab fa-linkedin w-4 text-indigo-400 text-center"></i>
+                        <a href="https://www.linkedin.com/in/peter-eluwade-5b8a73363/" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://www.linkedin.com/in/peter-eluwade-5b8a73363/</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fab fa-x-twitter w-4 text-indigo-400 text-center"></i>
+                        <a href="https://x.com/peterlightspeed" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://x.com/peterlightspeed</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fab fa-youtube w-4 text-indigo-400 text-center"></i>
+                        <a href="https://www.youtube.com/@peterlight_speed" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://www.youtube.com/@peterlight_speed</a>
+                    </div>
+                    <div class="flex items-center gap-2 truncate">
+                        <i class="fab fa-instagram w-4 text-indigo-400 text-center"></i>
+                        <a href="https://www.instagram.com/peterlightspeed_/" target="_blank" class="hover:text-indigo-300 underline transition-colors">https://www.instagram.com/peterlightspeed_/</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body Section -->
+        <div class="p-10 space-y-8">
+            
+            <!-- Professional Summary -->
+            <section class="page-break-inside-avoid">
+                <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                    <i class="fas fa-user-circle mr-3 text-indigo-500"></i> Professional Summary
+                </h2>
+                <div class="text-slate-600 leading-relaxed space-y-3 text-sm md:text-base">
+                    <p>Junior AI Developer and Front-End Web Developer building intelligent, responsive, and user-focused digital experiences. I help businesses, creators, and startups create fast web solutions and AI-inspired projects that improve engagement, usability, and online presence.</p>
+                    <p>I am the founder of PLSTech Company, where I build and share AI, web, and automation projects, and I also create practical tech tutorials and content across social platforms. My recent work includes PLS Jarvis, a terminal-based AI assistant prototype that listens to commands, speaks back, and performs actions, as well as a range of beginner-friendly coding and AI projects designed to solve real problems.</p>
+                    <p>I enjoy turning ideas into working products, learning by building, and sharing practical tech knowledge in public. I am currently seeking opportunities in Junior AI Development, AI/ML Support, Prompt Engineering, and AI-focused Product Development.</p>
+                </div>
+            </section>
+
+            <!-- Core Skills -->
+            <section class="page-break-inside-avoid">
+                <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                    <i class="fas fa-tools mr-3 text-indigo-500"></i> Core Skills
+                </h2>
+                <div class="flex flex-wrap gap-2 mt-3">
+                    <!-- Programming & Web -->
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">Python</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">HTML5</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">CSS3</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">JavaScript</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">Front-End Development</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">Responsive Web Design</span>
+                    <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-indigo-100">GitHub Pages</span>
+                    
+                    <!-- AI & Tech -->
+                    <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-slate-200">AI Fundamentals</span>
+                    <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-slate-200">Machine Learning Basics</span>
+                    <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-slate-200">Prompt Engineering</span>
+                    <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-slate-200">AI Product Prototyping</span>
+                    
+                    <!-- Soft & Other Skills -->
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Blogger / SEO</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Technical Content Creation</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Project Documentation</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Problem Solving</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Public Speaking</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">Digital Communication</span>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-5 uppercase tracking-wider flex items-center">
+                    <i class="fas fa-briefcase mr-3 text-indigo-500"></i> Experience
+                </h2>
+                
+                <div class="space-y-6 relative border-l-2 border-indigo-100 ml-3 pl-6">
+                    
+                    <!-- Job 1 -->
+                    <div class="relative page-break-inside-avoid">
+                        <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-indigo-500 border-4 border-white shadow-sm"></span>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                            <h3 class="text-lg font-bold text-slate-800">Founder & AI Builder</h3>
+                            <span class="text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full mt-1 md:mt-0 w-max">2025 – Present</span>
+                        </div>
+                        <div class="text-md text-slate-600 font-semibold mb-2">PLSTech Company</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm">
+                            <li>Build and test AI-inspired tools, web experiences, and automation concepts.</li>
+                            <li>Share tech tutorials and project updates publicly.</li>
+                            <li>Develop digital solutions that combine AI, usability, and modern design.</li>
+                            <li>Create content around coding, AI tools, and developer education.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="relative page-break-inside-avoid">
+                        <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></span>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                            <h3 class="text-lg font-bold text-slate-800">Founder & SEO Blogger</h3>
+                            <span class="text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full mt-1 md:mt-0 w-max">2025 – Present</span>
+                        </div>
+                        <div class="text-md text-slate-600 font-semibold mb-2">PLS WorldNews</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm">
+                            <li>Founded and manage a growing entertainment and news blog.</li>
+                            <li>Write and publish long-form SEO-friendly articles on trending topics.</li>
+                            <li>Use internal links, metadata, and content structure for search visibility.</li>
+                            <li>Manage site layout and content organization to improve user engagement.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="relative page-break-inside-avoid">
+                        <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></span>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                            <h3 class="text-lg font-bold text-slate-800">Tech Content Creator</h3>
+                            <span class="text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full mt-1 md:mt-0 w-max">2025 – Present</span>
+                        </div>
+                        <div class="text-md text-slate-600 font-semibold mb-2">Social Media Platforms</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm">
+                            <li>Create educational content around Python, AI, tech updates, and beginner projects.</li>
+                            <li>Built an audience through consistent build-in-public content.</li>
+                            <li>Generated 60k+ impressions in one week through tech-focused posts.</li>
+                            <li>Create short tutorials, prompts, and coding tips for learners and creators.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="relative page-break-inside-avoid">
+                        <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></span>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                            <h3 class="text-lg font-bold text-slate-800">Freelance WordPress & Web Developer</h3>
+                            <span class="text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full mt-1 md:mt-0 w-max">2024 – Present</span>
+                        </div>
+                        <div class="text-md text-slate-600 font-semibold mb-2">Self-Employed</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm">
+                            <li>Built and customized WordPress and front-end websites for clients.</li>
+                            <li>Customized themes, layouts, and plugins to match branding and business goals.</li>
+                            <li>Optimized website performance, loading speed, and mobile responsiveness.</li>
+                            <li>Implemented SEO-friendly structures and conversion-focused page layouts.</li>
+                            <li>Integrated contact forms, dynamic content, and third-party services.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="relative page-break-inside-avoid">
+                        <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></span>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                            <h3 class="text-lg font-bold text-slate-800">Frontend Web Developer</h3>
+                            <span class="text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full mt-1 md:mt-0 w-max">Feb 2025 – Jul 2025</span>
+                        </div>
+                        <div class="text-md text-slate-600 font-semibold mb-2">Camex Global Concept</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm">
+                            <li>Built and maintained responsive websites for internal and client projects.</li>
+                            <li>Converted design layouts into clean, mobile-friendly user interfaces.</li>
+                            <li>Improved page structure, usability, and accessibility.</li>
+                            <li>Assisted with website deployment, updates, and content changes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-5 uppercase tracking-wider flex items-center">
+                    <i class="fas fa-project-diagram mr-3 text-indigo-500"></i> Featured Projects
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Project 1 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow page-break-inside-avoid">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">PLS Jarvis</h3>
+                        <p class="text-sm text-slate-600 mb-3">Terminal-based AI assistant prototype that listens to user commands, speaks back, and performs basic actions. Built for learning and public demonstration.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Speech UI</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Logic</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow page-break-inside-avoid">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">PLSTech Company Projects</h3>
+                        <p class="text-sm text-slate-600 mb-3">Ongoing company brand used to build and test AI-inspired web tools, tech tutorials, and digital product ideas for creators and businesses.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">HTML/CSS/JS</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">AI Tools</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow page-break-inside-avoid">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">AI Prompting & Content Systems</h3>
+                        <p class="text-sm text-slate-600 mb-3">Created and tested AI prompt workflows for generating LinkedIn, X, IG, and YouTube content around tech updates, coding, and AI education.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Gemini</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Prompt Engineering</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow page-break-inside-avoid">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Beginner Python Projects</h3>
+                        <p class="text-sm text-slate-600 mb-3">Built educational mini-projects including Calculator, Password Checker, QR Code Generator, URL Shortener, and a Simple Chatbot.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Google Colab</span>
+                            <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">Replit</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra project mention -->
+                <div class="mt-3 text-sm text-slate-600 pl-2 border-l-2 border-slate-300 page-break-inside-avoid">
+                    <span class="font-bold text-slate-800">Cyberpunk Terminal / Hacker UI Concepts:</span> Created futuristic terminal-style UI concepts for live coding and interactive demonstrations using HTML, CSS, JavaScript.
+                </div>
+            </section>
+
+            <!-- Multi-column Container for Space Efficiency -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Education & Certifications -->
+                <section class="space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                            <i class="fas fa-graduation-cap mr-3 text-indigo-500"></i> Education
+                        </h2>
+                        
+                        <div class="mb-4 page-break-inside-avoid">
+                            <h3 class="text-md font-bold text-slate-800">B.Sc. Computer Science <span class="font-normal text-sm text-slate-500">(Part-time)</span></h3>
+                            <div class="text-sm text-indigo-600 font-medium">Lagos State University</div>
+                            <div class="text-sm text-slate-500">Dec 2025 – 2030 (Expected)</div>
+                        </div>
+                        
+                        <div class="page-break-inside-avoid">
+                            <h3 class="text-md font-bold text-slate-800">Senior Secondary Certificate</h3>
+                            <div class="text-sm text-indigo-600 font-medium">Glory Crown International Senior Secondary School</div>
+                            <div class="text-sm text-slate-500">Completed | 2022 – 2024</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                            <i class="fas fa-certificate mr-3 text-indigo-500"></i> Certifications
+                        </h2>
+                        <ul class="space-y-3 text-sm">
+                            <li class="page-break-inside-avoid">
+                                <span class="font-bold text-slate-800 block">Artificial Intelligence Bootcamp</span>
+                                <span class="text-slate-600">AI Academy Africa | Nov 2025</span>
+                            </li>
+                            <li class="page-break-inside-avoid">
+                                <span class="font-bold text-slate-800 block">AI-Powered Performance Ads</span>
+                                <span class="text-slate-600">Google | Jul 2025 – Jul 2026</span>
+                            </li>
+                            <li class="page-break-inside-avoid">
+                                <span class="font-bold text-slate-800 block">Soft Skills Training</span>
+                                <span class="text-slate-600">West Africa Vocational Education | Jul 2024</span>
+                            </li>
+                            <li class="page-break-inside-avoid">
+                                <span class="font-bold text-slate-800 block">Responsive Web Design</span>
+                                <span class="text-slate-600">FreeCodeCamp</span>
+                            </li>
+                            <li class="page-break-inside-avoid">
+                                <span class="font-bold text-slate-800 block">Digital Services</span>
+                                <span class="text-slate-600">Camex Global Concept | Feb 2025</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Achievements, Interests, Additional Info -->
+                <section class="space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                            <i class="fas fa-trophy mr-3 text-indigo-500"></i> Achievements
+                        </h2>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-1.5 text-sm page-break-inside-avoid">
+                            <li>Generated 60k+ impressions in one week through tech content creation.</li>
+                            <li>Built and shared public AI and coding projects consistently.</li>
+                            <li>Publicly presented and created learning content around AI and project building.</li>
+                            <li>Founded and managed PLSTech Company and PLS WorldNews.</li>
+                            <li>Developed practical beginner-friendly tutorials and prototypes for social media audiences.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-100 pb-2 mb-4 uppercase tracking-wider flex items-center">
+                            <i class="fas fa-heart mr-3 text-indigo-500"></i> Interests
+                        </h2>
+                        <div class="flex flex-wrap gap-2 text-sm text-slate-600 font-medium page-break-inside-avoid">
+                            <span class="bg-gray-100 px-2 py-1 rounded">Artificial Intelligence</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Machine Learning</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">AI Product Dev</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Front-End</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Prompt Engineering</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Tech Education</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Building in Public</span>
+                            <span class="bg-gray-100 px-2 py-1 rounded">Digital Innovation</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 page-break-inside-avoid">
+                        <h2 class="text-lg font-bold text-indigo-800 mb-2 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Additional Information
+                        </h2>
+                        <ul class="list-disc list-inside text-indigo-700 space-y-1 text-sm font-medium">
+                            <li>Open to entry-level paid roles, internships, freelance projects, and remote opportunities.</li>
+                            <li>Available for collaboration on AI, web, automation, and creator-focused tech projects.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

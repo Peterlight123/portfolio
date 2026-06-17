@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Admin - Peter Lightspeed</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .admin-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .response-item {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+        }
+        
+        .response-item:hover {
+            background-color: #e9ecef;
+        }
+        
+        .response-actions {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Password protection */
+        input[type="password"] {
+            -webkit-text-security: disc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container admin-container">
+        <div id="login-section">
+            <div class="login-container">
+                <h2 class="text-center mb-4">Chatbot Admin Login</h2>
+                <div id="login-error" class="alert alert-danger" style="display: none;"></div>
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-lock me-2"></i> Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="admin-section" style="display: none;">
+            <div class="admin-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="h3 mb-0">Chatbot Admin Panel</h1>
+                    <button id="logout-btn" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-box-arrow-right me-1"></i> Logout
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Knowledge Base Editor -->
+            <div class="admin-card">
+                <h2 class="h4 mb-3">Knowledge Base Editor</h2>
+                <p class="text-muted mb-4">Edit the chatbot's responses to different queries. These responses will be used to answer user questions.</p>
+                
+                <div id="save-success" class="alert alert-success" style="display: none;">
+                    Knowledge base updated successfully!
+                </div>
+                
+                <div id="knowledge-base-container">
+                    <!-- Knowledge base items will be added here dynamically -->
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <button id="add-response-btn" class="btn btn-outline-primary">
+                        <i class="bi bi-plus-circle me-2"></i> Add New Response
+                    </button>
+                    <button id="save-knowledge-base-btn" class="btn btn-primary">
+                        <i class="bi bi-save me-2"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat History -->
+            <div class="admin-card">
+                <h2 class="h4 mb-3">Chat History</h2>
+                <p class="text-muted mb-4">View recent chat conversations from your website visitors.</p>
+                
+                <div id="chat-history-container">
+                    <div class="alert alert-info">
+                        Loading chat history...
+                    </div>
+                </div>
+                
+                <button id="clear-history-btn" class="btn btn-outline-danger mt-3">
+                    <i class="bi bi-trash me-2"></i> Clear Chat History
+                </button>
+            </div>
+            
+            <!-- Settings -->
+            <div class="admin-card">
+                <h2 class="h4 mb-3">Chatbot Settings</h2>
+                
+                <form id="settings-form">
+                    <div class="mb-3">
+                        <label for="bot-name" class="form-label">Bot Name</label>
+                        <input type="text" class="form-control" id="bot-name" value="Peter Assistant">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="initial-message" class="form-label">Welcome Message</label>
+                        <textarea class="form-control" id="initial-message" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="typing-speed" class="form-label">Typing Speed (ms per character)</label>
+                            <input type="number" class="form-control" id="typing-speed" min="10" max="200" value="50">
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="response-delay" class="form-label">Response Delay (ms)</label>
+                            <input type="number" class="form-control" id="response-delay" min="0" max="3000" value="500">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-gear me-2"></i> Save Settings
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Response Modal -->
+    <div class="modal fade" id="addResponseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Response</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-response-form">
+                        <div class="mb-3">
+                            <label for="response-key" class="form-label">Trigger Keywords</label>
+                            <input type="text" class="form-control" id="response-key" required>
+                            <div class="form-text">Words or phrases that will trigger this response (e.g., "web development")</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="response-value" class="form-label">Response Text</label>
+                            <textarea class="form-control" id="response-value" rows="5" required></textarea>
+                            <div class="form-text">The chatbot's response when these keywords are mentioned</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="save-new-response-btn">Add Response</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Edit Response Modal -->
+    <div class="modal fade" id="editResponseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Response</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-response-form">
+                        <input type="hidden" id="edit-response-original-key">
+                        <div class="mb-3">
+                            <label for="edit-response-key" class="form-label">Trigger Keywords</label>
+                            <input type="text" class="form-control" id="edit-response-key" required>
+                            <div class="form-text">Words or phrases that will trigger this response</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-response-value" class="form-label">Response Text</label>
+                            <textarea class="form-control" id="edit-response-value" rows="5" required></textarea>
+                            <div class="form-text">The chatbot's response when these keywords are mentioned</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="update-response-btn">Update Response</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Admin credentials (in a real app, this would be server-side)
+        const ADMIN_USERNAME = 'admin';
+        const ADMIN_PASSWORD = 'PeterLightspeed2025';
+        
+        // DOM Elements
+        const loginSection = document.getElementById('login-section');
+        const adminSection = document.getElementById('admin-section');
+        const loginForm = document.getElementById('login-form');
+        const loginError = document.getElementById('login-error');
+        const logoutBtn = document.getElementById('logout-btn');
+        const knowledgeBaseContainer = document.getElementById('knowledge-base-container');
+        const addResponseBtn = document.getElementById('add-response-btn');
+        const saveKnowledgeBaseBtn = document.getElementById('save-knowledge-base-btn');
+        const saveSuccessAlert = document.getElementById('save-success');
+        const chatHistoryContainer = document.getElementById('chat-history-container');
+        const clearHistoryBtn = document.getElementById('clear-history-btn');
+        const settingsForm = document.getElementById('settings-form');
+        const botNameInput = document.getElementById('bot-name');
+        const initialMessageInput = document.getElementById('initial-message');
+        const typingSpeedInput = document.getElementById('typing-speed');
+        const responseDelayInput = document.getElementById('response-delay');
+        
+        // Modal elements
+        const addResponseModal = new bootstrap.Modal(document.getElementById('addResponseModal'));
+        const editResponseModal = new bootstrap.Modal(document.getElementById('editResponseModal'));
+        const saveNewResponseBtn = document.getElementById('save-new-response-btn');
+        const updateResponseBtn = document.getElementById('update-response-btn');
+        
+        // Current knowledge base
+        let currentKnowledgeBase = {};
+        
+        // Initialize admin panel
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            checkLoginStatus();
+            
+            // Event listeners
+            loginForm.addEventListener('submit', handleLogin);
+            logoutBtn.addEventListener('click', handleLogout);
+            addResponseBtn.addEventListener('click', showAddResponseModal);
+            saveKnowledgeBaseBtn.addEventListener('click', saveKnowledgeBase);
+            saveNewResponseBtn.addEventListener('click', addNewResponse);
+            updateResponseBtn.addEventListener('click', updateResponse);
+            clearHistoryBtn.addEventListener('click', clearChatHistory);
+            settingsForm.addEventListener('submit', saveSettings);
+        });
+        
+        // Check if user is logged in
+        function checkLoginStatus() {
+            const isLoggedIn = sessionStorage.getItem('adminLoggedIn') === 'true';
+            
+            if (isLoggedIn) {
+                showAdminPanel();
+                loadKnowledgeBase();
+                loadChatHistory();
+                loadSettings();
+            } else {
+                showLoginForm();
+            }
+        }
+        
+        // Handle login form submission
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                showAdminPanel();
+                loadKnowledgeBase();
+                loadChatHistory();
+                loadSettings();
+            } else {
+                loginError.textContent = 'Invalid username or password';
+                loginError.style.display = 'block';
+            }
+        }
+        
+        // Handle logout
+        function handleLogout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            showLoginForm();
+        }
+        
+        // Show login form
+        function showLoginForm() {
+            loginSection.style.display = 'block';
+            adminSection.style.display = 'none';
+            loginError.style.display = 'none';
+        }
+        
+        // Show admin panel
+        function showAdminPanel() {
+            loginSection.style.display = 'none';
+            adminSection.style.display = 'block';
+        }
+        
+        // Load knowledge base from localStorage
+        function loadKnowledgeBase() {
+            // Try to get from localStorage first
+            const storedKnowledgeBase = localStorage.getItem('botKnowledgeBase');
+            
+            if (storedKnowledgeBase) {
+                try {
+                    currentKnowledgeBase = JSON.parse(storedKnowledgeBase);
+                } catch (error) {
+                    console.error('Error parsing knowledge base:', error);
+                    // Fall back to default
+                    loadDefaultKnowledgeBase();
+                }
+            } else {
+                // If not in localStorage, load default
+                loadDefaultKnowledgeBase();
+            }
+            
+            // Display knowledge base
+            displayKnowledgeBase();
+        }
+        
+        // Load default knowledge base
+        function loadDefaultKnowledgeBase() {
+            // This would be the same as in bot.js
+            currentKnowledgeBase = {
+                "who is peter": "Peter Lightspeed (Eluwade Peter Toluwanimi) is a professional virtual assistant and web developer offering services including web development, graphic design, social media management, data entry, content creation, and digital marketing.",
+                "what services": "Peter offers a range of services including: 1) Web Development, 2) Graphic Design, 3) Social Media Management, 4) Data Entry & Typing, 5) Content Creation, and 6) Digital Marketing. You can learn more on the Services page.",
+                "contact": "You can contact Peter via email at petereluwade55@gmail.com or through WhatsApp at +234 810 882 1809. Alternatively, you can use the contact form on the Contact page.",
+                "location": "Peter is based in Nigeria but provides remote services to clients worldwide.",
+                "experience": "Peter has extensive experience in web development, graphic design, and virtual assistance, having worked on over 50 projects for various clients across different industries.",
+                "web development": "Peter offers professional web development services including responsive website design, e-commerce solutions, website maintenance, and custom web applications. His websites are mobile-friendly, SEO-optimized, and built with modern technologies.",
+                "graphic design": "Peter provides graphic design services including logo design, branding materials, social media graphics, banners, flyers, and digital illustrations. He creates visually appealing designs that help businesses stand out.",
+                "social media": "Peter offers comprehensive social media management services including content creation, scheduling, community engagement, and analytics reporting. He helps businesses build their online presence and engage with their audience effectively.",
+                "data entry": "Peter provides accurate and efficient data entry services, including spreadsheet management, database updates, and document processing. He ensures data accuracy and timely delivery.",
+                "content creation": "Peter creates engaging content for websites, blogs, and social media. His content writing services include SEO-optimized articles, product descriptions, and marketing copy that resonates with target audiences.",
+                "digital marketing": "Peter offers digital marketing services including SEO, social media marketing, email campaigns, and content marketing strategies to help businesses increase their online visibility and attract more customers.",
+                "projects": "Peter has worked on various projects including e-commerce websites, business portfolios, blogs, and social media campaigns. You can view his portfolio on the Projects page to see examples of his work.",
+                "portfolio": "You can view Peter's portfolio on the Projects page. It showcases his best work across web development, graphic design, and digital marketing projects.",
+                "pricing": "Pricing varies depending on project requirements and scope. Peter offers competitive rates and flexible packages. Please contact him directly for a personalized quote based on your specific needs.",
+                "rates": "Peter's rates are competitive and based on project complexity, timeline, and specific requirements. Contact him for a custom quote tailored to your project.",
+                "availability": "Peter is available 24/7 for client communication. Project timelines are discussed and agreed upon before starting any work.",
+                "turnaround time": "Turnaround time depends on the project scope and complexity. Peter always provides estimated completion times before starting work and strives to deliver on or before deadlines.",
+                "about": "Peter Lightspeed is a dedicated virtual assistant and web developer with a passion for creating digital solutions that help businesses grow. With expertise in web development, graphic design, and digital marketing, he provides comprehensive services to clients worldwide.",
+                "education": "Peter holds a Bachelor of Science in Computer Science from the University of Lagos, Nigeria. He has also completed various certifications in web development, digital marketing, and graphic design.",
+                "skills": "Peter's key skills include web development (HTML, CSS, JavaScript), graphic design (Adobe Creative Suite), content creation, social media management, data entry, and digital marketing.",
+                "default": "I'm not sure I understand. Could you please rephrase your question? I can help with information about Peter's services, projects, or how to contact him.",
+                "greeting": "Hello! How can I assist you today? I'm here to answer questions about Peter's services and expertise.",
+                "goodbye": "Thank you for chatting! If you need any further assistance, feel free to contact Peter directly at petereluwade55@gmail.com or through the Contact page.",
+                "thanks": "You're welcome! Is there anything else I can help you with?",
+                "hire": "Great! To discuss working with Peter, please send an email to petereluwade55@gmail.com or use the Contact form on the website. Please include details about your project for a prompt response."
+            };
+        }
+        
+        // Display knowledge base in the admin panel
+        function displayKnowledgeBase() {
+            knowledgeBaseContainer.innerHTML = '';
+            
+            // Sort keys alphabetically
+            const sortedKeys = Object.keys(currentKnowledgeBase).sort();
+            
+            sortedKeys.forEach(key => {
+                const responseItem = document.createElement('div');
+                responseItem.className = 'response-item';
+                
+                const responseContent = `
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="mb-1">${key}</h5>
+                            <p class="mb-0">${currentKnowledgeBase[key]}</p>
+                        </div>
+                        <div class="response-actions">
+                            <button class="btn btn-sm btn-outline-primary edit-response-btn" data-key="${key}">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-response-btn" data-key="${key}">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                responseItem.innerHTML = responseContent;
+                knowledgeBaseContainer.appendChild(responseItem);
+                
+                // Add event listeners to buttons
+                responseItem.querySelector('.edit-response-btn').addEventListener('click', () => {
+                    showEditResponseModal(key);
+                });
+                
+                responseItem.querySelector('.delete-response-btn').addEventListener('click', () => {
+                    deleteResponse(key);
+                });
+            });
+        }
+        
+        // Show add response modal
+        function showAddResponseModal() {
+            document.getElementById('response-key').value = '';
+            document.getElementById('response-value').value = '';
+            addResponseModal.show();
+        }
+        
+        // Show edit response modal
+        function showEditResponseModal(key) {
+            document.getElementById('edit-response-original-key').value = key;
+            document.getElementById('edit-response-key').value = key;
+            document.getElementById('edit-response-value').value = currentKnowledgeBase[key];
+            editResponseModal.show();
+        }
+        
+        // Add new response
+        function addNewResponse() {
+            const key = document.getElementById('response-key').value.trim().toLowerCase();
+            const value = document.getElementById('response-value').value.trim();
+            
+            if (!key || !value) {
+                alert('Both fields are required');
+                return;
+            }
+            
+            // Add to knowledge base
+            currentKnowledgeBase[key] = value;
+            
+            // Update display
+            displayKnowledgeBase();
+            
+            // Close modal
+            addResponseModal.hide();
+            
+            // Show success message
+            showSuccessMessage();
+        }
+        
+        // Update existing response
+        function updateResponse() {
+            const originalKey = document.getElementById('edit-response-original-key').value;
+            const newKey = document.getElementById('edit-response-key').value.trim().toLowerCase();
+            const value = document.getElementById('edit-response-value').value.trim();
+            
+            if (!newKey || !value) {
+                alert('Both fields are required');
+                return;
+            }
+            
+            // Remove old key if changed
+            if (originalKey !== newKey) {
+                delete currentKnowledgeBase[originalKey];
+            }
+            
+            // Add updated response
+            currentKnowledgeBase[newKey] = value;
+            
+            // Update display
+            displayKnowledgeBase();
+            
+            // Close modal
+            editResponseModal.hide();
+            
+            // Show success message
+            showSuccessMessage();
+        }
+        
+        // Delete response
+        function deleteResponse(key) {
+            if (confirm(`Are you sure you want to delete the response for "${key}"?`)) {
+                delete currentKnowledgeBase[key];
+                displayKnowledgeBase();
+                showSuccessMessage();
+            }
+        }
+        
+        // Save knowledge base
+        function saveKnowledgeBase() {
+            localStorage.setItem('botKnowledgeBase', JSON.stringify(currentKnowledgeBase));
+            showSuccessMessage();
+        }
+        
+        // Show success message
+        function showSuccessMessage() {
+            saveSuccessAlert.style.display = 'block';
+            setTimeout(() => {
+                saveSuccessAlert.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Load chat history
+        function loadChatHistory() {
+            const chatHistory = localStorage.getItem('chatHistory');
+            
+            if (chatHistory) {
+                try {
+                    const history = JSON.parse(chatHistory);
+                    displayChatHistory(history);
+                } catch (error) {
+                    console.error('Error parsing chat history:', error);
+                    chatHistoryContainer.innerHTML = '<div class="alert alert-warning">Error loading chat history.</div>';
+                }
+            } else {
+                chatHistoryContainer.innerHTML = '<div class="alert alert-info">No chat history found.</div>';
+            }
+        }
+        
+        // Display chat history
+        function displayChatHistory(history) {
+            if (history.length === 0) {
+                chatHistoryContainer.innerHTML = '<div class="alert alert-info">No chat history found.</div>';
+                return;
+            }
+            
+            // Group messages by date
+            const messagesByDate = {};
+            
+            history.forEach(msg => {
+                const date = new Date(msg.timestamp);
+                const dateString = date.toLocaleDateString();
+                
+                if (!messagesByDate[dateString]) {
+                    messagesByDate[dateString] = [];
+                }
+                
+                messagesByDate[dateString].push(msg);
+            });
+            
+            // Create HTML
+            let historyHTML = '';
+            
+            Object.keys(messagesByDate).sort().reverse().forEach(date => {
+                historyHTML += `
+                    <div class="chat-date mb-3">
+                        <h5>${date}</h5>
+                        <div class="chat-messages">
+                `;
+                
+                messagesByDate[date].forEach(msg => {
+                    const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    const role = msg.role === 'user' ? 'User' : 'Bot';
+                    const bgColor = msg.role === 'user' ? 'bg-light' : 'bg-info bg-opacity-10';
+                    
+                    historyHTML += `
+                        <div class="card mb-2 ${bgColor}">
+                            <div class="card-body py-2">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <small class="text-muted">${role}</small>
+                                    <small class="text-muted">${time}</small>
+                                </div>
+                                <p class="card-text mb-0">${msg.content}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                historyHTML += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            chatHistoryContainer.innerHTML = historyHTML;
+        }
+        
+        // Clear chat history
+        function clearChatHistory() {
+            if (confirm('Are you sure you want to clear all chat history? This cannot be undone.')) {
+                localStorage.removeItem('chatHistory');
+                chatHistoryContainer.innerHTML = '<div class="alert alert-info">No chat history found.</div>';
+            }
+        }
+        
+        // Load settings
+        function loadSettings() {
+            const botConfig = localStorage.getItem('botConfig');
+            
+            if (botConfig) {
+                try {
+                    const config = JSON.parse(botConfig);
+                    botNameInput.value = config.name || 'Peter Assistant';
+                    initialMessageInput.value = config.initialMessage || 'Hello! How can I help you today?';
+                    typingSpeedInput.value = config.typingSpeed || 50;
+                    responseDelayInput.value = config.responseDelay || 500;
+                } catch (error) {
+                    console.error('Error parsing bot config:', error);
+                }
+            } else {
+                // Default values
+                botNameInput.value = 'Peter Assistant';
+                initialMessageInput.value = '👋 Hello! I\'m Peter\'s virtual assistant. How can I help you today? I can provide information about Peter\'s services, projects, or answer any questions you might have.';
+                typingSpeedInput.value = 50;
+                responseDelayInput.value = 500;
+            }
+        }
+        
+        // Save settings
+        function saveSettings(e) {
+            e.preventDefault();
+            
+            const config = {
+                name: botNameInput.value,
+                initialMessage: initialMessageInput.value,
+                typingSpeed: parseInt(typingSpeedInput.value),
+                responseDelay: parseInt(responseDelayInput.value)
+            };
+            
+            localStorage.setItem('botConfig', JSON.stringify(config));
+            alert('Settings saved successfully!');
+        }
+    </script>
+</body>
+</html>
