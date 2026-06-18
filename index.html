@@ -92,19 +92,19 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ✅ Images and media stay responsive */
+/*   Images and media stay responsive */
 img, video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ✅ Prevent container overflow but keep visible children */
+/* Prevent container overflow but keep visible children */
 .container, .container-fluid, section, .row {
   overflow-x: clip; /* instead of hidden — safer for dropdowns */
 }
 
-/* ✅ Allow specific elements like dropdowns or sidebars to overflow properly */
+/*  Allow specific elements like dropdowns or sidebars to overflow properly */
 .dropdown-menu,
 .offcanvas,
 .social-sidebar,
@@ -113,7 +113,7 @@ img, video {
   overflow: visible !important;
 }
 
-/* ✅ Fix for padding and layout shifting */
+/*   Fix for padding and layout shifting */
 body {
   padding-right: 0 !important; /* prevents scrollbar compensation issue */
 }
@@ -192,7 +192,7 @@ body {
 
     <!-- HEADER & NAVBAR -->
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3 sticky-top">
             <div class="container">
                 <!-- Logo and Brand -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
